@@ -25,295 +25,233 @@ This approach sets a high benchmark: a marketplace strategy that preempts stakeh
 - *Data Governance & ML Model Overview*: Documents outlining ETL jobs, schema evolution policies, and ML retraining triggers (in data team’s Confluence pages).
 
 ---
+### 2. Market & User Insights
 
-## 2. Market & User Insights
+**Market Landscape & Competitive Context:**  
+The ridesharing industry is crowded and dynamic. Competitors employ various surge pricing strategies—some rely on simpler zone-based logic, others already experiment with granular, data-driven approaches. Standing out requires not just better modeling but robust transparency, trustworthy brand positioning, and rapid adaptability to local regulatory and cultural conditions. For instance, one competitor might handle rain-induced demand spikes simply by capping surges, while another might fail to explain price hikes, alienating riders. Our advantage will come from balancing precision and fairness, supported by transparent UX and compliance mechanisms, ensuring we capture both rider trust and driver loyalty.
 
-**Market Landscape:**  
-- Highly competitive with global and regional players. Differentiation requires operational reliability, ethical surge pricing, strong safety profiles, and brand trust.
-- Emerging regulatory frameworks vary by city/country. Adapting quickly to local rules (driver documentation, fare caps) is key.
-
-**User Segments & Pain Points:**  
+**User Segments & Their Nuanced Needs:**
 - **Riders:**  
-  - Pain: Inconsistent ETAs, confusing surge pricing, unclear safety protocols.  
-  - Need: Predictable wait times, upfront pricing transparency, confidence in driver vetting.  
+  - **Current Pain:** Confusion during off-peak hours if prices remain inexplicably high, or frustration if a sudden rain event doesn’t adjust prices fast enough, resulting in missed opportunities or switching to a competitor. Lack of clarity erodes trust.  
+  - **Rider Need:** Clear, upfront reasoning for fares (“Why this fare?”), stable ETAs, assurance that the platform responds ethically and promptly to changing conditions (like heavy rain or sudden demand clusters in a particular neighborhood).
+  
 - **Drivers:**  
-  - Pain: Earnings volatility, complex incentive structures, uncertainty about where/when to drive.  
-  - Need: Stable earnings guidance, clear dashboards showing peak times, fair dispatch algorithms.
+  - **Current Pain:** Struggle with earnings volatility; if prices remain too low during sudden demand spikes (due to previously lowered surge caps), drivers feel undervalued and may prefer competitor platforms offering quicker earnings upticks. Complexity in incentive rules also confuses them.  
+  - **Driver Need:** Predictable income guidance, intuitive dashboards that highlight when/where driving is most profitable, and transparent incentive parameters that adjust fairly with real conditions.
 
-**Opportunities Identified via User Interviews & Surveys:**  
-- A pilot rider survey (N=200) showed 70% confusion about surge pricing rationale. Transparent explanations reduced drop-offs by 10% in A/B tests.  
-- A driver focus group (N=50) indicated that a weekly recommended schedule improved driver satisfaction scores by 15% when tested in a small pilot.
+**Insights from Interviews, Surveys, and A/B Tests:**
+- Rider interviews show that a well-explained surge rationale (e.g., a tooltip or 10-second in-app explainer video) can reduce abandonment by ~2%. While that 2% seems small, at scale it’s meaningful revenue and improved brand reputation.  
+- Driver focus groups and pilot tests suggest that providing weekly peak-hour forecasts and clear incentive structures can reduce driver turnover by up to 10%, stabilizing supply and thus improving on-time performance.
+- Market research indicates that localizing parameters (like adapting surge thresholds for specific neighborhoods or adjusting feature_flag for test zones) can capture local market nuances. For instance, certain areas respond positively to slight fare increases if well explained, while others require maintaining strict surge caps to avoid backlash.
 
-**Cultural & Local Considerations:**  
-- Payment preferences (cash vs. digital wallets) differ by region. A pilot expansion plan for City A includes adding mobile wallet X, expected to raise rider adoption by 5%.  
-- Language localization: Providing local language support and customer support scripts reduces rider complaint handling time by ~20%.
+**Opportunities:**
+- Implementing a cell-based model (V1 baseline, evolving to V2, and ultimately V3 with ML) allows fine-grained control over pricing, addressing identified pain points directly.  
+- Coupling this pricing evolution with transparent explanations and fallback logic (feature_flag=0 for old logic, feature_flag=1 for new logic in certain zones, test intervals defined by start_time/end_time) ensures we can respond quickly if early tests show negative rider or driver feedback.  
+- Integrating rainfall and price search data (previously not collected) offers richer context. E.g., if heavy rain spikes demand and we fail to raise prices appropriately in old logic, we can switch to the new logic or adjust parameters mid-PI to prevent losing drivers to competitors.
 
----
-
-## 3. Objectives & Key Results (OKRs)
-
-| Objective                                | Key Result                                                           |
-|------------------------------------------|----------------------------------------------------------------------|
-| Improve On-Time Performance               | Increase on-time pickups from 85% to 95% in 6 months                |
-| Enhance Operational Efficiency            | Reduce average rider wait times by 15% in 4 months                  |
-| Strengthen Compliance & Safety            | Zero regulatory violations for 6 continuous months, 100% driver background checks |
-| Elevate User Satisfaction (Riders/Drivers)| Increase NPS by +10 points in 2 quarters, reduce driver turnover by 15% |
-| Ensure Scalable Growth                    | Expand to 3 new cities in 6 months, maintaining ≥90% on-time rate and NPS ≥ baseline +5 |
-
-**Additional Outcome Validation:**  
-- For on-time improvement, A/B test surge models in one city: if pilot achieves +5% in 1 month, scale globally.  
-- To boost NPS, track monthly NPS surveys. If after 3 months NPS < +3 points, add more UX refinements or modify incentive structures.
+These insights feed directly into our OKRs and strategy, ensuring every decision is grounded in validated user needs and market realities.
 
 ---
 
-## 4. Product & Marketplace Strategy
+### 3. Objectives & Key Results (OKRs) (Refined Version)
+
+We set OKRs to ensure that every feature, parameter tweak, and fallback decision ties directly to measurable outcomes. These OKRs are not static: if we fail to meet targets, we adjust strategy, backlog, or parameters (like unmet_rate thresholds or surge_high_tier_rate) in subsequent increments.
+
+| Objective                                | Key Result                                                                      |
+|------------------------------------------|---------------------------------------------------------------------------------|
+| Improve On-Time Performance (OKR1)        | Increase on-time pickups from 85% to 95% in 6 months                           |
+| Enhance Operational Efficiency (OKR2)     | Reduce average rider wait times by 15% within 4 months                         |
+| Strengthen Compliance & Safety (OKR3)     | Zero regulatory violations for 6 continuous months; 100% driver background checks |
+| Elevate User Satisfaction (OKR4)          | Increase NPS by +10 points in 2 quarters, reduce driver turnover by 15%         |
+| Ensure Scalable Growth (OKR5)             | Expand to 3 new cities in 6 months while maintaining ≥90% on-time rates          |
+
+**Real-World Validation & Iterative Adjustments:**
+- **If On-Time Improvement <3% After Pilot Tests (OKR1)**:  
+  Evaluate parameters (unmet_rate1, unmet_rate2, additional_surge_high) or revert feature_flag=0 for certain test zones. Next PI, prioritize surge algorithm refinement (WSJF scoring favors features with higher impact on on-time). Possibly run more A/B tests isolating rainfall data’s effect.
+  
+- **If NPS Stagnates After 2 Months (OKR4)**:  
+  Run user interviews focusing on surge explanation clarity. If confusion persists, try adding a short educational animation or simpler wording. Re-run A/B tests: if the animation variant improves comprehension and reduces abandonment, adopt it globally next increment.
+  
+- **If a Compliance Violation Occurs (OKR3)**:  
+  Immediately revert to old logic or apply stricter surge caps in that zone. Update compliance configs within 2 weeks, re-audit the logic next increment.
+  
+- **If Growth Targets Lag (OKR5)**:  
+  Before scaling beyond pilot zones, re-check local preferences. Maybe low adoption in a new city requires adjusting surge_high_tier_rate downward or extending test durations. If compliance or branding concerns arise (like negative press due to surge confusion), address them first.
+
+By linking outcomes to data-driven decision-making, we ensure no “What if?” scenario is ignored. Each KPI acts as a gate: if not met, do not scale or proceed; refine first.
+
+---
+
+### 4. Product & Marketplace Strategy (Refined Version)
+
+Our strategy rests on iterative refinement, data-driven insights, and the capacity to adapt swiftly if results deviate from targets. We integrate SAFe alignment, cross-functional input (Data, QA, Branding, Marketing, Compliance, Engineering), and scenario-based fallback logic to ensure resilience.
 
 **Strategic Pillars:**
-1. **Dynamic, Data-Driven Pricing & Dispatch:**  
-   - ML-based surge pricing recalculated every 5 minutes.  
-   - Predict driver shortages (≥10% shortfall triggers targeted driver incentives via push notifications).
-   - WSJF used to prioritize pricing algorithm improvements over less impactful features if KPIs lag.
 
-2. **Trust & Safety Integration:**  
-   - Driver onboarding includes ID verification, background checks (API integration with third-party screening).  
-   - In-app safety: SOS button tested in pilot city; if incidents resolve 20% faster, implement globally.  
-   - Compliance dashboard: Alerts if local reg changes. If new driver license rule emerges, adapt within 2 weeks.
+1. **Incremental Model Evolution (V1 → V2 → V3):**  
+   - **V1 (Baseline):** Parameter-heavy, derived from expert knowledge. Good starting point to test cell-level logic in controlled zones (e.g., zone_id = 51, 4 with a feature_flag=1). If pilot shows partial success (on-time +3% but NPS flat), adjust parameters or revert to old logic for a subset of hours.  
+   - **V2 (Mathematical Simplification):** After validating V4, switch to a simpler, fewer-parameter model that’s easier to tune and scale. A/B test V5.1 vs. V4 in pilot zones; if V5.1 improves operational efficiency by an additional 2% and reduces driver confusion, adopt V5.1 in more zones next increment.  
+   - **Future V3 (AI-Driven ML):** Once enough data is collected (at least 6 months of cell-level data, including rainfall, price searches), introduce ML-based surge predictions. If ML tests reveal bias or complexity issues, revert to V5.1 temporarily, retrain ML, and re-test.
 
-3. **Transparent & Intuitive UX:**  
-   - Riders see a breakdown: base fare, time/distance, surge multiplier + educational tooltip.  
-   - Drivers get a weekly “peak hours” suggestion card; A/B test if adding visual heatmaps reduces idle time by 10%.
+2. **SAFe Alignment & Iterative Validation:**
+   Each Program Increment (PI) focuses on a set of features and pilot tests. After PI-1, if no significant improvement, reprioritize backlog (using WSJF) toward features (like adjusting unmet_rate thresholds) or UX enhancements. Inspect & Adapt sessions after each PI incorporate user feedback (from brand surveys, compliance checks, QA reports) and pilot data into immediate next steps.
 
-4. **Scalability & Localization:**  
-   - Microservices architecture allows plugging in local payment methods in <2 weeks.  
-   - Localization team aligns content and support scripts to regional preferences; test localized approach in City B pilot and measure adoption.
+3. **Robust Fallback & Compliance Integration:**
+   The presence of a feature_flag means we can revert to old logic if a new model or parameter set causes rider dissatisfaction, compliance risks, or negative brand impact. For instance, if heavy rain hits and the new logic fails to raise prices adequately (losing drivers to competitors), we can quickly tweak additional_surge_high or revert to old logic for a set period defined by start_time/end_time. If a local regulation emerges capping surge at 1.2x, compliance rules feed into pricing logic instantly; if a violation is detected, old logic acts as a safety net while we reconfigure parameters.
 
-5. **Continuous Improvement & Iteration:**  
-   - Sprint-level adjustments via Inspect & Adapt sessions each PI.  
-   - If after PI-1 on-time +5% target not met, run a root cause analysis (maybe increase incentive budget or tweak ML hyperparameters).
+4. **Cross-Functional Integration (Brand, Data, QA, Marketing, Ops, Compliance):**
+   - **Data:** Powers the shift from V4 to V5.1 and eventually V5.2 by collecting richer contextual data (rain, price search patterns) and ensuring no ETL discrepancies.  
+   - **QA:** Validates performance under load, ensures accessibility and security before each rollout. If test fails, block release until resolved.  
+   - **Brand & UX:** Ensures that each increment of model improvement also includes refined rider/driver communications. If brand tests show confusion, add educational tooltips next PI.  
+   - **Marketing & GTM:** Align pilot rollouts with user messaging campaigns. If marketing finds low user adoption, test new explanatory material or promotions in next increment.  
+   - **Compliance & Ops:** Rapidly adjust parameters or revert logic if new regulations appear or if compliance violations arise. If expansions to a new city yield unexpected cultural barriers, refine localized logic, re-check brand messaging, and retest.
 
-**Sample WSJF Example:**  
-- Surge Algorithm Improvement (A) vs. Cosmetic UI Change (B):  
-  - A expected to improve on-time by 3% vs. B’s 0.5% user delight increment. A receives higher WSJF score, prioritized in next PI.
+**Outcome-Focus & Real-World Checks:**
+The entire strategy revolves around outcome validation:
 
----
-
-## 5. Epics, Features, and Hierarchy
-
-**Epics & Their Justification:**
-
-| Epic ID | Epic Name                         | Why It Exists (Strategic Tie-In)                      |
-|---------|-----------------------------------|-------------------------------------------------------|
-| E-01    | Dynamic Pricing & Dispatch         | Directly improves on-time rates (OKR1) and efficiency (OKR2) by ensuring balanced supply/demand. |
-| E-02    | Safety & Compliance Framework      | Mandatory for zero violations (OKR3), building trust, meeting regulatory needs, and improving NPS indirectly. |
-| E-03    | Rider Experience (UX & Transparency)| Enhances NPS (OKR4), reduces confusion and drop-offs by clarifying pricing and ETAs. |
-| E-04    | Driver Engagement & Incentives     | Reduces driver turnover (OKR4), ensures stable supply, aiding on-time pickups. |
-| E-05    | Data & Analytics Integration       | Enables predictive modeling, monitoring OKRs, and iterative improvements. Critical for all OKRs. |
-| E-06    | Scalability & Localization         | Key to successful expansions (OKR5) and maintaining KPIs in new cities. |
-| E-07    | Marketing & GTM Integration         | Ensures user awareness, adoption, and positive brand perception, impacting NPS and expansion success. |
-| E-08    | QA & Test Automation               | Guarantees reliability and quality, indirectly supporting all OKRs by preventing regressions. |
-| E-09    | Compliance & Risk Management       | Rapid adaptation to new laws, mitigating compliance risks and protecting brand integrity.
-
-**Features Under an Epic (Example):**  
-**E-01 (Dynamic Pricing & Dispatch):**  
-- F-01: ML Surge Algorithm v1  
-- F-02: Real-Time Driver Shortfall Alerts  
-- F-03: A/B Testing Framework for Pricing Variations
-
-Each feature will have detailed user stories, acceptance criteria, FRs, NFRs, and tasks.
+- If after a pilot (2-week test in selected zones), no KPI improvements meet targets, do not scale further. Instead, refine, retest, or revert.  
+- Continuous feedback loops (weekly user interviews, monthly NPS surveys, pen tests, load tests each PI) ensure no stagnation.  
+- Each decision is not final; it’s a hypothesis tested in real conditions. If outcomes fail, we adapt swiftly, making the entire approach highly resilient and future-proof.
 
 ---
 
-## 6. Detailed Requirements (FRs, NFRs, User Stories, Acceptance Criteria)
+### 5. Epics, Features, and Hierarchy
 
-### Functional Requirements (FRs) (Selected Examples):
+**Epics & Their Justification:**  
+Each Epic directly supports OKRs and strategic pillars by addressing rider/driver needs, ensuring compliance, enhancing data capabilities, scaling operations, and maintaining brand trust.
 
-1. **FR1 (Surge Algorithm):**  
-   - System recalculates surge multipliers every 5 minutes based on real-time supply/demand.  
-   - Processing latency <2s.  
-   - If predicted rider demand outpaces driver supply by >10%, surge factor increases incrementally (max cap defined by local regulation).
+| Epic ID | Epic Name                         | Strategic/Outcome Alignment                                     |
+|---------|-----------------------------------|--------------------------------------------------------------------|
+| E-01    | Dynamic Pricing & Dispatch         | Directly improves on-time performance (OKR1) and efficiency (OKR2). Cell-based pricing (V4→V5.1→V5.2) with parameters & feature_flag provides granular, testable control and quick fallback if pilots fail. |
+| E-02    | Transparency & UX Enhancements     | Increases NPS (OKR4) by reducing rider confusion. “Why this fare?” explanations and A/B-tested UI changes ensure trust and fairness. If metrics don’t improve, pivot messaging next increment. |
+| E-03    | Driver Incentive Optimization      | Reduces driver turnover (OKR4) by offering stable earning forecasts and intuitive dashboards. If driver satisfaction <80%, adjust incentive display logic or add visuals next PI. |
+| E-04    | Data Governance & ML Readiness     | Critical for future AI-driven pricing (OKR5), ensuring data accuracy and integrity. If ETL errors >1%, fix before next release. Data collected now supports future ML (V5.2) improvements. |
+| E-05    | Compliance & Risk Mitigation       | Ensures zero violations (OKR3) and quick adaptation to local laws. If a new rule appears, implement in <2 weeks or revert to old logic. Regular compliance checks prevent brand/reputational damage. |
+| E-06    | Marketing & GTM Integration         | Drives user adoption and brand message alignment, supporting efficiency/NPS improvements. If marketing campaigns fail (e.g., CTR <1%), test alternate messaging or promotions next PI. |
+| E-07    | QA & Test Automation Framework     | Indirectly supports all OKRs by preventing regressions. Comprehensive testing (performance, security, accessibility) ensures stable deployments. If tests fail, block release, fix defects, retest. |
+| E-08    | Scalability & Localization          | Essential for expansions (OKR5). Localizing payment methods, languages, and compliance rules. If a city launch fails KPI targets, refine local parameters, re-test before further rollout. |
+| E-09    | Compliance & Risk Management        | Rapidly adapt pricing rules to new regulations or user backlash. Fallback logic (feature_flag=0) ensures we never linger in a non-compliant or user-unfriendly state. |
 
-2. **FR2 (Driver Forecasting):**  
-   - Predict supply needs 30 min ahead. If shortfall >10%, send push notifications to off-duty drivers.  
-   - Track how many drivers respond to these alerts. If response <5%, consider increasing incentive amount automatically.
+**Feature Examples Under E-01 (Dynamic Pricing):**
+- F-01: Baseline Surge Model (V1) with parameterized logic and feature_flag support. Pilot in zones 51 & 4 for 2 weeks. If on-time improves ≥5%, scale. If not, adjust parameters or revert old logic for these zones.
+- F-02: Simplified Math Model (V2) after V1 success. If wait times reduce by an additional 3% and no compliance issues, proceed city-wide incrementally.
+- F-03: Predictive Surge Enhancements (V3-ready): Prepare pipelines with rainfall, price search data. Once stable, A/B test ML-driven approach. If ML underperforms, revert to V2
 
-3. **FR3 (Background Checks):**  
-   - On driver sign-up, integrate with external API for background checks.  
-   - If fail, block activation and notify compliance officer.  
-   - Re-verify driver background every 6 months automatically.
-
-4. **FR4 (Fare Transparency UI):**  
-   - Rider app displays cost breakdown (base fare, distance fare, surge multiplier, estimated total).  
-   - Show “?” icon next to surge: tapping opens a tooltip explaining surge logic.  
-   - A/B test: In test group, show a short video snippet (10s) explaining surge. If abandonment reduces by >2%, roll out video snippet widely.
-
-5. **FR5 (ETL & Data Quality):**  
-   - Run nightly ETL. If discrepancy >1%, trigger remediation job and alert data steward via Slack.  
-   - Store monthly ETL error reports in Confluence with root cause analysis. If recurring error >3 times, escalate to Data Engineering Manager.
-
-6. **FR6 (Localization):**  
-   - Adding a new language (strings in resource files) and payment method (API integration) should take <2 weeks from request to production.  
-   - Test localized UI with a user pilot: if comprehension scores <90% in user tests, refine translations before city launch.
-
-### Non-Functional Requirements (NFRs):
-
-- **Performance:** Critical actions (request ride, assign driver, pricing calc) respond <2s at 10x peak load.
-- **Scalability:** Support 100k drivers & 1M daily rides by Year 2.  
-- **Security & Compliance:** OAuth 2.0 auth, encrypted data at rest and transit, quarterly pen tests.  
-- **Accessibility:** WCAG 2.1 AA compliance (keyboard navigation verified, color contrast checked via automated tools like Axe).  
-- **Reliability:** 99.9% uptime, RTO<4h, RPO<1h with multi-region failover tested quarterly.
-
-### User Stories & Acceptance Criteria:
-
-**US-E01-01 (Rider Surge Display):**  
-- Story: As a rider, I want to understand why surge pricing applies, so I don’t feel unfairly charged.  
-- Acceptance Criteria:
-  - Given surge active, when rider requests a ride, display surge multiplier on confirmation screen.  
-  - Provide “?” icon. Tapping shows a tooltip: “Prices higher due to high demand and limited drivers right now.”  
-  - A/B Test Variant: In 50% of users, show a 10s explainer animation instead of text. If animation group abandonment < control group by >2%, adopt animation globally.
-
-**US-E04-02 (Driver Incentive Dashboard):**  
-- Story: As a driver, I want a weekly dashboard showing earnings and peak recommendations, so I can plan effectively.  
-- Acceptance Criteria:
-  - Dashboard updates daily at midnight with total earnings, top 3 peak hours for next week.
-  - Show a heatmap icon (from mockups saved in Design repo) highlighting busy zones.  
-  - Survey: At least 80% of drivers in pilot city rate dashboard “helpful” after 2 weeks. If <80%, iterate on UI (shorter text, clearer icons) and retest.
-
-**US-E02-03 (Emergency SOS Feature):**  
-- Story: As a rider, if I feel unsafe, I want a quick SOS button connecting me to emergency support.  
-- Acceptance Criteria:
-  - SOS icon visible during trip.  
-  - Tap SOS: sends GPS + driver/rider details to emergency contact center.  
-  - Run pilot in 1 city for 1 month: measure incident resolution time. If reduced by ≥20%, roll out globally.
-
-### Tasks:
-
-- **Task (Surge Algo Improvement):**  
-  - Data Scientist: Configure ML pipeline to retrain surge model monthly, store model version in registry.  
-  - Engineer: Implement API endpoint `/surge/calculate` with caching.  
-  - QA: Write load test scripts to ensure <2s response at peak load.
-
-- **Task (Driver Verification):**  
-  - Compliance Officer: Provide local regulatory checklist.  
-  - Engineer: Integrate with background check API (e.g., Checkr) and handle fail/pass logic.  
-  - QA: Create test accounts with mock data sets (clean, with criminal record) to ensure correct blocking.
-
-- **Task (Localization):**  
-  - Localization Team: Translate all rider/driver UI strings for City A into local language.  
-  - Engineer: Integrate local payment API, run test transactions.  
-  - QA: Test language toggle feature, ensure no UI clipping, run user test with 10 local riders to confirm >90% comprehension.
+Each feature is not final until tested and validated. If a feature fails A/B tests or user surveys, reprioritize using WSJF, refine parameters (e.g., surge_high_tier_rate), and retest next PI.
 
 ---
 
-## 7. Data & Analytics Integration
+### 6. Detailed Requirements (FRs, NFRs, User Stories, Acceptance Criteria)
 
-**Scope:** Ensure data pipelines, ML models, ETL processes, and analytics tools deliver accurate, timely insights to guide decision-making, evaluate OKRs, and continuously refine marketplace performance.
+**Functional Requirements (FRs):**
 
-**Data Sources & Governance:**  
-- **Core Data Inputs:** Rider requests, driver statuses (online/offline, trip states), pricing events, trip completions, ratings, support tickets, regulatory and compliance events, external feeds (weather, traffic).  
-- **ETL Processes:**  
-  - Nightly ETL job transforms raw event logs into structured trip tables, driver performance summaries, and rider usage metrics.  
-  - Schema evolution handled via versioned schemas stored in a data catalog (e.g., in a Data Dictionary on Confluence). Any schema changes require Data Steward approval, automatic backward compatibility checks.  
-  - If discrepancy >1% in ETL run, remediation job triggers. Data Engineering logs root cause and fixes within 24h.
+1. **FR1 (Cell-Level Surge Calculation):**  
+   - Every 5 min, recalculate surge per H3 cell. If demand > supply by >10%, increase surge using parameter additional_surge_high.  
+   - Acceptance: In pilot A/B test, if on-time improves by ≥5% vs. control. If not achieved, adjust unmet_rate thresholds next PI or revert logic in test zones.
 
-**ML Model Governance:**  
-- **Model Types:** Surge prediction models, driver supply forecasting, ETA accuracy models.  
-- **MLOps Pipeline:**  
-  - Retrain surge model monthly or if MAE >10% for 3 consecutive days.  
-  - Store model versions in a model registry, label them by deployment date and test results.  
-  - Automated drift detection: If predicted vs. actual supply differs by >5% for a week, alert Data Scientist to review model features (e.g., might add weather data if not already included).
+2. **FR2 (Feature_Flag & Parameter Control):**  
+   - If feature_flag=0, use old logic; if feature_flag=1, use new parameter-driven logic for specified zones (e.g., 51,4) and time intervals.  
+   - Acceptance: If compliance or user feedback negative, revert to old logic within 1 hour. Document changes and fix parameters offline.
 
-**A/B Testing & Advanced Analytics:**  
-- **A/B Test Framework:**  
-  - Randomly assign subsets of riders/drivers to test variants (e.g., different incentive schemes or surge explanations).  
-  - Collect metrics (abandonment rate, earnings stability, time-to-complete rides) and run statistical significance tests.  
-- **User Behavior Analytics:**  
-  - Heatmaps of driver availability vs. rider request density displayed in internal dashboards (Tableau or Looker) to guide city operations teams.  
-  - NPS tracking monthly; if NPS stagnates, run correlation analysis to see if price complexity or safety concerns are impacting satisfaction.
+3. **FR3 (Rider Fare Transparency):**  
+   - Show “Why this fare?” and test short animation vs. text tooltips.  
+   - Acceptance: If abandonment reduces by ≥2%, adopt best variant globally next increment. If <2%, try different messaging or add localized examples.
 
-**Artifacts/References:**  
-- Data Dictionary: Lists all data tables, fields, and lineage diagrams accessible via internal Confluence.  
-- ML Model Documentation: MLOps pipeline described in Engineering/ML wiki, including hyperparameter defaults, retraining triggers, and fallback models.
+4. **FR4 (Driver Incentive Dashboard):**  
+   - Weekly earnings summary + recommended peak hours.  
+   - Acceptance: If ≥80% drivers find it helpful in pilot survey, scale city-wide. If not, adjust visuals or add time-slot filtering next PI.
 
----
+5. **FR5 (Compliance Triggers):**  
+   - If local max surge =1.5x exceeded, log event, alert Compliance Officer, and revert logic or apply stricter parameters within ≤1h.  
+   - Acceptance: Zero unresolved compliance violations after fallback. If any recurring, add compliance rule hardcoding next PI.
 
-## 8. Engineering & Architecture Overview
+**Non-Functional Requirements (NFRs):**
+- **Performance:** Surge API <2s under 10x load; if tests fail, optimize or block release.  
+- **Scalability:** Support 100k drivers & 1M daily rides by Year 2. If expansions slow performance, add caching, scale horizontally.  
+- **Security & Compliance:** OAuth 2.0, encryption, quarterly pen tests. Any pen test fail = fix before next release.  
+- **Accessibility:** WCAG 2.1 AA compliance. If any violation, block launch until fixed.  
+- **Reliability:** 99.9% uptime, RTO<4h with monthly failover drills. If failover test fails, fix and retest before expansions.
 
-**High-Level Architecture:**  
-- **Microservices:** Pricing service, dispatch service, compliance service, payment gateway integration, driver onboarding service, rider app backend, notification service for incentives.  
-- **APIs & Contracts:**  
-  - Versioned APIs with backward compatibility guaranteed for 2 releases.  
-  - API contracts documented in OpenAPI specs (see Engineering repo “api-specs/”).  
-  - Performance budgets: Each API responds <200ms under normal load, <500ms under 10x peak.
+**User Stories & Acceptance Criteria:**
+- **US-E01-01 (Rider Surge Display):** If variation with animation reduces abandonment ≥2% vs. control, adopt animation. If not, try simpler text next PI.
+- **US-E02-05 (Zone-Specific Parameters):** As an Ops Manager, if a zone’s (e.g., 51) feedback is negative, update zone’s parameters within 1 day. If no improvement after next iteration, revert feature_flag=0.
 
-**CI/CD & Tooling:**  
-- Code repos: GitHub monorepo with separate directories for each microservice.  
-- CI Pipeline: GitHub Actions runs unit, integration tests on each commit; merge to main requires passing all tests & code review by 2 peers.  
-- CD Pipeline: Argo CD for automated deployments to staging & prod after approvals in monthly release windows.
-
-**Performance & Scalability Measures:**  
-- **Caching:** Redis caching for frequently accessed data (e.g., pricing lookups).  
-- **Autoscaling:** Kubernetes HPA (Horizontal Pod Autoscaler) scaling services up/down based on CPU/memory metrics and custom latency thresholds.  
-- **Disaster Recovery:**  
-  - Multi-region deployment: If primary region fails, failover to secondary within RTO <4h.  
-  - DR drills quarterly; last DR drill revealed a DNS misconfiguration, fixed immediately.
-
-**Security & Compliance:**  
-- OAuth 2.0 for auth, all tokens short-lived.  
-- Data encryption (AES-256 at rest, TLS in transit).  
-- Quarterly pen tests by an external security firm; track findings in Security Jira board.
-
-**Artifacts/References:**  
-- Architecture Diagram: Detailed system diagram in Engineering wiki “architecture/2023-q2/”.  
-- API Specs: OpenAPI docs in “api-specs/” repository with example requests/responses.
+**Validation & Loopholes:**
+Every FR and story ties to clear metrics. If unmet, we know exactly how to pivot (tweak parameters, revert logic, retest). Detailed acceptance criteria and fallback logic ensure no scenario leaves us stranded.
 
 ---
 
-## 9. QA & Test Automation
+### 7. Data & Analytics Integration
 
-**Test Strategies:**  
-- **Unit Tests:** ≥90% coverage, mocking external dependencies.  
-- **Integration Tests:** Validate end-to-end flows (request ride → driver assigned → trip complete → payment). For example, a test simulates a peak-hour scenario and checks if surge pricing and driver notifications work as intended.  
-- **System Integration Testing (SIT):** Conducted pre-MVP and before major releases, SIT includes load tests with 10x normal traffic and simulated external API delays.
+Data underpins iterative validation and outcome-driven improvements. We ensure that every decision—tweaking unmet_rate or adjusting surge caps—is grounded in robust, near-real-time and historical data.
 
-**UAT & Pilot Tests:**  
-- **UAT:** Invite a select group of riders/drivers from pilot city to test new features, gather qualitative feedback. If UAT reveals confusion about incentive UI, adjust before global launch.  
-- **Alpha/Beta Testing:** Run alpha in a closed test group (internal employees), beta in one pilot city. If beta feedback indicates -5% driver satisfaction, fix issues before scaling globally.
+**Data Flows:**
+- Collect cell-level demand/supply, rainfall, price searches every 5 min.  
+- ETL ensures <1% discrepancy. If >1%, run remediation job immediately. If recurring >3 times, escalate to Data Eng Manager and block expansions until fixed.
 
-**Performance & Security Testing:**  
-- Monthly load tests. If response times exceed 2s at peak, add caching or refine queries.  
-- Security: Automated scans (Snyk for dependencies, Zap for dynamic scans), pen tests quarterly.
+**ML Pipeline & Governance:**
+- Even if V5.2 ML is future, we start accumulating enough high-quality data for when we’re ready. If model drift occurs later, revert to simpler logic (V5.1 or old logic) until ML is retrained and tested.
 
-**Accessibility Testing:**  
-- Automated scans with Axe on staging builds. Manual tests with screen readers. If critical WCAG violations found, block release until resolved.
+**A/B Testing & Analytics Tools:**
+- A/B test different parameter sets (e.g., surge_high_tier_rate=0.4 vs. 0.5) and measure difference in acceptance or NPS.  
+- Dashboards (Tableau, Looker) show zone-level KPIs. If a particular zone lags behind, investigate if local parameters need adjusting or if rainfall correlation missed.
 
-**Artifacts/References:**  
-- Test Plan Document: Details test scopes, test tools (Selenium for UI, JMeter for load), stored in QA repo “test-plans/2023-q2/”.  
-- Defect Management: Jira board “MARKETPLACE-DEFECTS” tracking severity, SLA for fixes (P1 fix within 24h).
+By embedding analytics deeply, we ensure no guesswork. Each iteration can be justified by data, and if data reveals unexpected patterns, we adapt parameters or revert logic next PI.
 
 ---
 
-## 10. Branding, UX & CX Alignment
+### 8. Engineering & Architecture Overview
 
-**Brand Principles:**  
-- Reliability, fairness, innovation. The UI should reflect a trusted, friendly tone: no confusing jargon.  
-- Color Scheme: Brand-approved palette (e.g., blue for reliability, green accents for “go” signals). Typography per Brand Style Guide (Montserrat font, consistent iconography).
+**Architecture Goals:**
+Enable rapid changes—e.g., toggling feature_flag, updating parameters for a zone—without downtime, ensuring stable performance and easy scaling.
 
-**UX Validation:**  
-- Monthly usability tests with at least 5 riders and 5 drivers. If testing surge explanation, we record time-to-understand pricing. If ≥80% understand within 10s, good to proceed. If <80%, simplify wording or add an animation.
+**Key Enhancements:**
+- Microservices for pricing logic, compliance checks, data ingestion.  
+- Versioned APIs ensure backward compatibility for at least 2 releases, so if a compliance-driven model emerges, we integrate seamlessly without breaking existing flows.
+- CI/CD pipelines ensure every commit is tested. If performance dips, add caching layers or refine indexing before merging. If a pen test reveals vulnerability, fix immediately.
 
-**Consistent CX Across Touchpoints:**  
-- Support scripts aligned with brand tone: empathetic, concise.  
-- Marketing emails follow brand guidelines (logo, tagline, consistent tone). If a PR crisis (e.g., safety incident) occurs, use pre-approved crisis messaging templates to maintain trust.
+**Scalability & Reliability:**
+- If scaling to 30% city coverage triggers latency >2s, horizontally scale pricing microservice pods, or add a read-replica DB.  
+- Regular DR drills ensure we never get caught off-guard. If a DR drill fails, fix root causes before next increment.
 
-**Artifacts/References:**  
-- Brand Style Guide: In “brand-guide/” repository with color codes, logo usage rules.  
-- UX Mockups & Prototypes: Figma links in “design/ux-prototypes/rider_surge_explainer.fig”.
-
-**A/B Testing for UX:**  
-- If adding a new driver incentive icon, split test icon A vs. icon B. If B leads to 5% higher driver follow-through, adopt B.
+**Integration with ML:**
+- Designed so that plugging in ML-driven V5.2 model is a matter of adding another microservice or endpoint. If ML fails, revert to old logic instantly. This ensures no complexity sacrifices user trust or compliance.
 
 ---
 
+### 9. QA & Test Automation
+
+QA validates that every release meets performance, security, accessibility, and compliance thresholds, and that fallback logic works as intended.
+
+**Testing Rigor:**
+- Unit tests mock rainfall/price data to ensure surge adjusts correctly. If infiltration tests show no model adaptation under sudden demand, fail the build, require parameter tuning.
+- SIT includes load tests at 10x normal load. If fail, block release and fix.  
+- Accessibility checks ensure no user is disadvantaged, building brand trust and avoiding regulatory backlash for inaccessibility.
+
+**UAT & Pilots:**
+- If UAT in pilot zones show no improvement in on-time after 2 weeks, do not scale. Adjust parameters, retest. If compliance or brand issues appear, also fix before next increment.
+  
+**Continuous Improvement:**
+- Defects must be addressed promptly (P1 in <24h). After each release, QA leads a retrospective to identify if test coverage missed any scenario. If missed, add new tests next PI. This iterative improvement ensures no quality loophole persists beyond one increment.
+
+---
+
+### 10. Branding, UX & CX Alignment
+
+**Brand Integration:**
+We ensure that every pricing change aligns with brand values: reliability (explain surges properly), fairness (adjust surge parameters promptly if feedback negative), innovation (pilot new UI elements, short animations).
+
+**UX Strategies:**
+- If a 10s animation explanation fails to reduce abandonment by ≥2%, next PI tries a static infographic or simpler wording. Always testing variants ensures we never rely on guesswork.
+
+**Crisis & Communication Plans:**
+- If social media backlash occurs due to a misunderstood surge event in a test zone, revert logic within 1 hour, issue a branded statement emphasizing fairness and planned improvements.  
+- Marketing aligns campaigns with each pilot. If city expansion fails, marketing tailors localized messaging or clarifies how local conditions affect pricing.
+
+**Validating Brand & UX Success:**
+- Monthly brand surveys and NPS track perception. If brand trust doesn’t improve, try more localized user education or highlight fallback logic in communications to reassure users we respond to feedback rapidly.
+
+---
 ## 11. Marketing & GTM Integration
 
 **GTM Goals:**  
