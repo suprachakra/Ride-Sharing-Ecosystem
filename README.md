@@ -75,6 +75,7 @@ We are developing a cutting-edge ridesharing marketplace pricing strategy—tran
 ### 1. Executive Summary & Vision
 
 #### **High-Level Vision:**  
+<hr style="border:2px solid gray">
 We aim to create a ridesharing marketplace that achieves **exceptional reliability, fairness, and adaptability** in pricing, ensuring that riders receive transparent, predictable fares and drivers earn stable, attractive incomes. By leveraging a cell-based (H3 hexagonal) infrastructure and evolving from baseline models (akin to V1) to more mathematically optimized (V2) and ultimately AI-driven models (V3), we will continuously refine our surge pricing logic. Every improvement is validated through data-driven experiments, user feedback loops, and compliance checks, ensuring a safe, ethical, and user-centric experience.
 
 #### **Strategic Imperatives:**
