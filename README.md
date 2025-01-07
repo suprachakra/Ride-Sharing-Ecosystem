@@ -2,9 +2,7 @@
 
 # Table of Contents
 
-# Table of Contents
-
-1. **Executive Summary & Vision**
+[1. Executive Summary & Vision](#1-executive-summary--vision)
    - [1.1 High-Level Vision](#11-high-level-vision)
    - [1.2 Strategic Imperatives](#12-strategic-imperatives)
    - [1.3 Why It Matters](#13-why-it-matters)
@@ -76,19 +74,19 @@ We are developing a cutting-edge ridesharing marketplace pricing strategy—tran
 
 ### 1. Executive Summary & Vision
 
-**High-Level Vision:**  
+#### **High-Level Vision:**  
 We aim to create a ridesharing marketplace that achieves **exceptional reliability, fairness, and adaptability** in pricing, ensuring that riders receive transparent, predictable fares and drivers earn stable, attractive incomes. By leveraging a cell-based (H3 hexagonal) infrastructure and evolving from baseline models (akin to V1) to more mathematically optimized (V2) and ultimately AI-driven models (V3), we will continuously refine our surge pricing logic. Every improvement is validated through data-driven experiments, user feedback loops, and compliance checks, ensuring a safe, ethical, and user-centric experience.
 
-**Strategic Imperatives:**
+#### **Strategic Imperatives:**
 - **Outcome-Focused:** Improve key metrics (e.g., On-Time Performance, NPS) through precisely tuned surge pricing—directly tying each feature to measurable OKRs.
 - **Transparent & Trustworthy:** Provide riders with clear “Why this fare?” explanations and ensure driver incentive dashboards foster trust and reduce turnover.
 - **Agile & Scalable:** Align with SAFe increments; begin with pilot tests in selected areas, scale up iteratively as KPIs meet thresholds, and maintain compliance in all expansions.
 - **Data-Driven & Adaptive:** Employ continuous A/B tests, pilot rollouts, feedback sessions, and iterative model retraining to ensure long-term success and responsiveness to market changes.
 
 **Why It Matters:**  
-This approach sets a high benchmark: a marketplace strategy that preempts stakeholder questions (“What if regulatory changes occur?” “How do we ensure fairness?”) and offers ready solutions—circuit breakers for price spikes, compliance dashboards, ML model drift alerts, and communication protocols for user education. By achieving operational excellence and delighting both riders and drivers, we strengthen our competitive position and future-proof the business against evolving market conditions.
+> This approach sets a high benchmark: a marketplace strategy that preempts stakeholder questions (“What if regulatory changes occur?” “How do we ensure fairness?”) and offers ready solutions—circuit breakers for price spikes, compliance dashboards, ML model drift alerts, and communication protocols for user education. By achieving operational excellence and delighting both riders and drivers, we strengthen our competitive position and future-proof the business against evolving market conditions.
 
-**Key Artifacts:**  
+#### **Key Artifacts:**  
 - *UX Mockups*: High-fidelity prototypes for rider surge explanation screens and driver incentive dashboards (accessible via internal design repository).  
 - *High-Level Architectural Diagram*: Shows microservices for pricing, dispatch, compliance, and data pipelines (maintained in engineering wiki).  
 - *Data Governance & ML Model Overview*: Documents outlining ETL jobs, schema evolution policies, and ML retraining triggers (in data team’s Confluence pages).
