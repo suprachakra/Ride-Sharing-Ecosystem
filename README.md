@@ -3,10 +3,10 @@
 # Table of Contents
 
 [1. Executive Summary & Vision](#1-executive-summary--vision)
-   - [1.1 High-Level Vision](#11-high-level-vision)
-   - [1.2 Strategic Imperatives](#12-strategic-imperatives)
-   - [1.3 Why It Matters](#13-why-it-matters)
-   - [1.4 Key Artifacts](#14-key-artifacts)
+   - [High-Level Vision](#high-level-vision)
+   - [Strategic Imperatives](#strategic-imperatives)
+   - [Why It Matters](#why-it-matters)
+   - [Key Artifacts](#key-artifacts)
 
 2. **Market & User Insights**
    - [2.1 Market Landscape & Competitive Context](#21-market-landscape--competitive-context)
