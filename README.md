@@ -2,18 +2,19 @@
 
 # Table of Contents
 
-1. **Context & Vision**
-   - [1.1 Context](#11-context)
-   - [1.2 High-Level Vision](#12-high-level-vision)
-   - [1.3 Strategic Imperatives](#13-strategic-imperatives)
-   - [1.4 Why It Matters](#14-why-it-matters)
-   - [1.5 Key Artifacts](#15-key-artifacts)
+# Table of Contents
+
+1. **Executive Summary & Vision**
+   - [1.1 High-Level Vision](#11-high-level-vision)
+   - [1.2 Strategic Imperatives](#12-strategic-imperatives)
+   - [1.3 Why It Matters](#13-why-it-matters)
+   - [1.4 Key Artifacts](#14-key-artifacts)
 
 2. **Market & User Insights**
    - [2.1 Market Landscape & Competitive Context](#21-market-landscape--competitive-context)
-   - [2.2 User Segments & Needs](#22-user-segments--needs)
-     - Riders
-     - Drivers
+   - [2.2 User Segments & Their Nuanced Needs](#22-user-segments--their-nuanced-needs)
+     - [Riders](#riders)
+     - [Drivers](#drivers)
    - [2.3 Insights from Interviews, Surveys, and A/B Tests](#23-insights-from-interviews-surveys-and-ab-tests)
    - [2.4 Opportunities](#24-opportunities)
 
@@ -23,107 +24,49 @@
 
 4. **Product & Marketplace Strategy**
    - [4.1 Strategic Pillars](#41-strategic-pillars)
-     - Incremental Model Evolution
-     - SAFe Alignment & Iterative Validation
-     - Robust Fallback & Compliance Integration
-     - Cross-Functional Integration
    - [4.2 Outcome-Focus & Real-World Checks](#42-outcome-focus--real-world-checks)
 
 5. **Epics, Features, and Hierarchy**
-   - [5.1 Epics & Their Justification](#51-epics--their-justification)
-   - [5.2 Feature Examples](#52-feature-examples)
 
-6. **Detailed Requirements**
-   - [6.1 Functional Requirements (FRs)](#61-functional-requirements-frs)
-   - [6.2 Non-Functional Requirements (NFRs)](#62-non-functional-requirements-nfrs)
-   - [6.3 User Stories & Acceptance Criteria](#63-user-stories--acceptance-criteria)
+6. **Detailed Requirements (FRs, NFRs, User Stories, Acceptance Criteria)**
 
 7. **Data & Analytics Integration**
-   - [7.1 Data Flows](#71-data-flows)
-   - [7.2 ML Pipeline & Governance](#72-ml-pipeline--governance)
-   - [7.3 A/B Testing & Analytics Tools](#73-ab-testing--analytics-tools)
 
 8. **Engineering & Architecture Overview**
-   - [8.1 Architecture Goals](#81-architecture-goals)
-   - [8.2 Scalability & Reliability](#82-scalability--reliability)
-   - [8.3 Integration with ML](#83-integration-with-ml)
 
 9. **QA & Test Automation**
-   - [9.1 Testing Rigor](#91-testing-rigor)
-   - [9.2 UAT & Pilots](#92-uat--pilots)
-   - [9.3 Continuous Improvement](#93-continuous-improvement)
 
 10. **Branding, UX & CX Alignment**
-    - [10.1 UX Strategies](#101-ux-strategies)
-    - [10.2 Crisis & Communication Plans](#102-crisis--communication-plans)
-    - [10.3 Validating Brand & UX Success](#103-validating-brand--ux-success)
 
 11. **Marketing & GTM Integration**
-    - [11.1 GTM Goals](#111-gtm-goals)
-    - [11.2 GTM Channels & Collateral](#112-gtm-channels--collateral)
-    - [11.3 Measuring GTM Success](#113-measuring-gtm-success)
 
 12. **Operations & Compliance Considerations**
-    - [12.1 Driver Onboarding & Verification](#121-driver-onboarding--verification)
-    - [12.2 Support & Escalation Protocols](#122-support--escalation-protocols)
-    - [12.3 Regulatory Adaptation](#123-regulatory-adaptation)
 
 13. **Risk Management & Trade-Offs**
-    - [13.1 Key Risks & Mitigations](#131-key-risks--mitigations)
-    - [13.2 Trade-Off Examples](#132-trade-off-examples)
-    - [13.3 Scenario Handling](#133-scenario-handling)
 
-14. **Roadmap & Timelines**
-    - [14.1 Roadmap Goals](#141-roadmap-goals)
-    - [14.2 Example SAFe-Based Roadmap](#142-example-safe-based-roadmap)
-    - [14.3 Continuous Iteration & Feedback Loops](#143-continuous-iteration--feedback-loops)
+14. **Roadmap & Timelines (SAFe-Aligned)**
 
-15. **Epics, Features & Implementation**
-    - [15.1 Feature Hierarchy](#151-feature-hierarchy)
-    - [15.2 Pilot Rollouts & A/B Testing](#152-pilot-rollouts--ab-testing)
+15. **Iteration & Feedback Loops**
 
-16. **Data Privacy & Ethics Framework**
-    - [16.1 Global Data Privacy Compliance](#161-global-data-privacy-compliance)
-    - [16.2 Data Minimization & Anonymization](#162-data-minimization--anonymization)
-    - [16.3 Ethical Data Usage](#163-ethical-data-usage)
-    - [16.4 Transparency & Communication](#164-transparency--communication)
-    - [16.5 Data Governance & Accountability](#165-data-governance--accountability)
-    - [16.6 Crisis Preparedness](#166-crisis-preparedness)
+16. **Financial Modeling & Unit Economics**
 
 17. **Competitive & Market Analysis**
-    - [17.1 Competitor Benchmarking](#171-competitor-benchmarking)
-    - [17.2 Geographic & Demographic Insights](#172-geographic--demographic-insights)
-    - [17.3 Emerging Trends & Disruptions](#173-emerging-trends--disruptions)
-    - [17.4 Scenario Planning & Contingencies](#174-scenario-planning--contingencies)
 
 18. **Partnerships & Ecosystem Integration**
-    - [18.1 Data & Service Provider Tie-Ins](#181-data--service-provider-tie-ins)
-    - [18.2 Driver & Fleet Ecosystem Partnerships](#182-driver--fleet-ecosystem-partnerships)
-    - [18.3 Corporate & Institutional Tie-Ups](#183-corporate--institutional-tie-ups)
 
-19. **Supply Management & Driver Economics**
-    - [19.1 Holistic Driver Retention & Support](#191-holistic-driver-retention--support)
-    - [19.2 Handling Different Driver Profiles](#192-handling-different-driver-profiles)
+19. **Supply Management & Driver Economics Beyond Incentives**
 
-20. **Long-Term Strategic Roadmap**
-    - [20.1 Two-to-Three Year Vision](#201-two-to-three-year-vision)
-    - [20.2 Brand Evolution & Compliance Adaption](#202-brand-evolution--compliance-adaption)
+20. **Long-Term Strategic Roadmap Beyond the First Few PIs**
 
-21. **Cost Structures & Resource Allocation**
-    - [21.1 Budgeting Guidelines per SAFe PI](#211-budgeting-guidelines-per-safe-pi)
-    - [21.2 Contingency & Flex Budgets](#212-contingency--flex-budgets)
-    - [21.3 Integration with Product & Ops](#213-integration-with-product--ops)
+21. **Data Privacy & Ethics Beyond Compliance**
 
-22. **Payment & Loyalty Systems Integration**
-    - [22.1 Payment System Integration](#221-payment-system-integration)
-    - [22.2 Loyalty Program Design](#222-loyalty-program-design)
-    - [22.3 Partnership Opportunities](#223-partnership-opportunities)
-    - [22.4 Data-Driven Personalization](#224-data-driven-personalization)
-    - [22.5 Operational Efficiency](#225-operational-efficiency)
-    - [22.6 Metrics & Success Measurement](#226-metrics--success-measurement)
-    - [22.7 Global Scalability & Compliance](#227-global-scalability--compliance)
-    - [22.8 Long-Term Vision](#228-long-term-vision)
+22. **Disaster Scenarios & Macro-Environmental Changes**
 
+23. **Customer Lifetime Value (CLV) & Retention Strategies**
+
+24. **Cost Structures & Resource Allocation Planning**
+
+25. **Integration with Payment & Loyalty Systems**
 
 
 **Context:**  
