@@ -10,8 +10,8 @@
 [2. Market & User Insights](#2-market--user-insights)
    - [Market Landscape & Competitive Context](#market-landscape--competitive-context)
    - [User Segments & Their Nuanced Needs](#user-segments--their-nuanced-needs)
-     - **Riders**
-     - **Drivers**
+     - Riders
+     - Drivers
    - [Insights from Interviews, Surveys, and A/B Tests](#insights-from-interviews-surveys-and-ab-tests)
    - [Opportunities](#opportunities)
 
@@ -77,10 +77,12 @@
   - [21.4. Transparency & Communication](#214-transparency--communication)
   - [21.5. Data Governance & Accountability](#215-data-governance--accountability)
   - [21.6. Crisis Preparedness](#216-crisis-preparedness)
+  - [21.7. Metrics and Continuous Improvement](#217-metrics-and-continuous-improvement)
+  - [21.8. Positioning for Thought Leadership](#218-positioning-for-thought-leadership)
 
-[22. Disaster Scenarios & Macro-Environmental Changes]()
+[22. Disaster Scenarios & Macro-Environmental Changes](#22-disaster-scenarios--macro-environmental-changes)
 
-[23. Customer Lifetime Value (CLV) & Retention Strategies]()
+[23. Customer Lifetime Value (CLV) & Retention Strategies](#23-customer-lifetime-value-clv--retention-strategies)
 
 [24. Cost Structures & Resource Allocation Planning]()
 
