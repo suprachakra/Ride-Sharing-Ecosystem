@@ -18,9 +18,9 @@
 [3. Objectives & Key Results (OKRs)](#3-objectives--key-results-okrs)
    - [Real-World Validation & Iterative Adjustments](#real-world-validation--iterative-adjustments)
 
-4. **Product & Marketplace Strategy**
-   - [4.1 Strategic Pillars](#41-strategic-pillars)
-   - [4.2 Outcome-Focus & Real-World Checks](#42-outcome-focus--real-world-checks)
+[4. Product & Marketplace Strategy](#4-oproduct--marketplace-strategy)
+   - [Strategic Pillars](#strategic-pillars)
+   - [Outcome-Focus & Real-World Checks](#outcome-focus--real-world-checks)
 
 5. **Epics, Features, and Hierarchy**
 
@@ -152,7 +152,7 @@ By linking outcomes to data-driven decision-making, we ensure no “What if?” 
 
 Our strategy rests on iterative refinement, data-driven insights, and the capacity to adapt swiftly if results deviate from targets. We integrate SAFe alignment, cross-functional input (Data, QA, Branding, Marketing, Compliance, Engineering), and scenario-based fallback logic to ensure resilience.
 
-**Strategic Pillars:**
+#### **Strategic Pillars:**
 
 1. **Incremental Model Evolution (V1 → V2 → V3):**  
    - **V1 (Baseline):** Parameter-heavy, derived from expert knowledge. Good starting point to test cell-level logic in controlled zones (e.g., zone_id = 51, 4 with a feature_flag=1). If pilot shows partial success (on-time +3% but NPS flat), adjust parameters or revert to old logic for a subset of hours.  
@@ -172,7 +172,7 @@ Our strategy rests on iterative refinement, data-driven insights, and the capaci
    - **Marketing & GTM:** Align pilot rollouts with user messaging campaigns. If marketing finds low user adoption, test new explanatory material or promotions in next increment.  
    - **Compliance & Ops:** Rapidly adjust parameters or revert logic if new regulations appear or if compliance violations arise. If expansions to a new city yield unexpected cultural barriers, refine localized logic, re-check brand messaging, and retest.
 
-**Outcome-Focus & Real-World Checks:**
+#### **Outcome-Focus & Real-World Checks:**
 The entire strategy revolves around outcome validation:
 
 - If after a pilot (2-week test in selected zones), no KPI improvements meet targets, do not scale further. Instead, refine, retest, or revert.  
