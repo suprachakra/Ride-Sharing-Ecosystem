@@ -62,7 +62,9 @@
   - [18.1 Data & Service Provider Tie-Ins](#181-data--service-provider-tie-ins)
   - [Driver & Fleet Ecosystem Partnerships](#182-driver--fleet-ecosystem-partnerships)
 
-[19. Supply Management & Driver Economics Beyond Incentives]()
+[19. Supply Management & Driver Economics Beyond Incentives](#19-supply-management--driver-economics-beyond-incentives)
+  - [19.1 Holistic Driver Retention & Support](#191-holistic-driver-retention--support)
+  - [19.2 Handling Different Driver Profiles](#192-handling-different-driver-profiles)
 
 [20. Long-Term Strategic Roadmap Beyond the First Few PIs]()
 
