@@ -136,11 +136,11 @@ We aim to create a ridesharing marketplace that achieves **exceptional reliabili
 The ridesharing industry is crowded and dynamic. Competitors employ various surge pricing strategies—some rely on simpler zone-based logic, others already experiment with granular, data-driven approaches. Standing out requires not just better modeling but robust transparency, trustworthy brand positioning, and rapid adaptability to local regulatory and cultural conditions. For instance, one competitor might handle rain-induced demand spikes simply by capping surges, while another might fail to explain price hikes, alienating riders. Our advantage will come from balancing precision and fairness, supported by transparent UX and compliance mechanisms, ensuring we capture both rider trust and driver loyalty.
 
 #### **User Segments & Their Nuanced Needs:**
-> - **Riders:**  
+>  **Riders:**  
 >  - **Current Pain:** Confusion during off-peak hours if prices remain inexplicably high, or frustration if a sudden rain event doesn’t adjust prices fast enough, resulting in missed opportunities or switching to a competitor. Lack of clarity erodes trust.  
 >  - **Rider Need:** Clear, upfront reasoning for fares (“Why this fare?”), stable ETAs, assurance that the platform responds ethically and promptly to changing conditions (like heavy rain or sudden demand clusters in a particular neighborhood).
   
->- **Drivers:**  
+> **Drivers:**  
 >  - **Current Pain:** Struggle with earnings volatility; if prices remain too low during sudden demand spikes (due to previously lowered surge caps), drivers feel undervalued and may prefer competitor platforms offering quicker earnings upticks. Complexity in incentive rules also confuses them.  
 >  - **Driver Need:** Predictable income guidance, intuitive dashboards that highlight when/where driving is most profitable, and transparent incentive parameters that adjust fairly with real conditions.
 
