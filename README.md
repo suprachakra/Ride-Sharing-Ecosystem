@@ -105,7 +105,7 @@
 <hr style="border:1px solid blue">
 
 **Context:**  
-. We are developing a cutting-edge ridesharing marketplace pricing strategy—transitioning from a traditional zone-based surge model to a more granular and intelligent cell-based approach, eventually incorporating advanced AI-driven pricing. This approach not only improves operational metrics but also aligns deeply with brand values, compliance needs, and user satisfaction goals.
+> We are developing a cutting-edge ridesharing marketplace pricing strategy—transitioning from a traditional zone-based surge model to a more granular and intelligent cell-based approach, eventually incorporating advanced AI-driven pricing. This approach not only improves operational metrics but also aligns deeply with brand values, compliance needs, and user satisfaction goals.
 
 ---
 
