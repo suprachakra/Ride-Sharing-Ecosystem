@@ -1184,7 +1184,7 @@ Modern ride-hailing success requires **seamless payment experiences** and compel
 
 ---
 
-## 25.1 Payment System Integration
+#### 25.1 Payment System Integration
 
 **Purpose & User Experience:**  
 Reducing payment friction and ensuring broad payment method coverage can significantly boost ride frequency, brand preference, and cross-border adoption—provided we manage overhead and maintain reliable fallback options.
@@ -1210,7 +1210,7 @@ A well-rounded payment ecosystem covering local wallets, BNPL, and standard card
 
 ---
 
-## 25.2 Loyalty Program Design
+#### 25.2 Loyalty Program Design
 
 **Purpose & Revenue Growth:**  
 A robust loyalty framework fosters repeated usage and higher CLV. By segmenting riders (frequent vs. occasional) and providing tailored perks, we encourage engagement without overextending costs or overshadowing brand identity.
@@ -1236,7 +1236,7 @@ A loyalty ecosystem that’s **flexible, cost-aware,** and anchored by fallback 
 
 ---
 
-## 25.3 Partnership Opportunities
+#### 25.3 Partnership Opportunities
 
 **Purpose & Extended Value:**  
 Strategic alliances with financial institutions, fintechs, retailers, or travel industry players can multiply loyalty benefits (cashback, co-branded offers). We incorporate synergy checks and overhead constraints so we don’t overshadow brand identity or blow budgets.
@@ -1259,7 +1259,7 @@ Expanding user value beyond standalone rides. Each partnership is tested for ROI
 
 ---
 
-## 25.4 Data-Driven Personalization
+#### 25.4 Data-Driven Personalization
 
 **Purpose & Targeted Rewards:**  
 Payment and ride history data is a goldmine for customizing loyalty. We must ensure no privacy overreach or intangible overhead that might erode brand trust or balloon DevOps usage.
@@ -1282,7 +1282,7 @@ Heightened user engagement through targeted offers and payment-based personaliza
 
 ---
 
-## 25.5 Operational Efficiency
+#### 25.5 Operational Efficiency
 
 **Purpose & System Stability:**  
 Seamless real-time payment processing and loyalty tracking require robust backend systems and integrated fraud prevention. We also maintain fallback logic if partners or internal systems fail.
@@ -1305,7 +1305,7 @@ A stable, secure backend that updates payments and loyalty in real-time but also
 
 ---
 
-## 25.6 Metrics & Success Measurement
+#### 25.6 Metrics & Success Measurement
 
 **Purpose & KPI Accountability:**  
 Define KPIs that unify product, marketing, finance, data, and operations in evaluating the success of payment integrations and loyalty programs.
@@ -1329,7 +1329,7 @@ A data-driven governance system ensuring no single function (marketing, product,
 
 ---
 
-## 25.7 Global Scalability & Compliance
+#### 25.7 Global Scalability & Compliance
 
 **Purpose & Expansion Feasibility:**  
 Payment and loyalty frameworks must scale internationally, factoring local regulations (e.g., PSD2 in Europe, data residency laws), user payment preferences, and currency complexities.
@@ -1352,7 +1352,7 @@ A globally consistent approach that can expand or scale back advanced loyalty/pa
 
 ---
 
-## 25.8 Long-Term Vision
+#### 25.8 Long-Term Vision
 
 **Purpose & Future-Proofing:**  
 Over time, emerging payment methods (cryptocurrencies, frictionless transit pass) and multi-modal mobility (bike shares, micro-transit) may reshape the user journey. We maintain a flexible payment/loyalty core that can pivot quickly.
