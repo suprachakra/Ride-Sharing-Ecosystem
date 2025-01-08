@@ -1,6 +1,6 @@
 # Ridesharing Marketplace Ecosystem
 
-# Table of Contents
+### Table of Contents
 
 [1. Executive Summary & Vision](#1-executive-summary--vision)
    - [High-Level Vision](#high-level-vision)
