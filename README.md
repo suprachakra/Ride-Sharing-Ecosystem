@@ -102,17 +102,17 @@
   - [25.6 Metrics & Success Measurement](#256-metrics--success-measurement)
   - [25.7 Global Scalability & Compliance](#257-global-scalability--compliance)
   - [25.8 Long-Term Vision](#258-long-term-vision)
-
+<hr style="border:1px solid blue">
 
 **Context:**  
-We are developing a cutting-edge ridesharing marketplace pricing strategy—transitioning from a traditional zone-based surge model to a more granular and intelligent cell-based approach, eventually incorporating advanced AI-driven pricing. This approach not only improves operational metrics but also aligns deeply with brand values, compliance needs, and user satisfaction goals.
+. We are developing a cutting-edge ridesharing marketplace pricing strategy—transitioning from a traditional zone-based surge model to a more granular and intelligent cell-based approach, eventually incorporating advanced AI-driven pricing. This approach not only improves operational metrics but also aligns deeply with brand values, compliance needs, and user satisfaction goals.
 
 ---
 
 ### 1. Executive Summary & Vision
 
 #### **High-Level Vision:**  
-<hr style="border:1px solid blue">
+
 We aim to create a ridesharing marketplace that achieves **exceptional reliability, fairness, and adaptability** in pricing, ensuring that riders receive transparent, predictable fares and drivers earn stable, attractive incomes. By leveraging a cell-based (H3 hexagonal) infrastructure and evolving from baseline models (akin to V1) to more mathematically optimized (V2) and ultimately AI-driven models (V3), we will continuously refine our surge pricing logic. Every improvement is validated through data-driven experiments, user feedback loops, and compliance checks, ensuring a safe, ethical, and user-centric experience.
 
 #### **Strategic Imperatives:**
