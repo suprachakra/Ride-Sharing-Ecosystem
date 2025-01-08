@@ -25,46 +25,46 @@
 [5. Epics, Features, and Hierarchy](#5-epics-features-and-hierarchy)
 
 [6. Detailed Requirements (FRs, NFRs, User Stories, Acceptance Criteria)](#6-detailed-requirements-frs-nfrs-user-stories-acceptance-criteria)
-   - [Functional Requirements (FRs)]()
-   - [Non-Functional Requirements (NFRs)]()
+   - [Functional Requirements (FRs)](#functional-requirements-frs)
+   - [Non-Functional Requirements (NFRs)](#non-functional-requirements-nfrs)
 
-7. **Data & Analytics Integration**
+[7. Data & Analytics Integration](#7-data--analytics-integration)
 
-8. **Engineering & Architecture Overview**
+[8. Engineering & Architecture Overview*](#8-engineering--architecture-overview)
 
-9. **QA & Test Automation**
+[9. QA & Test Automation](#9-qa--test-automation)
 
-10. **Branding, UX & CX Alignment**
+[10. Branding, UX & CX Alignment](#10-branding-ux--cx-alignment)
 
-11. **Marketing & GTM Integration**
+[11. Marketing & GTM Integration](#11-marketing--gtm-integration)
 
-12. **Operations & Compliance Considerations**
+[12. Operations & Compliance Considerations](#12-operations--compliance-considerations)
 
-13. **Risk Management & Trade-Offs**
+[13. Risk Management & Trade-Offs](#13-risk-management--trade-offs)
 
-14. **Roadmap & Timelines (SAFe-Aligned)**
+[14. Roadmap & Timelines (SAFe-Aligned)](#14-roadmap--timelines-safe-aligned)
 
-15. **Iteration & Feedback Loops**
+[15. Iteration & Feedback Loops](#15-iteration--feedback-loops)
 
-16. **Financial Modeling & Unit Economics**
+[16. Financial Modeling & Unit Economics]()
 
-17. **Competitive & Market Analysis**
+[17. Competitive & Market Analysis]()
 
-18. **Partnerships & Ecosystem Integration**
+[18. Partnerships & Ecosystem Integration]()
 
-19. **Supply Management & Driver Economics Beyond Incentives**
+[19. Supply Management & Driver Economics Beyond Incentives]()
 
-20. **Long-Term Strategic Roadmap Beyond the First Few PIs**
+[20. Long-Term Strategic Roadmap Beyond the First Few PIs]()
 
-21. **Data Privacy & Ethics Beyond Compliance**
+[21. Data Privacy & Ethics Beyond Compliance]()
 
-22. **Disaster Scenarios & Macro-Environmental Changes**
+[22. Disaster Scenarios & Macro-Environmental Changes]()
 
-23. **Customer Lifetime Value (CLV) & Retention Strategies**
+[23. Customer Lifetime Value (CLV) & Retention Strategies]()
 
-24. **Cost Structures & Resource Allocation Planning**
+[24. Cost Structures & Resource Allocation Planning]()
 
-25. **Integration with Payment & Loyalty Systems**
+[25. Integration with Payment & Loyalty Systems]()
 
 
 **Context:**  
@@ -263,24 +263,6 @@ By embedding analytics deeply, we ensure no guesswork. Each iteration can be jus
 
 ---
 
-### 7. Data & Analytics Integration
-
-Data underpins iterative validation and outcome-driven improvements. We ensure that every decision—tweaking unmet_rate or adjusting surge caps—is grounded in robust, near-real-time and historical data.
-
-**Data Flows:**
-- Collect cell-level demand/supply, rainfall, price searches every 5 min.  
-- ETL ensures <1% discrepancy. If >1%, run remediation job immediately. If recurring >3 times, escalate to Data Eng Manager and block expansions until fixed.
-
-**ML Pipeline & Governance:**
-- Even if V5.2 ML is future, we start accumulating enough high-quality data for when we’re ready. If model drift occurs later, revert to simpler logic (V5.1 or old logic) until ML is retrained and tested.
-
-**A/B Testing & Analytics Tools:**
-- A/B test different parameter sets (e.g., surge_high_tier_rate=0.4 vs. 0.5) and measure difference in acceptance or NPS.  
-- Dashboards (Tableau, Looker) show zone-level KPIs. If a particular zone lags behind, investigate if local parameters need adjusting or if rainfall correlation missed.
-
-By embedding analytics deeply, we ensure no guesswork. Each iteration can be justified by data, and if data reveals unexpected patterns, we adapt parameters or revert logic next PI.
-
----
 
 ### 8. Engineering & Architecture Overview
 
@@ -451,30 +433,6 @@ We embed feedback loops at all levels: user interviews, pilot tests, A/B tests, 
 - **User Interviews & Surveys:** Monthly sessions reveal pain points. If confusion persists about surge, simplify explanations or add localized analogies next PI.
 - **Data-Driven Backlog Refinement (WSJF):** Quarterly WSJF scoring ensures we pick features with highest impact on OKRs. If no progress on NPS after 2 increments, prioritize UX or incentive improvements next cycle.
 - **Integration with SAFe PIs:** After each PI, Inspect & Adapt workshop identifies what worked, what didn’t. Rapid response ensures no known issue stagnates.
-
----
-Below is a **thorough gap analysis** of why the current Section 16 (Financial Modeling & Unit Economics) might still feel incomplete, followed by a **refined, deeper version** that fills any lingering loopholes. The goal is to make it “pitch perfect,” explicitly addressing real-life complexities, fallback scenarios, cross-functional alignment, and hidden cost or revenue pitfalls. 
-
----
-
-## Why the Current Section 16 Feels Incomplete
-
-1. **Insufficient Detail on Hidden or Indirect Costs**  
-   - The current draft outlines Cost per Ride (CPR) and Contribution Margin (CM) but doesn’t explicitly address certain intangible or less obvious costs that can erode margins. For instance, incremental QA overhead for each new feature, DevOps bills surging from heavy ML computations, or brand/marketing synergy overhead (e.g., user confusion raising support costs).  
-   - Without a plan to incorporate these costs, we risk missing margin targets when new expansions or advanced data features quietly escalate monthly bills.
-
-2. **Limited Real-World Complexity in Scenario Planning**  
-   - The existing “shock & stress testing” covers competitor undercuts and a rise in fuel or new regulations, but real life can bring more variations (e.g., data pipeline meltdown, brand backlash from overly aggressive surges, or abrupt changes in driver-labor laws).  
-   - Deeper scenario coverage (like partial city coverage if compliance overhead spikes, or re-scoping expansions if large competitor meltdown yields a sudden rider influx) is missing.
-
-3. **Minimal Guidance on Allocating Budget Across Cross-Functional Teams**  
-   - While the text alludes to re-checking “DevOps overhead, QA cycles, marketing outlay,” it doesn’t detail how each function’s budget gets determined or adjusted. Real synergy requires specifying processes for monthly or PI-based budget reallocation. 
-
-4. **Lack of Tiered Response Mechanisms**  
-   - The text references “If improvement lags by >1% for two consecutive months, we shift backlog priorities.” That is a start, but in real-world terms, we may need tiered response measures (mild, moderate, severe) tied to cost or revenue thresholds. For example, how do we proceed if CM is 2% below target vs. 5% below? The fallback might differ.
-
-5. **Not Enough Emphasis on Cross-Functional Ownership**  
-   - The mention of “Finance & Analytics group updates these projections monthly” is good, but we still want clarity on who triggers cost-cutting if DevOps cloud costs spike 15% unexpectedly, or how brand/marketing illusions affect margin if user confusion triggers more support overhead. 
 
 ---
 
