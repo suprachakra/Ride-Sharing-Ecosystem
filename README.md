@@ -137,12 +137,12 @@ The ridesharing industry is crowded and dynamic. Competitors employ various surg
 
 #### **User Segments & Their Nuanced Needs:**
 > - **Riders:**  
-  - **Current Pain:** Confusion during off-peak hours if prices remain inexplicably high, or frustration if a sudden rain event doesn’t adjust prices fast enough, resulting in missed opportunities or switching to a competitor. Lack of clarity erodes trust.  
-  - **Rider Need:** Clear, upfront reasoning for fares (“Why this fare?”), stable ETAs, assurance that the platform responds ethically and promptly to changing conditions (like heavy rain or sudden demand clusters in a particular neighborhood).
+>  - **Current Pain:** Confusion during off-peak hours if prices remain inexplicably high, or frustration if a sudden rain event doesn’t adjust prices fast enough, resulting in missed opportunities or switching to a competitor. Lack of clarity erodes trust.  
+>  - **Rider Need:** Clear, upfront reasoning for fares (“Why this fare?”), stable ETAs, assurance that the platform responds ethically and promptly to changing conditions (like heavy rain or sudden demand clusters in a particular neighborhood).
   
 >- **Drivers:**  
-  - **Current Pain:** Struggle with earnings volatility; if prices remain too low during sudden demand spikes (due to previously lowered surge caps), drivers feel undervalued and may prefer competitor platforms offering quicker earnings upticks. Complexity in incentive rules also confuses them.  
-  - **Driver Need:** Predictable income guidance, intuitive dashboards that highlight when/where driving is most profitable, and transparent incentive parameters that adjust fairly with real conditions.
+>  - **Current Pain:** Struggle with earnings volatility; if prices remain too low during sudden demand spikes (due to previously lowered surge caps), drivers feel undervalued and may prefer competitor platforms offering quicker earnings upticks. Complexity in incentive rules also confuses them.  
+>  - **Driver Need:** Predictable income guidance, intuitive dashboards that highlight when/where driving is most profitable, and transparent incentive parameters that adjust fairly with real conditions.
 
 #### **Insights from Interviews, Surveys, and A/B Tests:**
 - Rider interviews show that a well-explained surge rationale (e.g., a tooltip or 10-second in-app explainer video) can reduce abandonment by ~2%. While that 2% seems small, at scale it’s meaningful revenue and improved brand reputation.  
@@ -212,12 +212,12 @@ Our strategy rests on iterative refinement, data-driven insights, and the capaci
    - **Compliance & Ops:** Rapidly adjust parameters or revert logic if new regulations appear or if compliance violations arise. If expansions to a new city yield unexpected cultural barriers, refine localized logic, re-check brand messaging, and retest.
 
 #### **Outcome-Focus & Real-World Checks:**
-The entire strategy revolves around outcome validation:
-
-- If after a pilot (2-week test in selected zones), no KPI improvements meet targets, do not scale further. Instead, refine, retest, or revert.  
-- Continuous feedback loops (weekly user interviews, monthly NPS surveys, pen tests, load tests each PI) ensure no stagnation.  
-- Each decision is not final; it’s a hypothesis tested in real conditions. If outcomes fail, we adapt swiftly, making the entire approach highly resilient and future-proof.
-
+>The entire strategy revolves around outcome validation:
+>
+>- If after a pilot (2-week test in selected zones), no KPI improvements meet targets, do not scale further. Instead, refine, retest, or revert.  
+>- Continuous feedback loops (weekly user interviews, monthly NPS surveys, pen tests, load tests each PI) ensure no stagnation.  
+>- Each decision is not final; it’s a hypothesis tested in real conditions. If outcomes fail, we adapt swiftly, making the entire approach highly resilient and future-proof.
+>
 ---
 ### 5. Epics, Features, and Hierarchy
 
@@ -481,7 +481,7 @@ Ensuring **long-term profitability** underpins every operational and user-focuse
 ---
 
 #### 16.1 Core Financial KPIs & Extended Targets
-
+---
 1. **Cost per Ride (CPR) & Contribution Margin (CM) with Hidden Costs**  
    - **CPR Calculation:**  
      - Includes direct driver incentives, data fees, partial overhead (support, QA, compliance, marketing overhead). If new marketing campaigns cause confusion, raising support tickets, that cost is accounted for in overhead.  
@@ -503,7 +503,7 @@ Ensuring **long-term profitability** underpins every operational and user-focuse
 ---
 
 #### 16.2 Dynamic Scenario Modeling & Deeper Resilience
-
+---
 1. **Iterative Sensitivity & Tiered Fallback**  
    - **Monthly Simulation:** For each new surge or incentive tweak, we run ±10% param changes on net revenue, rider abandonment, driver churn. If net revenue growth <0.5% from a +10% incentive shift, we classify it as “low yield.”  
    - **Tiered Response:**  
@@ -519,7 +519,7 @@ Ensuring **long-term profitability** underpins every operational and user-focuse
 ---
 
 #### 16.3 ROI & Breakeven with Cross-Functional Budgeting
-
+---
 1. **Initiative-Specific ROI & DevOps/QA Overhead**  
    - Each feature must consider intangible overhead: more complex surge calculations can inflate QA cycles or data pipeline usage. If the break-even timeframe surpasses 12 months, we might pilot only in a single city or scale down until ROI is clearer.  
    - If competitor or compliance changes require rushed features, we watch for 1–2% cost overruns. If it threatens margin, we do partial rollouts or re-scope the feature.
@@ -543,7 +543,7 @@ Our ride-hailing marketplace, operating in a region akin to the Middle East, com
 ---
 
 #### 17.1 Competitor Benchmarking: Framework & Metrics
-
+---
 **Aim:**  
 Continuously monitor competitor pricing models, surge practices, driver bonus schemes, and seasonal promotions. Then, calibrate our responses (stable fares, mild discount codes, or brand-lift campaigns) in a cost-conscious and brand-consistent way.
 
@@ -572,7 +572,7 @@ A **granular** competitor intelligence system that pinpoints promotions, bonus w
 ---
 
 #### 17.2 Geographic & Demographic Insights
-
+---
 **Aim:**  
 Distinguish how competitor presence varies by district or demographic group (e.g., professionals in city centers vs. families in suburbs) to fine-tune our own expansions or promotional focus. If a competitor dominates young urban professionals with super-app loyalty, we might target families or business travelers with different brand messages or partial discount codes.
 
@@ -597,7 +597,7 @@ A deeper, more localized approach, ensuring expansions or brand messages remain 
 ---
 
 #### 17.3 Emerging Trends & Disruptions (12–24 Months)
-
+---
 **Aim:**  
 Forecast major market shifts—micromobility expansions, ride-pooling acceptance, integration with public transport—and competitor transformations. Each forecast ties to a fallback plan (scaling synergy with local regulators, partial brand-lift, or advanced features) if competitor moves first.
 
@@ -617,7 +617,7 @@ Forecast major market shifts—micromobility expansions, ride-pooling acceptance
 ---
 
 #### 17.4 Proactive Scenario Planning & Contingencies
-
+---
 **Aim:**  
 Create action-ready strategies for competitor underpricing, driver poaching, or brand-lift campaigns—while containing overhead and preserving brand identity.
 
@@ -637,7 +637,7 @@ Create action-ready strategies for competitor underpricing, driver poaching, or 
 ---
 
 #### 17.5 Customer-Centric Differentiation & Tech Leverage
-
+---
 **Aim:**  
 While responding to competitor moves, we must also stand out through **pricing transparency**, reliability, and advanced AI-driven features. This fosters user loyalty even if competitor tries to undercut on price.
 
