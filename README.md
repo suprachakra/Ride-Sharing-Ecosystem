@@ -70,9 +70,13 @@
   - [20.1 Two-to-Three Year Vision](#201-two-to-three-year-vision)
   - [20.2 Brand Evolution & Compliance Adaption](#202-brand-evolution--compliance-adaption)
 
-[21. Data Privacy & Ethics Beyond Compliance]()
-  - []()
-  - []()
+[21. Data Privacy & Ethics Beyond Compliance](#21-data-privacy--ethics-beyond-compliance-a-comprehensive-framework)
+  - [21.1. Global Data Privacy Compliance](#211-global-data-privacy-compliance)
+  - [21.2. Data Minimization & Anonymization](#212-data-minimization--anonymization)
+  - [21.3. Ethical Data Usage](#213-ethical-data-usage)
+  - [21.4. Transparency & Communication](#214-transparency--communication)
+  - [21.5. Data Governance & Accountability](#215-data-governance--accountability)
+  - [21.6. Crisis Preparedness](#216-crisis-preparedness)
 
 [22. Disaster Scenarios & Macro-Environmental Changes]()
 
