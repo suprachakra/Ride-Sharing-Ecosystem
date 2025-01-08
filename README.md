@@ -10,14 +10,13 @@
 [2. Market & User Insights](#2-market--user-insights)
    - [Market Landscape & Competitive Context](#market-landscape--competitive-context)
    - [User Segments & Their Nuanced Needs](#user-segments--their-nuanced-needs)
-     - [Riders](#riders)
-     - [Drivers](#drivers)
+     - **Riders**
+     - **Drivers**
    - [Insights from Interviews, Surveys, and A/B Tests](#insights-from-interviews-surveys-and-ab-tests)
    - [Opportunities](#opportunities)
 
-3. **Objectives & Key Results (OKRs)**
-   - [3.1 OKRs Overview](#31-okrs-overview)
-   - [3.2 Real-World Validation & Iterative Adjustments](#32-real-world-validation--iterative-adjustments)
+[3. Objectives & Key Results (OKRs)](#3-objectives--key-results-okrs)
+   - [Real-World Validation & Iterative Adjustments](#real-world-validation--iterative-adjustments)
 
 4. **Product & Marketplace Strategy**
    - [4.1 Strategic Pillars](#41-strategic-pillars)
@@ -132,7 +131,7 @@ We set OKRs to ensure that every feature, parameter tweak, and fallback decision
 | Elevate User Satisfaction (OKR4)          | Increase NPS by +10 points in 2 quarters, reduce driver turnover by 15%         |
 | Ensure Scalable Growth (OKR5)             | Expand to 3 new cities in 6 months while maintaining ≥90% on-time rates          |
 
-**Real-World Validation & Iterative Adjustments:**
+#### **Real-World Validation & Iterative Adjustments:**
 - **If On-Time Improvement <3% After Pilot Tests (OKR1)**:  
   Evaluate parameters (unmet_rate1, unmet_rate2, additional_surge_high) or revert feature_flag=0 for certain test zones. Next PI, prioritize surge algorithm refinement (WSJF scoring favors features with higher impact on on-time). Possibly run more A/B tests isolating rainfall data’s effect.
   
