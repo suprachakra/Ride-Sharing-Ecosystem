@@ -18,7 +18,7 @@
 [3. Objectives & Key Results (OKRs)](#3-objectives--key-results-okrs)
    - [Real-World Validation & Iterative Adjustments](#real-world-validation--iterative-adjustments)
 
-[4. Product & Marketplace Strategy](#4-oproduct--marketplace-strategy)
+[4. Product & Marketplace Strategy](#4-product--marketplace-strategy)
    - [Strategic Pillars](#strategic-pillars)
    - [Outcome-Focus & Real-World Checks](#outcome-focus--real-world-checks)
 
