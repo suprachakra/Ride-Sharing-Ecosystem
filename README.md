@@ -22,9 +22,11 @@
    - [Strategic Pillars](#strategic-pillars)
    - [Outcome-Focus & Real-World Checks](#outcome-focus--real-world-checks)
 
-5. **Epics, Features, and Hierarchy**
+[5. Epics, Features, and Hierarchy](#5-epics-features-and-hierarchy)
 
-6. **Detailed Requirements (FRs, NFRs, User Stories, Acceptance Criteria)**
+[6. Detailed Requirements (FRs, NFRs, User Stories, Acceptance Criteria)](#6-detailed-requirements-frs-nfrs-user-stories-acceptance-criteria)
+   - [Functional Requirements (FRs)]()
+   - [Non-Functional Requirements (NFRs)]()
 
 7. **Data & Analytics Integration**
 
@@ -208,7 +210,7 @@ Each feature is not final until tested and validated. If a feature fails A/B tes
 
 ### 6. Detailed Requirements (FRs, NFRs, User Stories, Acceptance Criteria)
 
-**Functional Requirements (FRs):**
+#### **Functional Requirements (FRs):**
 
 1. **FR1 (Cell-Level Surge Calculation):**  
    - Every 5 min, recalculate surge per H3 cell. If demand > supply by >10%, increase surge using parameter additional_surge_high.  
@@ -230,7 +232,7 @@ Each feature is not final until tested and validated. If a feature fails A/B tes
    - If local max surge =1.5x exceeded, log event, alert Compliance Officer, and revert logic or apply stricter parameters within ≤1h.  
    - Acceptance: Zero unresolved compliance violations after fallback. If any recurring, add compliance rule hardcoding next PI.
 
-**Non-Functional Requirements (NFRs):**
+#### **Non-Functional Requirements (NFRs):**
 - **Performance:** Surge API <2s under 10x load; if tests fail, optimize or block release.  
 - **Scalability:** Support 100k drivers & 1M daily rides by Year 2. If expansions slow performance, add caching, scale horizontally.  
 - **Security & Compliance:** OAuth 2.0, encryption, quarterly pen tests. Any pen test fail = fix before next release.  
