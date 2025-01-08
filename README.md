@@ -5,16 +5,15 @@
 [1. Executive Summary & Vision](#1-executive-summary--vision)
    - [High-Level Vision](#high-level-vision)
    - [Strategic Imperatives](#strategic-imperatives)
-   - [Why It Matters](#why-it-matters)
    - [Key Artifacts](#key-artifacts)
 
-2. **Market & User Insights**
-   - [2.1 Market Landscape & Competitive Context](#21-market-landscape--competitive-context)
-   - [2.2 User Segments & Their Nuanced Needs](#22-user-segments--their-nuanced-needs)
+[2. Market & User Insights](#2-market--user-insights)
+   - [Market Landscape & Competitive Context](#market-landscape--competitive-context)
+   - [User Segments & Their Nuanced Needs](#user-segments--their-nuanced-needs)
      - [Riders](#riders)
      - [Drivers](#drivers)
-   - [2.3 Insights from Interviews, Surveys, and A/B Tests](#23-insights-from-interviews-surveys-and-ab-tests)
-   - [2.4 Opportunities](#24-opportunities)
+   - [Insights from Interviews, Surveys, and A/B Tests](#insights-from-interviews-surveys-and-ab-tests)
+   - [Opportunities](#opportunities)
 
 3. **Objectives & Key Results (OKRs)**
    - [3.1 OKRs Overview](#31-okrs-overview)
@@ -95,10 +94,10 @@ We aim to create a ridesharing marketplace that achieves **exceptional reliabili
 ---
 ### 2. Market & User Insights
 
-**Market Landscape & Competitive Context:**  
+#### **Market Landscape & Competitive Context:**  
 The ridesharing industry is crowded and dynamic. Competitors employ various surge pricing strategies—some rely on simpler zone-based logic, others already experiment with granular, data-driven approaches. Standing out requires not just better modeling but robust transparency, trustworthy brand positioning, and rapid adaptability to local regulatory and cultural conditions. For instance, one competitor might handle rain-induced demand spikes simply by capping surges, while another might fail to explain price hikes, alienating riders. Our advantage will come from balancing precision and fairness, supported by transparent UX and compliance mechanisms, ensuring we capture both rider trust and driver loyalty.
 
-**User Segments & Their Nuanced Needs:**
+#### **User Segments & Their Nuanced Needs:**
 - **Riders:**  
   - **Current Pain:** Confusion during off-peak hours if prices remain inexplicably high, or frustration if a sudden rain event doesn’t adjust prices fast enough, resulting in missed opportunities or switching to a competitor. Lack of clarity erodes trust.  
   - **Rider Need:** Clear, upfront reasoning for fares (“Why this fare?”), stable ETAs, assurance that the platform responds ethically and promptly to changing conditions (like heavy rain or sudden demand clusters in a particular neighborhood).
@@ -107,12 +106,12 @@ The ridesharing industry is crowded and dynamic. Competitors employ various surg
   - **Current Pain:** Struggle with earnings volatility; if prices remain too low during sudden demand spikes (due to previously lowered surge caps), drivers feel undervalued and may prefer competitor platforms offering quicker earnings upticks. Complexity in incentive rules also confuses them.  
   - **Driver Need:** Predictable income guidance, intuitive dashboards that highlight when/where driving is most profitable, and transparent incentive parameters that adjust fairly with real conditions.
 
-**Insights from Interviews, Surveys, and A/B Tests:**
+#### **Insights from Interviews, Surveys, and A/B Tests:**
 - Rider interviews show that a well-explained surge rationale (e.g., a tooltip or 10-second in-app explainer video) can reduce abandonment by ~2%. While that 2% seems small, at scale it’s meaningful revenue and improved brand reputation.  
 - Driver focus groups and pilot tests suggest that providing weekly peak-hour forecasts and clear incentive structures can reduce driver turnover by up to 10%, stabilizing supply and thus improving on-time performance.
 - Market research indicates that localizing parameters (like adapting surge thresholds for specific neighborhoods or adjusting feature_flag for test zones) can capture local market nuances. For instance, certain areas respond positively to slight fare increases if well explained, while others require maintaining strict surge caps to avoid backlash.
 
-**Opportunities:**
+#### **Opportunities:**
 - Implementing a cell-based model (V1 baseline, evolving to V2, and ultimately V3 with ML) allows fine-grained control over pricing, addressing identified pain points directly.  
 - Coupling this pricing evolution with transparent explanations and fallback logic (feature_flag=0 for old logic, feature_flag=1 for new logic in certain zones, test intervals defined by start_time/end_time) ensures we can respond quickly if early tests show negative rider or driver feedback.  
 - Integrating rainfall and price search data (previously not collected) offers richer context. E.g., if heavy rain spikes demand and we fail to raise prices appropriately in old logic, we can switch to the new logic or adjust parameters mid-PI to prevent losing drivers to competitors.
