@@ -47,16 +47,28 @@
 [15. Iteration & Feedback Loops](#15-iteration--feedback-loops)
 
 [16. Financial Modeling & Unit Economics]()
+  - [16.1 Core Financial KPIs & Extended Targets](#161-core-financial-kpis--extended-targets)
+  - [16.2 Dynamic Scenario Modeling & Deeper Resilience](#162-dynamic-scenario-modeling--deeper-resilience)
+  - [16.3 ROI & Breakeven with Cross-Functional Budgeting](#163-roi--breakeven-with-cross-functional-budgeting)
 
-[17. Competitive & Market Analysis]()
+[17. Competitive & Market Analysis](#17-competitive--market-analysis)
+  - [17.1 Competitor Benchmarking: Framework & Metrics](#171-competitor-benchmarking-framework--metrics)
+  - [17.2 Geographic & Demographic Insights](#172-geographic--demographic-insights)
+  - [17.3 Emerging Trends & Disruptions (12–24 Months)](#173-emerging-trends--disruptions-1224-months)
+  - [17.4 Proactive Scenario Planning & Contingencies](#174-proactive-scenario-planning--contingencies)
+  - [17.5 Customer-Centric Differentiation & Tech Leverage](#175-customer-centric-differentiation--tech-leverage)
 
-[18. Partnerships & Ecosystem Integration]()
+[18. Partnerships & Ecosystem Integration](#18-partnerships--ecosystem-integration)
+  - [18.1 Data & Service Provider Tie-Ins](#181-data--service-provider-tie-ins)
+  - [Driver & Fleet Ecosystem Partnerships](#182-driver--fleet-ecosystem-partnerships)
 
 [19. Supply Management & Driver Economics Beyond Incentives]()
 
 [20. Long-Term Strategic Roadmap Beyond the First Few PIs]()
 
 [21. Data Privacy & Ethics Beyond Compliance]()
+  - []()
+  - []()
 
 [22. Disaster Scenarios & Macro-Environmental Changes]()
 
@@ -505,7 +517,7 @@ Our ride-hailing marketplace, operating in a region akin to the Middle East, com
 
 ---
 
-## 17.1 Competitor Benchmarking: Framework & Metrics
+#### 17.1 Competitor Benchmarking: Framework & Metrics
 
 **Aim:**  
 Continuously monitor competitor pricing models, surge practices, driver bonus schemes, and seasonal promotions. Then, calibrate our responses (stable fares, mild discount codes, or brand-lift campaigns) in a cost-conscious and brand-consistent way.
@@ -534,7 +546,7 @@ A **granular** competitor intelligence system that pinpoints promotions, bonus w
 
 ---
 
-## 17.2 Geographic & Demographic Insights
+#### 17.2 Geographic & Demographic Insights
 
 **Aim:**  
 Distinguish how competitor presence varies by district or demographic group (e.g., professionals in city centers vs. families in suburbs) to fine-tune our own expansions or promotional focus. If a competitor dominates young urban professionals with super-app loyalty, we might target families or business travelers with different brand messages or partial discount codes.
@@ -559,7 +571,7 @@ A deeper, more localized approach, ensuring expansions or brand messages remain 
 
 ---
 
-## 17.3 Emerging Trends & Disruptions (12–24 Months)
+#### 17.3 Emerging Trends & Disruptions (12–24 Months)
 
 **Aim:**  
 Forecast major market shifts—micromobility expansions, ride-pooling acceptance, integration with public transport—and competitor transformations. Each forecast ties to a fallback plan (scaling synergy with local regulators, partial brand-lift, or advanced features) if competitor moves first.
@@ -579,7 +591,7 @@ Forecast major market shifts—micromobility expansions, ride-pooling acceptance
 
 ---
 
-## 17.4 Proactive Scenario Planning & Contingencies
+#### 17.4 Proactive Scenario Planning & Contingencies
 
 **Aim:**  
 Create action-ready strategies for competitor underpricing, driver poaching, or brand-lift campaigns—while containing overhead and preserving brand identity.
@@ -599,7 +611,7 @@ Create action-ready strategies for competitor underpricing, driver poaching, or 
 
 ---
 
-## 17.5 Customer-Centric Differentiation & Tech Leverage
+#### 17.5 Customer-Centric Differentiation & Tech Leverage
 
 **Aim:**  
 While responding to competitor moves, we must also stand out through **pricing transparency**, reliability, and advanced AI-driven features. This fosters user loyalty even if competitor tries to undercut on price.
@@ -626,7 +638,7 @@ We unify brand marketing (communicating fairness or regulated trust), engineerin
 **Purpose & Ecosystem Value:**  
 Alliances with payment providers, data sources, corporate institutions, and local events can minimize operational risks, open new revenue channels, and enhance brand loyalty. This section details how we cultivate, manage, and evaluate these partnerships to ensure synergy with our surge logic, brand identity, and compliance needs.
 
-### 18.1 Data & Service Provider Tie-Ins
+#### 18.1 Data & Service Provider Tie-Ins
 
 1. **Backup Data & SLA Enforcement:**
    - Maintain 2–3 alternative providers for weather, mapping, traffic. Each must have <2 hours downtime monthly. If the main provider fails, auto-switch, ensuring no more than 0.5% monthly disruptions.  
@@ -636,7 +648,7 @@ Alliances with payment providers, data sources, corporate institutions, and loca
    - Pilot e-wallet or loyalty program with a target of +3% completed rides or a -10s checkout time.  
    - If results fall under +2%, test a different partner or approach. If brand confusion arises (co-brand overshadowing ours), scale back the co-marketing or refine integration messaging.
 
-### 18.2 Driver & Fleet Ecosystem Partnerships
+#### 18.2 Driver & Fleet Ecosystem Partnerships
 
 1. **Maintenance & EV Charging:**  
    - Offer discounted maintenance or EV charging deals for top drivers. Aim for a 15% downtime reduction and 5% driver retention boost. Evaluate results each quarter—if retention lags, refine or expand offerings to other partner networks.  
