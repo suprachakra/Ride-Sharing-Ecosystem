@@ -193,93 +193,113 @@ By linking outcomes to data-driven decision-making, we ensure no “What if?” 
 Our strategy rests on iterative refinement, data-driven insights, and the capacity to adapt swiftly if results deviate from targets. We integrate SAFe alignment, cross-functional input (Data, QA, Branding, Marketing, Compliance, Engineering), and scenario-based fallback logic to ensure resilience.
 
 ---
+
 #### **4.1 Strategic Pillars**
+
+##### **4.1.1 Incremental Model Evolution (V1 → V2 → V3)**
+
+- **V1 (Baseline)**: This parameter-driven approach, built on expert knowledge, lays the foundation for testing cell-level logic in controlled zones (e.g., zone_id = 51, 4 with feature_flag=1). If pilot results show partial success (e.g., a 3% improvement in on-time performance but no NPS gain), we fine-tune parameters or revert to the old logic during specific hours.
+  
+- **V2 (Mathematical Simplification)**: After validating V1, we transition to a streamlined model with fewer parameters for ease of scalability and tuning. A/B testing V5.1 against V4 in pilot zones allows us to measure efficiency gains (e.g., an additional 2% operational improvement and reduced driver confusion). If successful, V5.1 is expanded in subsequent increments.
+
+- **V3 (AI-Driven ML)**: With 6+ months of cell-level data (e.g., rainfall, price searches), the model evolves to ML-based surge predictions. If ML tests highlight biases or introduce complexity issues, the system reverts to V5.1 for recalibration and further testing.
+
 ---
 
-**4.1.1. Incremental Model Evolution (V1 → V2 → V3):**  
-   - **V1 (Baseline):** Parameter-heavy, derived from expert knowledge. Good starting point to test cell-level logic in controlled zones (e.g., zone_id = 51, 4 with a feature_flag=1). If pilot shows partial success (on-time +3% but NPS flat), adjust parameters or revert to old logic for a subset of hours.  
-   - **V2 (Mathematical Simplification):** After validating V4, switch to a simpler, fewer-parameter model that’s easier to tune and scale. A/B test V5.1 vs. V4 in pilot zones; if V5.1 improves operational efficiency by an additional 2% and reduces driver confusion, adopt V5.1 in more zones next increment.  
-   - **Future V3 (AI-Driven ML):** Once enough data is collected (at least 6 months of cell-level data, including rainfall, price searches), introduce ML-based surge predictions. If ML tests reveal bias or complexity issues, revert to V5.1 temporarily, retrain ML, and re-test.
+##### **4.1.2 SAFe Alignment & Iterative Validation**
 
-**4.1.2. SAFe Alignment & Iterative Validation:**
-   Each Program Increment (PI) focuses on a set of features and pilot tests. After PI-1, if no significant improvement, reprioritize backlog (using WSJF) toward features (like adjusting unmet_rate thresholds) or UX enhancements. Inspect & Adapt sessions after each PI incorporate user feedback (from brand surveys, compliance checks, QA reports) and pilot data into immediate next steps.
+Each Program Increment (PI) targets specific features and pilots. After PI-1, if improvements are negligible, the backlog is reprioritized using WSJF (Weighted Shortest Job First) to focus on impactful features (e.g., unmet_rate adjustments or UX enhancements). Inspect & Adapt sessions after every PI integrate user feedback, compliance reviews, and pilot data into actionable next steps.
 
-**4.1.3. Robust Fallback & Compliance Integration:**
-   The presence of a feature_flag means we can revert to old logic if a new model or parameter set causes rider dissatisfaction, compliance risks, or negative brand impact. For instance, if heavy rain hits and the new logic fails to raise prices adequately (losing drivers to competitors), we can quickly tweak additional_surge_high or revert to old logic for a set period defined by start_time/end_time. If a local regulation emerges capping surge at 1.2x, compliance rules feed into pricing logic instantly; if a violation is detected, old logic acts as a safety net while we reconfigure parameters.
-
-**4.1.4. Cross-Functional Integration (Brand, Data, QA, Marketing, Ops, Compliance):**
-   - **Data:** Powers the shift from V4 to V5.1 and eventually V5.2 by collecting richer contextual data (rain, price search patterns) and ensuring no ETL discrepancies.  
-   - **QA:** Validates performance under load, ensures accessibility and security before each rollout. If test fails, block release until resolved.  
-   - **Brand & UX:** Ensures that each increment of model improvement also includes refined rider/driver communications. If brand tests show confusion, add educational tooltips next PI.  
-   - **Marketing & GTM:** Align pilot rollouts with user messaging campaigns. If marketing finds low user adoption, test new explanatory material or promotions in next increment.  
-   - **Compliance & Ops:** Rapidly adjust parameters or revert logic if new regulations appear or if compliance violations arise. If expansions to a new city yield unexpected cultural barriers, refine localized logic, re-check brand messaging, and retest.
 ---
+
+##### **4.1.3 Robust Fallback & Compliance Integration**
+
+The feature_flag mechanism ensures seamless fallback to previous logic when new models or parameters create dissatisfaction, compliance risks, or negative brand impact. For example:
+- During heavy rain, if the updated model underestimates surge needs, the system can revert temporarily to old logic or tweak the additional_surge_high parameter.
+- Compliance rules dynamically integrate into pricing logic. If a city enforces a surge cap of 1.2x, the system immediately adapts while retaining old logic as a contingency.
+
+---
+
+##### **4.1.4 Cross-Functional Integration**
+
+- **Data**: Drives the transition from V4 to V5.1 and eventually V5.2 by incorporating richer contextual insights (e.g., rainfall, price searches) while ensuring data integrity through robust ETL processes.
+- **QA**: Conducts performance validation, ensures accessibility compliance, and mitigates security risks. Releases are blocked if test criteria are unmet.
+- **Brand & UX**: Refines communication at each model iteration. For example, tooltips or educational prompts are tested to reduce user confusion.
+- **Marketing & GTM**: Aligns pilot launches with user campaigns. If adoption lags, marketing tests alternative materials or localized promotions in subsequent increments.
+- **Compliance & Ops**: Adjusts parameters or reverts logic in response to evolving regulations or cultural barriers during expansions. Localization is revalidated before scaling citywide.
+
+---
+
 #### **4.2 Proposed Shared-Ride (Ride-Pooling) Model in a High-Fleet City**
----
 
-**4.2.1 Context and Data**  
+##### **4.2.1 Context and Data**
 
-- The official local taxi operator in this metropolitan area manages **~5,000 to 5,500 taxis**, handling **~600,000+ trips daily** citywide.
-- Peak demand windows typically occur during **morning rush (7–10 AM)** and **evening rush (5–9 PM)**, plus weekends in tourist hotspots
-- Many riders cite **5–8 minutes** as an acceptable wait time according to regulatory board and user surveys, while also indicating they’d accept up to **20–30%** route extension if fares are **~20–30% cheaper**.  
-- Average speed in congested downtown corridors is **15–25 km/h** during peak hours, with typical trip distances around **8–10 km**. Up to 60–80 km/h on major highways off-peak. The most busy roads can see speeds drop below 20 km/h during intense rush hours.
-- With a tourism influence of 1M+ monthly international visitors in high seasons, boosting taxi demand around airports, malls, beaches, and major hotels
+This metropolitan city, with ~5,000 to 5,500 taxis completing ~600,000 daily trips, demonstrates high demand during rush hours and tourist-heavy weekends. Rider feedback reveals:
+- An acceptable wait time of 5–8 minutes, with a willingness to extend trip duration by 20–30% for a 20–30% fare discount.
+- Average trip distances are 8–10 km within congested corridors and up to 60–80 km/h on highways during off-peak times.
 
-> _Why it’s relevant:_ This data indicates strong demand and short trip patterns, making shared rides feasible without overly inconveniencing riders.
-
-
-**4.2.2 Fare Structure (in $) and Discount Logic**  
-Base Calculation   => (Flagfall + Distance × Per-Km Rate + [Possible Waiting]) × (1 – Shared Discount)
-Discount Rate      => Start with 25%. This figure is data-driven
-Cap / Lock-In Fare => The system guarantees the passenger will not pay more than the quoted maximum. If more riders join, the passenger’s final cost might decrease—but never go above the initial quote.
-This transparency fosters trust in the pooling system.
-
-
-- **Local Daytime Starting Fare:** ~$2.00  
-- **Per-Kilometer Rate:** ~$0.55–0.60 per km (varies slightly by time of day).  
-- **Minimum Fare:** ~$5.00 (no trip under this).  
-- **Waiting Charges:** ~$0.15 per minute if the car is at a standstill.  
-- **Shared-Ride Discount Proposal:** ~25% cheaper than a comparable private ride, ensuring a clear incentive.  
-  - Example: A 10 km trip might cost ~$8 in a private scenario; under pooling, the passenger might pay ~$6.00.
-
-> _Why it works:_ A discount under ~15% may not compel riders to share, while going beyond ~40% could undermine driver earnings.
-> 
-
-**4.2.3 Real-Time Matching and Route Constraints**  
-- **Max Detour**: Each passenger’s trip should not exceed **+5–8 minutes** beyond the private-ride ETA.  
-- **Availability Checks**: Taxis must have seats (up to 3 passengers in a standard sedan).  
-- **Dynamic Traffic Data**: If congestion spikes, the system halts new pickups for that vehicle to avoid breaching the detour cap.
-  
-  
-**4.2.4 Surge Interaction and Pooling**
-Our cell-based surge logic dynamically adjusts fares at a granular (H3 hexagonal) level. To maintain pooling’s appeal:
-
-- If the zone’s surge multiplier is active, we still apply the 25% discount on the final metered fare for pooled rides. For instance, if a private ride is surging by +30%, a pooled ride sees a net +30% minus the 25% discount, effectively offering a ~5% net surcharge instead of the full 30%.
-- We cap the surge multiplier for pooled rides at a lower level if real-time adoption stalls. This ensures cost-conscious riders still choose pooling, helping meet the occupancy and sustainability goals.
-- Every 5 minutes, each cell re-evaluates supply-demand. If capacity is nearly maxed out, the system prompts passengers to consider “shared ride” with an upfront discount estimate, encouraging them to pool instead of waiting for a private ride.
-
-
-
-**4.2.5 Pilot Phase vs. Citywide Rollout**  
-- **Pilot**: Launch in 1–2 dense zones for 3–6 months, track occupancy, average wait times, and user satisfaction.  
-- **Rollout**: If pilot meets KPI thresholds (e.g., occupancy ≥2 riders/trip, 90% of rides within +8 min detour), expand citywide.
-  
-
-**4.2.6 Potential Pitfalls and Mitigations**  
-- **Driver Reluctance**: Provide a total “group fare” that can surpass a single private fare, thus boosting driver income.  
-- **Traffic Volatility**: If real-time data shows unexpected jams, freeze additional pickups.  
-- **Fare Surprises**: Lock in the passenger’s maximum cost up front, so new pickups only reduce the fare, never increase it.
-- 
-
-**4.2.7 Success Metrics and Continuous Feedback**  
-- **Shared-Ride Adoption**: Target ~20–30% of total rides to be shared during peak times.  
-- **Extra Detour**: Keep the average added travel time below 8 minutes in ≥80% of pooled trips.  
-- **NPS/CSAT**: Aim for a 4.5+/5 rating for the shared-ride experience, monitored monthly.  
-- **Driver Earnings**: Track whether drivers see a net increase in hourly income when doing pooled rides.
+**Relevance**: High-density, short trips make ride-pooling a practical solution without significant inconvenience.
 
 ---
 
-#### **4.3 Outcome-Focus & Real-World Checks**
+##### **4.2.2 Fare Structure and Discount Logic**
+
+- **Fare Formula**: *(Flagfall + Distance × Per-Km Rate + [Possible Waiting]) × (1 – Shared Discount)*.
+- **Key Components**:
+  - **Local Daytime Starting Fare**: ~$2.00.
+  - **Per-Kilometer Rate**: ~$0.55–0.60/km.
+  - **Minimum Fare**: ~$5.00.
+  - **Waiting Charges**: ~$0.15/minute.
+  - **Shared Discount**: ~25%, ensuring pooled rides remain ~25% cheaper than private rides.
+  
+**Example**: For a 10 km trip, a private fare of ~$8 drops to ~$6 under pooling.
+
+**Balance**: Discounts <15% may not incentivize pooling, while >40% risks driver dissatisfaction.
+
+---
+
+##### **4.2.3 Real-Time Matching and Route Constraints**
+
+- **Max Detour**: Additional travel time capped at 5–8 minutes.
+- **Availability Checks**: Requires sufficient seating (e.g., max 3 passengers in a standard sedan).
+- **Dynamic Traffic Adjustments**: Real-time congestion halts new pickups to maintain detour caps.
+
+---
+
+##### **4.2.4 Surge Interaction and Pooling**
+
+- **Dynamic Fare Adjustments**: Pooling fares reflect a net reduction (e.g., +30% surge minus 25% pooling discount results in a ~5% surcharge).
+- **Surge Caps**: Limit surge multipliers for pooling if adoption stalls.
+- **Supply-Demand Rebalancing**: Every 5 minutes, the system evaluates supply-demand, nudging users to consider pooling with upfront discount visibility.
+
+---
+
+##### **4.2.5 Pilot Phase vs. Citywide Rollout**
+
+- **Pilot**: Test in 1–2 dense zones for 3–6 months, focusing on occupancy rates, wait times, and satisfaction.
+- **Rollout**: Scale citywide if KPI thresholds (e.g., ≥2 riders/trip, 90% detour adherence) are met.
+
+---
+
+##### **4.2.6 Potential Pitfalls and Mitigations**
+
+- **Driver Reluctance**: Introduce "group fares" exceeding private fare totals, ensuring driver income parity.
+- **Traffic Volatility**: Freeze new pickups if real-time congestion spikes beyond predicted levels.
+- **Fare Surprises**: Guarantee no cost increases beyond the initial quote, with potential reductions as more riders join.
+
+---
+
+##### **4.2.7 Success Metrics and Continuous Feedback**
+
+- **Adoption**: Target 20–30% of peak-time rides as shared.
+- **Detour Compliance**: Ensure 80% of pooled trips stay within the 8-minute detour cap.
+- **User Satisfaction**: Maintain NPS/CSAT ratings ≥4.5/5.
+- **Driver Earnings**: Confirm net hourly income increases for drivers engaging in pooling.
+
+---
+
+
+##### **4.3 Outcome-Focus & Real-World Checks**
 ---
 >The entire strategy revolves around outcome validation:
 >
