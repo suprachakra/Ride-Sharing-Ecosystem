@@ -218,6 +218,7 @@ Our strategy rests on iterative refinement, data-driven insights, and the capaci
 ---
 
 **4.2.1 Context and Data**  
+
 - The official local taxi operator in this metropolitan area manages **~5,000 to 5,500 taxis**, handling **~600,000+ trips daily** citywide.
 - Peak demand windows typically occur during **morning rush (7–10 AM)** and **evening rush (5–9 PM)**, plus weekends in tourist hotspots
 - Many riders cite **5–8 minutes** as an acceptable wait time according to regulatory board and user surveys, while also indicating they’d accept up to **20–30%** route extension if fares are **~20–30% cheaper**.  
@@ -226,11 +227,13 @@ Our strategy rests on iterative refinement, data-driven insights, and the capaci
 
 > _Why it’s relevant:_ This data indicates strong demand and short trip patterns, making shared rides feasible without overly inconveniencing riders.
 
+
 **4.2.2 Fare Structure (in $) and Discount Logic**  
 Base Calculation   => (Flagfall + Distance × Per-Km Rate + [Possible Waiting]) × (1 – Shared Discount)
 Discount Rate      => Start with 25%. This figure is data-driven
 Cap / Lock-In Fare => The system guarantees the passenger will not pay more than the quoted maximum. If more riders join, the passenger’s final cost might decrease—but never go above the initial quote.
 This transparency fosters trust in the pooling system.
+
 
 - **Local Daytime Starting Fare:** ~$2.00  
 - **Per-Kilometer Rate:** ~$0.55–0.60 per km (varies slightly by time of day).  
@@ -240,11 +243,13 @@ This transparency fosters trust in the pooling system.
   - Example: A 10 km trip might cost ~$8 in a private scenario; under pooling, the passenger might pay ~$6.00.
 
 > _Why it works:_ A discount under ~15% may not compel riders to share, while going beyond ~40% could undermine driver earnings.
+> 
 
 **4.2.3 Real-Time Matching and Route Constraints**  
 - **Max Detour**: Each passenger’s trip should not exceed **+5–8 minutes** beyond the private-ride ETA.  
 - **Availability Checks**: Taxis must have seats (up to 3 passengers in a standard sedan).  
 - **Dynamic Traffic Data**: If congestion spikes, the system halts new pickups for that vehicle to avoid breaching the detour cap.
+  
   
 **4.2.4 Surge Interaction and Pooling**
 Our cell-based surge logic dynamically adjusts fares at a granular (H3 hexagonal) level. To maintain pooling’s appeal:
@@ -254,14 +259,17 @@ Our cell-based surge logic dynamically adjusts fares at a granular (H3 hexagonal
 - Every 5 minutes, each cell re-evaluates supply-demand. If capacity is nearly maxed out, the system prompts passengers to consider “shared ride” with an upfront discount estimate, encouraging them to pool instead of waiting for a private ride.
 
 
+
 **4.2.5 Pilot Phase vs. Citywide Rollout**  
 - **Pilot**: Launch in 1–2 dense zones for 3–6 months, track occupancy, average wait times, and user satisfaction.  
 - **Rollout**: If pilot meets KPI thresholds (e.g., occupancy ≥2 riders/trip, 90% of rides within +8 min detour), expand citywide.
+  
 
 **4.2.6 Potential Pitfalls and Mitigations**  
 - **Driver Reluctance**: Provide a total “group fare” that can surpass a single private fare, thus boosting driver income.  
 - **Traffic Volatility**: If real-time data shows unexpected jams, freeze additional pickups.  
 - **Fare Surprises**: Lock in the passenger’s maximum cost up front, so new pickups only reduce the fare, never increase it.
+- 
 
 **4.2.7 Success Metrics and Continuous Feedback**  
 - **Shared-Ride Adoption**: Target ~20–30% of total rides to be shared during peak times.  
