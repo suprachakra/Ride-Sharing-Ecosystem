@@ -240,6 +240,11 @@ This metropolitan city, with ~5,000 to 5,500 taxis completing ~600,000 daily tri
 
 **Relevance**: High-density, short trips make ride-pooling a practical solution without significant inconvenience.
 
+#### Women Taxis & Family-Focused Fleets
+To maintain user confidence in specialized services (e.g., Women and Families Taxis), we optionally exclude these fleets from pooling unless drivers and passengers explicitly opt in. 
+- If these specialized drivers choose pooling, the feature_flag=1 is enabled for Women Taxis on a pilot basis, with passenger consent screens ensuring comfort and privacy.
+- If feedback is negative or usage remains <2%, revert to private-only rides for Women Taxis.
+
 ---
 
 ##### **4.2.2 Fare Structure and Discount Logic**
@@ -247,12 +252,14 @@ This metropolitan city, with ~5,000 to 5,500 taxis completing ~600,000 daily tri
 - **Fare Formula**: *(Flagfall + Distance × Per-Km Rate + [Possible Waiting]) × (1 – Shared Discount)*.
 - **Key Components**:
   - **Local Daytime Starting Fare**: ~$2.00.
-  - **Per-Kilometer Rate**: ~$0.55–0.60/km.
-  - **Minimum Fare**: ~$5.00.
-  - **Waiting Charges**: ~$0.15/minute.
+  - **Per-Kilometer Rate**: ~$0.55–0.60/km (varies slightly by time of day).
+  - **Minimum Fare**: ~$5.00 (no trip under this).
+  - **Waiting Charges**: ~$0.15/minute if the car is at a standstill.
   - **Shared Discount**: ~25%, ensuring pooled rides remain ~25% cheaper than private rides.
+  - **Handling Local Tolls & Surcharges**: If a route includes Tolls or special pickup charges, these fees are allocated proportionally among all passengers in a pooled ride. The system calculates each passenger’s share upfront, ensuring transparency. 
   
-**Example**: For a 10 km trip, a private fare of ~$8 drops to ~$6 under pooling.
+**Example**- For a 10 km trip, a private fare of ~$8 drops to ~$6 under pooling.
+           - An $5 surcharge or Toll (AED 4) is automatically divided by the number of pooled passengers
 
 **Balance**: Discounts <15% may not incentivize pooling, while >40% risks driver dissatisfaction.
 
@@ -262,11 +269,12 @@ This metropolitan city, with ~5,000 to 5,500 taxis completing ~600,000 daily tri
 
 - **Max Detour**: Additional travel time capped at 5–8 minutes.
 - **Availability Checks**: Requires sufficient seating (e.g., max 3 passengers in a standard sedan).
-- **Dynamic Traffic Adjustments**: Real-time congestion halts new pickups to maintain detour caps.
+- **Dynamic Traffic Adjustments**:  If congestion spikes, the system halts new pickups for that vehicle to avoid breaching the detour cap.x
 
 ---
 
 ##### **4.2.4 Surge Interaction and Pooling**
+Our cell-based surge logic dynamically adjusts fares at a granular (H3 hexagonal) level. To maintain pooling’s appeal:
 
 - **Dynamic Fare Adjustments**: Pooling fares reflect a net reduction (e.g., +30% surge minus 25% pooling discount results in a ~5% surcharge).
 - **Surge Caps**: Limit surge multipliers for pooling if adoption stalls.
@@ -357,6 +365,15 @@ Each feature is not final until tested and validated. If a feature fails A/B tes
 5. **FR5 (Compliance Triggers):**  
    - If local max surge =1.5x exceeded, log event, alert Compliance Officer, and revert logic or apply stricter parameters within ≤1h.  
    - Acceptance: Zero unresolved compliance violations after fallback. If any recurring, add compliance rule hardcoding next PI.
+     
+6. **FR6 (Toll or Surcharge Shared):**
+   - The platform must display each passenger’s share of tolls/surcharges in real time.
+  
+7. **FR7 (Cash Handling in Multi-Passenger Rides):**
+For riders paying in cash:
+- Each passenger’s share is calculated upfront. The driver app displays total owed per passenger.
+- If repeated mismatch (>2 times in a week) occurs, the driver’s pooling option is paused until operational review clarifies the shortfall.
+
 
 #### **Non-Functional Requirements (NFRs):**
 - **Performance:** Surge API <2s under 10x load; if tests fail, optimize or block release.  
@@ -441,6 +458,13 @@ We ensure that every pricing change aligns with brand values: reliability (expla
 
 **Validating Brand & UX Success:**
 - Monthly brand surveys and NPS track perception. If brand trust doesn’t improve, try more localized user education or highlight fallback logic in communications to reassure users we respond to feedback rapidly.
+
+**Cultural & Religious Event Sensitivities:**
+During periods such as Ramadan or other significant local holidays:
+- Consider limiting or stabilizing surges, especially around iftar times.
+- Adjust marketing tone to respect cultural values (e.g., no overly promotional content during fasting hours).
+- If brand audits show ≥3% negative feedback, refine messaging or revert to standard stable surges until post-event.
+
 ---
 
 ### 11. Marketing & GTM Integration 
@@ -499,6 +523,12 @@ Operations ensure daily smooth functioning—driver onboarding, support resoluti
 - Compliance Dashboard (“ops/compliance_dashboard”) for live alerts, driver doc status. If repeated compliance alerts occur, escalate and fix immediately.  
 - Support Playbook (“ops/support_playbook.pdf”) for standardized responses. If certain queries keep recurring, update playbook or improve UI messaging next increment.
 
+**In-Cab Surveillance & RTA Regulations:**
+All rides must comply with real-time camera/GPS feed requirements mandated by regulatory. For pooled rides:
+- If a camera malfunctions mid-trip, the system restricts new pickups to safeguard passenger safety and maintain compliance. 
+- If repeated camera failures occur, the driver reverts to private-only mode until resolved.
+
+
 ---
 ### 13. Risk Management & Trade-Offs
 
@@ -518,6 +548,12 @@ We have fallback logic, compliance checks, pilot tests, and scenario-based param
 **Trade-Off Examples:**
 - **Speed vs. Completeness:**  
   If close to MVP and animation for “Why fare?” not stable, launch with tooltip only. If metrics don’t improve, add animation next PI.
+
+- **Event Surge Management:**
+For large-scale events (e.g., Expo, GITEX, DSF) with predicted demand spikes:
+- Enable advanced surge logic in those zones, combined with short-term driver incentives (e.g., extra $ X per completed trip).
+- If occupancy or driver supply does not meet targets, revert to stable surges or partial pooling logic to avoid user frustration.
+- Post-event, run a 2-week retrospective to measure driver earnings and rider satisfaction before scaling citywide again.
   
 - **Cost vs. Earnings Stability:**
   If driver turnover high, temporarily increase incentives. Check next 2-week pilot. If no improvement, consider non-monetary driver perks or better scheduling tips.
@@ -526,7 +562,6 @@ We have fallback logic, compliance checks, pilot tests, and scenario-based param
 - If after 2 months on-time <3% gain vs. target 5%, run root cause analysis. Possibly raise additional_surge_high or refine unmet_rate2. If still failing next PI, revert to older stable logic and test alternative parameters in following increments.
 - If city B caps surge at 1.2x suddenly, comply within 2 weeks or revert logic in that city until we find a legal workaround or adapt model next PI.
 
-**No Loopholes:**
 Every risk has a clearly defined fallback or iterative improvement route. Regular Inspect & Adapt sessions ensure no known risk remains unmanaged.
 
 ---
@@ -781,6 +816,12 @@ Alliances with payment providers, data sources, corporate institutions, and loca
 
 2. **Driver Training & Upskilling:**
    - Partner with recognized institutes for advanced route optimization training. If 20% driver adoption yields +5% higher rider ratings, expand city-wide. If negligible gains, re-check training content or adjust the partner relationship.
+  
+3. **EV & Hybrid Fleet Incentives:**
+As part of sustainable mobility goals, the strategy includes incremental EV adoption:
+- Drivers who switch to EVs receive partial commission reductions or additional monthly bonuses for 6 months. 
+- If EV drivers accept pooled rides (2–3 passengers), they qualify for an extra synergy bonus to promote green carpooling.
+
 
 #### 18.3 Corporate & Institutional Tie-Ups
 
@@ -843,6 +884,12 @@ Once V3 has run reliably for ~6 months, we assess whether advanced enhancements 
 
 **Global & Multi-City Horizons:**  
 We identify 2–3 potential international markets with lesser competition or high growth potential. Each new market can adopt the baseline V1–V2 approach for stability, then selectively implement V3 as compliance or demand patterns allow. If local ride-hailing laws prove too restrictive or the brand needs heavier investments than ROI justifies, we either slow expansions or pivot to partial deployments. The brand and compliance teams prepare a 3–6 month lead time to handle local data residency and driver classification laws.
+
+**Future Metro/Tram Integration:**
+Collaborate with Regulatory to allow pooled taxis as a last-mile solution from Metro stations or Tram stops:
+- If pilot data shows ≥5% additional rides from station-based pickups within 3 months, expand citywide.
+- If usage <2%, revert to standard private pickups at stations.
+
 
 #### 20.2 Brand Evolution & Compliance Adaption
 
