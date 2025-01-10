@@ -19,9 +19,9 @@
    - [Real-World Validation & Iterative Adjustments](#real-world-validation--iterative-adjustments)
 
 [4. Product & Marketplace Strategy](#4-product--marketplace-strategy)
-   - [Strategic Pillars](#strategic-pillars)
-      
-   - [Outcome-Focus & Real-World Checks](#outcome-focus--real-world-checks)
+   - [4.1 Strategic Pillars](#41-strategic-pillars)
+   - [4.2 Proposed Shared-Ride (Ride-Pooling) Model in a High-Fleet City](#42-proposed-shared-ride-ride-pooling-model-in-a-high-fleet-city)
+   - [4.3 Outcome-Focus & Real-World Checks](#43-outcome-focus--real-world-checks)
 
 [5. Epics, Features, and Hierarchy](#5-epics-features-and-hierarchy)
 
@@ -192,7 +192,9 @@ By linking outcomes to data-driven decision-making, we ensure no “What if?” 
 
 Our strategy rests on iterative refinement, data-driven insights, and the capacity to adapt swiftly if results deviate from targets. We integrate SAFe alignment, cross-functional input (Data, QA, Branding, Marketing, Compliance, Engineering), and scenario-based fallback logic to ensure resilience.
 
-#### **4.1 Strategic Pillars:**
+---
+#### **4.1 Strategic Pillars**
+---
 
 **4.1.1. Incremental Model Evolution (V1 → V2 → V3):**  
    - **V1 (Baseline):** Parameter-heavy, derived from expert knowledge. Good starting point to test cell-level logic in controlled zones (e.g., zone_id = 51, 4 with a feature_flag=1). If pilot shows partial success (on-time +3% but NPS flat), adjust parameters or revert to old logic for a subset of hours.  
@@ -211,8 +213,9 @@ Our strategy rests on iterative refinement, data-driven insights, and the capaci
    - **Brand & UX:** Ensures that each increment of model improvement also includes refined rider/driver communications. If brand tests show confusion, add educational tooltips next PI.  
    - **Marketing & GTM:** Align pilot rollouts with user messaging campaigns. If marketing finds low user adoption, test new explanatory material or promotions in next increment.  
    - **Compliance & Ops:** Rapidly adjust parameters or revert logic if new regulations appear or if compliance violations arise. If expansions to a new city yield unexpected cultural barriers, refine localized logic, re-check brand messaging, and retest.
-
-#### **4.2 Proposed Shared-Ride (Ride-Pooling) Model in a High-Fleet City:**
+---
+#### **4.2 Proposed Shared-Ride (Ride-Pooling) Model in a High-Fleet City**
+---
 
 **4.2.1 Context and Data**  
 - The official local taxi operator in this metropolitan area manages **~5,000 to 5,500 taxis**, handling **~600,000+ trips daily** citywide.
@@ -260,7 +263,8 @@ This transparency fosters trust in the pooling system.
 
 ---
 
-#### **4.3 Outcome-Focus & Real-World Checks:**
+#### **4.3 Outcome-Focus & Real-World Checks**
+---
 >The entire strategy revolves around outcome validation:
 >
 >- If after a pilot (2-week test in selected zones), no KPI improvements meet targets, do not scale further. Instead, refine, retest, or revert.  
