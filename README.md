@@ -184,12 +184,13 @@ Our **cell-based surge model**, combined with **dynamic pooling optimization**, 
 
 We set OKRs to ensure that every feature, parameter tweak, and fallback decision ties directly to measurable outcomes. These OKRs are not static: if we fail to meet targets, we adjust strategy, backlog, or parameters (like unmet_rate thresholds or surge_high_tier_rate) in subsequent increments.
 
-**Objective** | **Key Result**   | ---  | 
-**Improve On-Time Performance (OKR1):**|  Optimize pooling match times | Reduce average pooling wait time by 20% within 4 months.  
-**Enhance Operational Efficiency (OKR2):** | Increase pooling adoption | Boost pooled ride percentage from 15% to 25% in 6 months.  
-**Strengthen Compliance & Safety (OKR3):** | Maintain high safety standards in pooled rides | Zero complaints about overcrowding or improper matches for 6 continuous months.  
-**Elevate User Satisfaction (OKR4):** | Improve rider NPS | Increase pooling-specific NPS by +8 points in 2 quarters.  
-**Ensure Scalable Growth (OKR5):** | Expand carpooling features | Launch carpooling in 3 new cities while maintaining ≥90% on-time pooling match rates.  
+| Objective                          | Key Result                                                                                 | Details                                                                                           |
+|------------------------------------|-------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| **Improve On-Time Performance (OKR1):** | Optimize pooling match times: Reduce average pooling wait time by 20% within 4 months.    | Focus on algorithmic improvements and driver alignment for faster pooling match times.           |
+| **Enhance Operational Efficiency (OKR2):** | Increase pooling adoption: Boost pooled ride percentage from 15% to 25% in 6 months.      | Implement targeted promotions and optimize user flow to encourage pooling.                       |
+| **Strengthen Compliance & Safety (OKR3):** | Maintain high safety standards in pooled rides: Zero complaints about overcrowding or improper matches for 6 continuous months. | Regular audits and stricter adherence to safety guidelines.                                      |
+| **Elevate User Satisfaction (OKR4):** | Improve rider NPS: Increase pooling-specific NPS by +8 points in 2 quarters.              | Conduct user feedback sessions and A/B test improvements to the pooling experience.              |
+| **Ensure Scalable Growth (OKR5):** | Expand carpooling features: Launch carpooling in 3 new cities while maintaining ≥90% on-time pooling match rates. | Gradual rollout with city-specific customization and data-driven monitoring for on-time rates.    |
 
 **Real-World Validation & Iterative Adjustments:**  
 - **If Pooling Adoption Lags (OKR2):**  
