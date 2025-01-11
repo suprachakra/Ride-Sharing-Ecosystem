@@ -729,8 +729,7 @@ A **granular** competitor intelligence system that pinpoints promotions, bonus w
 #### 17.2 Geographic & Demographic Insights
 ---
 **Aim:**  
-Distinguish how competitor presence varies by district or demographic group (e.g., professionals in city centers vs. families in suburbs) to fine-tune our own expansions or promotional focus. If a competitor dominates young urban professionals with super-app loyalty, we might target families or business travelers with different brand messages or partial discount codes.
-
+   Distinguish how competitor presence varies by district or demographic group (e.g., professionals in city centers vs. families in suburbs) to fine-tune our own expansions or promotional focus. 
 ### 17.2.1 Zone-by-Zone Performance & Underserved Regions
 
 - **Underserved District Identification:**  
