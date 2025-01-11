@@ -421,11 +421,11 @@ Data underpins iterative validation and outcome-driven improvements. We ensure t
 - ETL ensures <1% discrepancy. If >1%, run remediation job immediately. If recurring >3 times, escalate to Data Eng Manager and block expansions until fixed.
 
 **ML Pipeline & Governance:**
-- Even if V5.2 ML is future, we start accumulating enough high-quality data for when we’re ready. If model drift occurs later, revert to simpler logic (V5.1 or old logic) until ML is retrained and tested.
+- Even if this is for future, we start accumulating enough high-quality data for when we’re ready. If model drift occurs later, revert to simpler logic until ML is retrained and tested.
 
 **A/B Testing & Analytics Tools:**
 - A/B test different parameter sets (e.g., surge_high_tier_rate=0.4 vs. 0.5) and measure difference in acceptance or NPS.  
-- Dashboards (Tableau, Looker) show zone-level KPIs. If a particular zone lags behind, investigate if local parameters need adjusting or if rainfall correlation missed.
+- Dashboards (Tableau, Looker) show zone-level KPIs. If a particular zone lags behind, investigate if local parameters need adjusting or if weather correlation missed. Surges or discount levels tested in pilot areas. 
 
 By embedding analytics deeply, we ensure no guesswork. Each iteration can be justified by data, and if data reveals unexpected patterns, we adapt parameters or revert logic next PI.
 
@@ -447,7 +447,7 @@ Enable rapid changes—e.g., toggling feature_flag, updating parameters for a zo
 - Regular DR drills ensure we never get caught off-guard. If a DR drill fails, fix root causes before next increment.
 
 **Integration with ML:**
-- Designed so that plugging in ML-driven V5.2 model is a matter of adding another microservice or endpoint. If ML fails, revert to old logic instantly. This ensures no complexity sacrifices user trust or compliance.
+- Designed so that plugging in ML-driven is a matter of adding another microservice or endpoint. If ML fails, revert to old logic instantly. This ensures no complexity sacrifices user trust or compliance.
 
 ---
 
@@ -461,7 +461,7 @@ QA validates that every release meets performance, security, accessibility, and 
 - Accessibility checks ensure no user is disadvantaged, building brand trust and avoiding regulatory backlash for inaccessibility.
 
 **UAT & Pilots:**
-- If UAT in pilot zones show no improvement in on-time after 2 weeks, do not scale. Adjust parameters, retest. If compliance or brand issues appear, also fix before next increment.
+- If UAT in pilot zones show no improvement in on-time after 3 weeks, do not scale. Adjust parameters, retest. If compliance or brand issues appear, also fix before next increment.
   
 **Continuous Improvement:**
 - Defects must be addressed promptly (P1 in <24h). After each release, QA leads a retrospective to identify if test coverage missed any scenario. If missed, add new tests next PI. This iterative improvement
@@ -478,7 +478,7 @@ We ensure that every pricing change aligns with brand values: reliability (expla
 - If a 10s animation explanation fails to reduce abandonment by ≥2%, next PI tries a static infographic or simpler wording. Always testing variants ensures we never rely on guesswork.
 
 **Crisis & Communication Plans:**
-- If social media backlash occurs due to a misunderstood surge event in a test zone, revert logic within 1 hour, issue a branded statement emphasizing fairness and planned improvements.  
+- If social media backlash occurs due to a misunderstood pooling surge event in a test zone, revert logic within 1 hour, issue a branded statement emphasizing fairness and planned improvements.  
 - Marketing aligns campaigns with each pilot. If city expansion fails, marketing tailors localized messaging or clarifies how local conditions affect pricing.
 
 **Validating Brand & UX Success:**
@@ -495,16 +495,16 @@ During periods such as Ramadan or other significant local holidays:
 ### 11. Marketing & GTM Integration 
 
 **Purpose & Strategic Fit:**  
-Marketing and GTM efforts ensure that users (riders, drivers) understand changes, trust the platform, and adopt new features. This epic aligns directly with NPS improvements (OKR4) and growth targets (OKR5). If marketing fails to raise adoption or clarify surge logic, we iterate messaging, test alternative campaigns, or add localized examples next increment.
+Marketing and GTM efforts ensure that users (riders, drivers) understand changes, trust the platform, and adopt ride-sharing features. This epic aligns directly with NPS improvements (OKR4) and growth targets. If marketing fails to raise adoption or clarify surge logic, we iterate messaging, test alternative campaigns, or add localized examples next increment.
 
 **GTM Goals:**  
 - Increase rider adoption and driver sign-ups in the pilot city by 10% pre-MVP. If short of target, test different promotional angles or timing next PI.  
-- Educate riders on surge logic to boost acceptance of surge rides by ≥2% post-launch. If not achieved, simplify explanations, add animations or tutorials next increment.  
-- After MVP, run referral campaigns: if referrals add ≥5% more riders in 1 month, scale that promotion city-wide. If <5%, try alternate referral incentives or messaging next PI.
+- Educate riders on ride-sharing logic to boost acceptance of rides by ≥2% post-launch. If not achieved, simplify explanations, add animations or tutorials next increment.  
+- After MVP, run campaigns: if referrals add ≥5% more riders in 1 month, scale that promotion city-wide. If <5%, try alternate referral incentives or messaging next PI.
 
 **GTM Channels & Collateral:**
 - **Pre-Launch Campaigns:**  
-  - Blog posts explaining new surge logic’s fairness and adaptability.  
+  - Blog posts explaining cost-sharing fairness and adaptability.  
   - Short social media video ads (30s animation) showcasing how we ensure ethical pricing. If CTR <1%, tweak visuals or copy next cycle.
   
 - **Launch Week Promotions:**  
@@ -528,7 +528,7 @@ Marketing and GTM efforts ensure that users (riders, drivers) understand changes
 ### 12. Operations & Compliance Considerations
 
 **Operational Excellence & Compliance Integrity:**
-Operations ensure daily smooth functioning—driver onboarding, support resolution, parameter updates—while compliance maintains zero violations (OKR3) and ethical adherence. Both drive trust and brand reputation.
+Operations ensure daily smooth functioning—driver onboarding, support resolution, parameter updates—while compliance maintains zero violations and ethical adherence. Both drive trust and brand reputation.
 
 **Driver Onboarding & Verification:**
 - Steps: ID upload → background checks → insurance validation → compliance sign-off.  
@@ -565,7 +565,6 @@ We have fallback logic, compliance checks, pilot tests, and scenario-based param
 | Risk                                   | Mitigation                                                           |
 |----------------------------------------|----------------------------------------------------------------------|
 | Integration failures (APIs, data)       | Sandbox testing pre-launch, fallback to baseline pricing if external feed down. If failure persists, test alternate data sources next PI. |
-| ML model underperformance (V3)          | Monthly retraining, drift alerts, revert to V2 if ML under-delivers. Next PI fix features or retrain model. |
 | Low user adoption or NPS shortfall      | Refine UX messaging, run targeted interviews, test alternate incentives. If still low, add localized educational material or simpler pricing explanations next PI. |
 | Regulatory changes mid-PI               | Modular compliance rules, adapt in <2 weeks. If urgent, revert logic ≤1h. Hardcode rules if recurring. |
 | Performance bottlenecks                 | Autoscaling, caching, monthly load tests. If >2s response, tune DB indexing or queries next PI.
@@ -583,10 +582,6 @@ For large-scale events (e.g., Expo, GITEX, DSF) with predicted demand spikes:
 - **Cost vs. Earnings Stability:**
   If driver turnover high, temporarily increase incentives. Check next 2-week pilot. If no improvement, consider non-monetary driver perks or better scheduling tips.
 
-**Scenario Handling:**
-- If after 2 months on-time <3% gain vs. target 5%, run root cause analysis. Possibly raise additional_surge_high or refine unmet_rate2. If still failing next PI, revert to older stable logic and test alternative parameters in following increments.
-- If city B caps surge at 1.2x suddenly, comply within 2 weeks or revert logic in that city until we find a legal workaround or adapt model next PI.
-
 Every risk has a clearly defined fallback or iterative improvement route. Regular Inspect & Adapt sessions ensure no known risk remains unmanaged.
 
 ---
@@ -597,11 +592,11 @@ Every risk has a clearly defined fallback or iterative improvement route. Regula
 Align features, data collection, and pilots with incremental delivery and validation. Each PI delivers testable increments. If pilots fail KPIs, refine and retest next PI rather than prematurely scaling.
 
 **Example SAFe-Based Roadmap:**
-- **PI-1 (Months 1-2.5):** Deploy V1 in 2 pilot zones, run 2-week test. If on-time ≥+5%, proceed. If not, adjust parameters or revert old logic and retest next PI.
-- **PI-2 (Months 2.5-5):** Introduce V2 if V1 success. If wait times drop another 3%, expand to 30% city coverage. If partial success, tweak surge_high_tier_rate next PI.
+- **PI-1 (Months 1-2.5):** Deploy baseline ride-sharing pilot in 2 zones, run 3-week test. If on-time ≥+5%, proceed. If not, adjust parameters or revert old logic and retest next PI.
+- **PI-2 (Months 2.5-5):** Expand pilot if metrics improve. If wait times drop another 3%, expand to 30% city coverage. If partial success, tweak discount or seat limits.
 - **MVP (Month 5):** If stable improvements confirmed, launch city-wide. If compliance or brand issues arise at scale, revert logic in impacted zones and fix next increment.
-- **PI-3 (Months 5-7.5):** Prepare ML pipeline for V3 tests in limited zones. If ML improves metrics by ≥2%, adopt further next PI. If not, revert to V2.
-- **PI-4 (Months 7.5-10):** Localize for new cities. If city expansions fail KPIs, refine localized parameters next increment. If marketing CTR low in new city, test alternate campaigns next PI.
+- **PI-3 (Months 5-7.5):** Prepare optional ML pipeline for matching in limited zones. If ML improves metrics by ≥2%, adopt further next PI. If not, revert.
+- **PI-4 (Months 7.5-10):** Localize for new zones. If city expansions fail KPIs, refine localized parameters next increment. If marketing CTR low in new city, test alternate campaigns next PI.
 
 **Inspect & Adapt & WSJF:**
 After each PI:
