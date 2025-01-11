@@ -106,18 +106,26 @@
 <hr style="border:1px solid blue">
 
 **Context:**  
-> We are developing a cutting-edge ridesharing marketplace pricing strategy—transitioning from a traditional zone-based surge model to a more granular and intelligent cell-based approach, eventually incorporating advanced AI-driven pricing. This approach not only improves operational metrics but also aligns deeply with brand values, compliance needs, and user satisfaction goals.
+> We are developing a **cutting-edge ridesharing (carpooling) marketplace** pricing strategy—transitioning from a traditional zone-based surge model to an **intelligent** approach, potentially incorporating advanced AI-driven pricing. This new methodology aims to **improve operational metrics**, align deeply with **brand values** and **compliance needs**, and champion **user satisfaction** (both riders and drivers).
 
 ---
 
 ### 1. Executive Summary & Vision
 
 #### **High-Level Vision:**  
+We aim to create a **ride-sharing (carpool) marketplace** that delivers:
 
-We aim to create a ridesharing marketplace that achieves exceptional **reliability**, **fairness**, and **adaptability** in pricing—ensuring riders benefit from transparent, predictable fares and drivers earn stable, attractive incomes. Expanding beyond single-rider trips, we focus on **ride-sharing (carpooling)** as a strategic pillar to reduce costs, optimize vehicle utilization, and improve environmental sustainability. 
+1. **Reliability**: Predictable wait times and transparent fares.  
+2. **Fairness**: Drivers earn stable income; riders save with shared fares.  
+3. **Scalability**: A pilot approach in key areas, expanding citywide once we validate carpool feasibility.  
+4. **Sustainability**: Reduce idle cars, traffic congestion, and carbon footprint via multi-passenger trips.
 
-By also leveraging a **cell-based (H3 hexagonal)** infrastructure, we will transition from zone-based models (V1) to granular cell-based logic (V2) and ultimately to **AI-driven surge pricing (V3)**. This iterative refinement will include dedicated features to optimize our ride-sharing, such as **dynamic pooling logic**, **cost-sharing transparency**, and **pool-eligibility incentives** for drivers.
+Through **iterative refinement** (small pilot → citywide → optional AI enhancements), we will integrate:
 
+- **Dynamic Carpooling Logic**: Real-time matching, seat capacity checks, max detour thresholds.  
+- **Cost-Sharing Transparency**: Clear breakdown so riders see actual savings.  
+- **Driver Incentive Structures**: Encourage acceptance of multiple passengers.
+  
 Every improvement will be validated through data-driven experiments, **user feedback loops** (riders and drivers), and **compliance checks**—ensuring a safe, ethical, and user-centric experience.  
 
 #### **Strategic Imperatives:**
@@ -140,11 +148,6 @@ Every improvement will be validated through data-driven experiments, **user feed
 
 #### **Market Landscape & Competitive Context:**  
 Ride-sharing is a **key differentiator** in today’s ridesharing industry, especially in urban, high-traffic areas. While competitors experiment with pooling, few have successfully balanced precision pricing, operational efficiency, and user satisfaction. For instance, one competitor might handle weather-induced demand spikes simply by capping surges, while another might fail to explain price hikes, alienating riders. Missteps like **poorly matched carpools** or unclear cost-sharing logic alienate users.  
-
-Our **cell-based surge model**, combined with **dynamic pooling optimization**, gives us a competitive edge:  
-- Riders benefit from reduced fares with transparent cost breakdowns.  
-- Drivers experience higher earnings due to reduced idle time and better vehicle occupancy.  
-
 
 #### **User Segments & Their Nuanced Needs:**
 >  **Riders:**  
@@ -171,9 +174,10 @@ Our **cell-based surge model**, combined with **dynamic pooling optimization**, 
 
 #### **Opportunities:**
 - **Ride-Sharing Optimization in Cell-Based Models:**  
-  - **V1:** Enable pooling for high-demand corridors; use fallback logic (feature_flag=0 for non-pooling areas).  
-  - **V2:** Optimize match-making by dynamically adjusting pooling thresholds (e.g., “Allow max 2 passengers during peak hours”).  
-  - **V3:** Incorporate ML models to predict pooling probabilities based on traffic, demand, and rider profiles.
+  - **Pilot Carpool V1:** Enable pooling for 1–2 high-demand areas for 3–6 months; use fallback logic (feature_flag=0 for non-pooling areas).  
+  - **Realtime Metrics V1:** Optimize match-making by dynamically adjusting pooling thresholds (e.g., “Allow max 2 passengers during peak hours”).  
+  - **Advanced V2:** Incorporate ML models to predict pooling probabilities based on traffic, demand, and rider profiles after we gather enough carpooling data.
+ 
     
 - **Dynamic Adaptation:**  
   - Use **real-time pooling metrics** like match success rate, abandonment rate, and idle time to adjust carpool incentives dynamically; ensuring every decision is grounded in validated user needs and market realities. 
@@ -186,10 +190,10 @@ We set OKRs to ensure that every feature, parameter tweak, and fallback decision
 
 | **Objective**                                                                                                  | **Key Result**                                                                                                             | **Additional Notes**                                                                                                                                                                                                                         |
 |---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **OKR1: Maintain/Improve Existing Revenue** <br> *Avoid BAU drop while introducing H3-based carpool pilots*    | 1. **0% revenue dip** for BAU services during first 3 months of carpool pilot<br>2. **+2% overall revenue growth** by end of pilot if carpool is well-received   | - Monitor daily/weekly revenue to ensure pilot doesn't cannibalize existing demand.<br>- Offer stable or minimal surcharges in pilot zones to maintain rider loyalty.<br>- Revisit fare structure if revenue dips below baseline for >2 weeks.   |
-| **OKR2: Validate Carpooling in Small H3 Zones** <br> *Prove feasibility before citywide rollout*               | 1. **≥15%** of rides in pilot zones are pooled within 3 months<br>2. **95% driver acceptance** for pooling requests in pilot areas                               | - Restrict pilot to 1–2 carefully selected H3 hexagonal zones (high demand corridors).<br>- Provide driver incentives for multi-passenger trips.<br>- If acceptance <10% after 2 months, refine matching algorithm or incentives.               |
-| **OKR3: Ensure On-Time Performance & User Satisfaction** <br> *No negative operational impact from pilot*      | 1. **On-time pickups remain ≥90%** in pilot zones (equal to BAU) <br>2. **NPS** for pooled rides is **≥+5 points** above baseline by quarter’s end               | - Track arrival times vs. BAU in pilot hex cells.<br>- Use A/B tests to refine “Why this fare?” or cost-sharing explanations.<br>- If NPS stalls, implement improved in-app carpool tutorials or adjust seat limits.                             |
-| **OKR4: Structured Release & Scale-Up** <br> *Gradual expansion strategy*                                      | 1. **Phase 1** pilot in small zones **by Month 6** <br>2. **Phase 2** citywide rollout once pilot meets ≥80% KPI targets <br>3. Achieve citywide coverage **by Month 12**  | - Use SAFe increments: each increment includes new H3 zones if pilot metrics (OKR2, OKR3) are satisfied.<br>- Document release retros in each PI to address any compliance or operational snags.<br>- If major issues occur, revert to BAU for those zones. |
+| **OKR1: Maintain/Improve Existing Revenue** <br> *Avoid BAU revenue drop while introducing carpool pilots*    | 1. **0% revenue dip** for BAU services during first 3 months of carpool pilot<br>2. **+2% overall revenue growth** by end of pilot if carpool is well-received   | - Monitor daily/weekly revenue to ensure pilot doesn't cannibalize existing demand.<br>- Offer stable or minimal surcharges in pilot zones to maintain rider loyalty.<br>- Revisit fare structure if revenue dips below baseline for >2 weeks.   |
+| **OKR2: Validate Carpooling in in Selected Pilot Areas** <br> *Prove feasibility before citywide rollout*               | 1. **≥15%** of rides in pilot zones are pooled within 3 months<br>2. **95% driver acceptance** for pooling requests in pilot areas                               | - Restrict pilot to 1–2 carefully selected pilot zones.<br>- Provide driver incentives for multi-passenger trips.<br>- If acceptance <10% after 2 months, refine matching algorithm or incentives.               |
+| **OKR3: Ensure On-Time Performance & User Satisfaction** <br> *No negative operational impact from pilot*      | 1. **On-time pickups remain ≥90%** in pilot zones (equal to BAU) <br>2. **NPS** for pooled rides is **≥+5 points** above baseline by quarter’s end               | - Track arrival times vs. BAU in pilot zones.<br>- Use A/B tests to refine “Why this fare?” or cost-sharing explanations.<br>- If NPS stalls, implement improved in-app carpool tutorials or adjust seat limits.                             |
+| **OKR4: Structured Release & Scale-Up** <br> *Gradual expansion strategy*                                      | 1. **Phase 1** pilot in small zones **by Month 6** <br>2. **Phase 2** citywide rollout once pilot meets ≥80% KPI targets <br>3. Achieve citywide coverage **by Month 12**  | - Use SAFe increments: each increment includes new    zones if pilot metrics (OKR2, OKR3) are satisfied.<br>- Document release retros in each PI to address any compliance or operational snags.<br>- If major issues occur, revert to BAU for those zones. |
 
 
 **Real-World Validation & Iterative Adjustments:**  
@@ -216,13 +220,11 @@ Our strategy rests on iterative refinement, data-driven insights, and the capaci
 
 #### **4.1 Strategic Pillars**
 
-##### **4.1.1 Incremental Model Evolution (V1 → V2 → V3)**
+##### **4.1.1 Carpool-Centric Model (Pilot → Citywide)**  **
 
-- **V1 (Baseline)**: This parameter-driven approach, built on expert knowledge, lays the foundation for testing cell-level logic in controlled zones (e.g., zone_id = 51, 4 with feature_flag=1). If pilot results show partial success (e.g., a 3% improvement in on-time performance but no NPS gain), we fine-tune parameters or revert to the old logic during specific hours.
-  
-- **V2 (Mathematical Simplification)**: After validating V1, we transition to a streamlined model with fewer parameters for ease of scalability and tuning. A/B testing V5.1 against V4 in pilot zones allows us to measure efficiency gains (e.g., an additional 2% operational improvement and reduced driver confusion). If successful, V5.1 is expanded in subsequent increments.
-
-- **V3 (AI-Driven ML)**: With 6+ months of cell-level data (e.g., rainfall, price searches), the model evolves to ML-based surge predictions. If ML tests highlight biases or introduce complexity issues, the system reverts to V5.1 for recalibration and further testing.
+- **Pilot**: Test a simplified ride-sharing surge model in limited zones. Gather feedback on cost-sharing, driver acceptance, and compliance.  
+- **Citywide**: If pilot meets KPI thresholds (≥15% pooled rides, stable revenue), expand across the metropolis.  
+- **Optional AI**: Once 6+ months of pooling data exist, we can consider AI-driven matching or demand prediction.
 
 ---
 
@@ -234,19 +236,18 @@ Each Program Increment (PI) targets specific features and pilots. After PI-1, if
 
 ##### **4.1.3 Robust Fallback & Compliance Integration**
 
-The feature_flag mechanism ensures seamless fallback to previous logic when new models or parameters create dissatisfaction, compliance risks, or negative brand impact. For example:
-- During heavy rain, if the updated model underestimates surge needs, the system can revert temporarily to old logic or tweak the additional_surge_high parameter.
+The feature_flag mechanism ensures seamless fallback to previous logic when new models or parameters create dissatisfaction, compliance risks, or negative brand impact, reduce driver income or raise compliance concerns. For example:
 - Compliance rules dynamically integrate into pricing logic. If a city enforces a surge cap of 1.2x, the system immediately adapts while retaining old logic as a contingency.
 
 ---
 
 ##### **4.1.4 Cross-Functional Integration**
 
-- **Data**: Drives the transition from V4 to V5.1 and eventually V5.2 by incorporating richer contextual insights (e.g., rainfall, price searches) while ensuring data integrity through robust ETL processes.
+- **Data**: Powers carpool matching logic with real-time demand.
 - **QA**: Conducts performance validation, ensures accessibility compliance, and mitigates security risks. Releases are blocked if test criteria are unmet.
-- **Brand & UX**: Refines communication at each model iteration. For example, tooltips or educational prompts are tested to reduce user confusion.
+- **Brand & UX**: Ensures every iteration communicates carpool benefits and cost savings. For example, tooltips or educational prompts are tested to reduce user confusion.
 - **Marketing & GTM**: Aligns pilot launches with user campaigns. If adoption lags, marketing tests alternative materials or localized promotions in subsequent increments.
-- **Compliance & Ops**: Adjusts parameters or reverts logic in response to evolving regulations or cultural barriers during expansions. Localization is revalidated before scaling citywide.
+- **Compliance & Ops**: Adjusts carpool parameters when facing new laws or cultural preferences (e.g., women/family-only taxis).
 
 ---
 
@@ -324,6 +325,8 @@ Our cell-based surge logic dynamically adjusts fares at a granular (H3 hexagonal
 - **User Satisfaction**: Maintain NPS/CSAT ratings ≥4.5/5.
 - **Driver Earnings**: Confirm net hourly income increases for drivers engaging in pooling.
 
+If metrics plateau or fail, refine the discount rate, matching logic, or seat-limit policy.
+
 ---
 
 
@@ -331,7 +334,7 @@ Our cell-based surge logic dynamically adjusts fares at a granular (H3 hexagonal
 ---
 >The entire strategy revolves around outcome validation:
 >
->- If after a pilot (2-week test in selected zones), no KPI improvements meet targets, do not scale further. Instead, refine, retest, or revert.  
+>- If after a pilot (3-week test in selected zones), no KPI improvements meet targets, do not scale further. Instead, refine, retest, or revert.  
 >- Continuous feedback loops (weekly user interviews, monthly NPS surveys, pen tests, load tests each PI) ensure no stagnation.  
 >- Each decision is not final; it’s a hypothesis tested in real conditions. If outcomes fail, we adapt swiftly, making the entire approach highly resilient and future-proof.
 >
@@ -343,10 +346,10 @@ Each Epic directly supports OKRs and strategic pillars by addressing rider/drive
 
 | Epic ID | Epic Name                         | Strategic/Outcome Alignment                                     |
 |---------|-----------------------------------|--------------------------------------------------------------------|
-| E-01    | Dynamic Pricing & Dispatch         | Directly improves on-time performance (OKR1) and efficiency (OKR2). Cell-based pricing (V4→V5.1→V5.2) with parameters & feature_flag provides granular, testable control and quick fallback if pilots fail. |
-| E-02    | Transparency & UX Enhancements     | Increases NPS (OKR4) by reducing rider confusion. “Why this fare?” explanations and A/B-tested UI changes ensure trust and fairness. If metrics don’t improve, pivot messaging next increment. |
+| E-01    | Dynamic Pricing & Dispatch         | Directly improves on-time performance (OKR1) and efficiency (OKR2). Embeds logic for ride-sharing surges and seat-based dispatch. |
+| E-02    | Transparency & UX Enhancements     | Increases NPS (OKR3 and OKR4) by reducing rider confusion. “Why this fare?” explanations and A/B-tested UI changes ensure trust and fairness. If metrics don’t improve, pivot messaging next increment. |
 | E-03    | Driver Incentive Optimization      | Reduces driver turnover (OKR4) by offering stable earning forecasts and intuitive dashboards. If driver satisfaction <80%, adjust incentive display logic or add visuals next PI. |
-| E-04    | Data Governance & ML Readiness     | Critical for future AI-driven pricing (OKR5), ensuring data accuracy and integrity. If ETL errors >1%, fix before next release. Data collected now supports future ML (V5.2) improvements. |
+| E-04    | Data Governance & ML Readiness     | Critical for future AI-driven pricing, ensuring data accuracy and integrity. If ETL errors >1%, fix before next release.  |
 | E-05    | Compliance & Risk Mitigation       | Ensures zero violations (OKR3) and quick adaptation to local laws. If a new rule appears, implement in <2 weeks or revert to old logic. Regular compliance checks prevent brand/reputational damage. |
 | E-06    | Marketing & GTM Integration         | Drives user adoption and brand message alignment, supporting efficiency/NPS improvements. If marketing campaigns fail (e.g., CTR <1%), test alternate messaging or promotions next PI. |
 | E-07    | QA & Test Automation Framework     | Indirectly supports all OKRs by preventing regressions. Comprehensive testing (performance, security, accessibility) ensures stable deployments. If tests fail, block release, fix defects, retest. |
@@ -354,9 +357,11 @@ Each Epic directly supports OKRs and strategic pillars by addressing rider/drive
 | E-09    | Compliance & Risk Management        | Rapidly adapt pricing rules to new regulations or user backlash. Fallback logic (feature_flag=0) ensures we never linger in a non-compliant or user-unfriendly state. |
 
 **Feature Examples Under E-01 (Dynamic Pricing):**
-- F-01: Baseline Surge Model (V1) with parameterized logic and feature_flag support. Pilot in zones 51 & 4 for 2 weeks. If on-time improves ≥5%, scale. If not, adjust parameters or revert old logic for these zones.
-- F-02: Simplified Math Model (V2) after V1 success. If wait times reduce by an additional 3% and no compliance issues, proceed city-wide incrementally.
-- F-03: Predictive Surge Enhancements (V3-ready): Prepare pipelines with rainfall, price search data. Once stable, A/B test ML-driven approach. If ML underperforms, revert to V2
+
+- **F-01**: Baseline Surge Model with parameter logic and feature_flag for pilot areas.  
+- **F-02**: Simplified Carpooling Logic post-Baseline success. If wait times drop another 3% with no compliance issues, expand citywide.  
+- **F-03**: Predictive Enhancements (optional AI). If ML underperforms, revert to simpler logic.
+
 
 Each feature is not final until tested and validated. If a feature fails A/B tests or user surveys, reprioritize using WSJF, refine parameters (e.g., surge_high_tier_rate), and retest next PI.
 
@@ -366,8 +371,8 @@ Each feature is not final until tested and validated. If a feature fails A/B tes
 
 #### **Functional Requirements (FRs):**
 
-1. **FR1 (Cell-Level Surge Calculation):**  
-   - Every 5 min, recalculate surge per H3 cell. If demand > supply by >10%, increase surge using parameter additional_surge_high.  
+1. **FR1 (Ride-Sharing Surge Calculation):**  
+   - Every 5 min, recalculate surge in pilot zones. If demand > supply by >10%, increase surge using parameter additional_surge_high.  
    - Acceptance: In pilot A/B test, if on-time improves by ≥5% vs. control. If not achieved, adjust unmet_rate thresholds next PI or revert logic in test zones.
 
 2. **FR2 (Feature_Flag & Parameter Control):**  
