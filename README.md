@@ -1,4 +1,4 @@
-      # Ridesharing Marketplace Ecosystem
+# Ridesharing Marketplace Ecosystem
 
 ### Table of Contents
 
