@@ -560,7 +560,7 @@ The following table exemplifies **User Stories**, referencing **Epics**/**Featur
 ---
 #### **6.4 Traceability Matrix (Epics → Features → User Stories → Tasks)**
 
-Below is the matrix linking each epic to **features**, **user stories** (US), and **tasks**—along with references to the **OKRs** and **FRs** or **NFRs**. We also show **Priority** (MVP, Pilot, Scale) and **Departmental** owners/validations. (Note: Simplified for brevity, but demonstrates the concept thoroughly.)
+Below is the matrix linking each epic to **features**, **user stories** (US), and **tasks**—along with references to the **OKRs** and **FRs** or **NFRs**. We also show **Priority** (MVP, Pilot, Scale) and **Departmental** owners/validations.
 
 | **Epic** (E-ID)         | **Feature** (F-ID)                                                         | **User Story** (US-ID)                                             | **Task** (T-ID)                                                         | **Relevant FR/NFR**      | **OKR Link**                                 | **Priority** | **Dept**                     | **Key Acceptance Criteria**                                                           |
 |-------------------------|----------------------------------------------------------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------|--------------------------------|----------------------------------------------|-------------|-----------------------------|--------------------------------------------------------------------------------------|
