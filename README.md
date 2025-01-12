@@ -236,10 +236,10 @@ Ride-sharing is a **key differentiator** in today’s ridesharing industry, espe
 **Dynamic Adaptation:**  
   - Use **real-time pooling metrics** like match success rate, abandonment rate, and idle time to adjust carpool incentives dynamically; ensuring every decision is grounded in validated user needs and market realities. 
 
-**Generic Real-World Pilot Example**
-“A recent 6-month pilot in the Middle East connected two major city hubs, offering up to 75% cost savings per rider when a taxi was shared by four passengers. The pilot selected these hubs due to their public transport connectivity and strong commuter demand, leading to high acceptance and potential future expansions.”
-
-This demonstrates how strategic corridor selection can significantly reduce per-passenger costs and encourage adoption.
+>**Generic Real-World Pilot Example**
+>_“A recent 6-month pilot in the Middle East connected two major city hubs, offering up to 75% cost savings per rider when a taxi was shared by four passengers. The pilot selected these hubs due to their public transport connectivity and strong commuter demand, leading to high acceptance and potential future expansions.”_
+>
+>This demonstrates how strategic corridor selection can significantly reduce per-passenger costs and encourage adoption.
 
 ---
 
