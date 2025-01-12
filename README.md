@@ -40,21 +40,21 @@
    - [7.3 User Stories & Acceptance Criteria](#73-user-stories--acceptance-criteria)
    - [7.4 Traceability Matrix (Epics → Features → User Stories → Tasks)](#74-traceability-matrix-epics--features--user-stories--tasks)
 
-[8. Data & Analytics Integration](#7-data--analytics-integration)
+[8. Data & Analytics Integration](#8-data--analytics-integration)
 
-[9. Engineering & Architecture Overview*](#8-engineering--architecture-overview)
+[9. Engineering & Architecture Overview*](#9-engineering--architecture-overview)
 
-[10. QA & Test Automation](#9-qa--test-automation)
+[10. QA & Test Automation](#10-qa--test-automation)
 
-[11. Branding, UX & CX Alignment](#10-branding-ux--cx-alignment)
+[11. Branding, UX & CX Alignment](#11-branding-ux--cx-alignment)
 
-[12. Marketing & GTM Integration](#11-marketing--gtm-integration)
+[12. Marketing & GTM Integration](#12-marketing--gtm-integration)
 
-[13. Operations & Compliance Considerations](#12-operations--compliance-considerations)
+[13. Operations & Compliance Considerations](#13-operations--compliance-considerations)
 
-[14. Risk Management & Trade-Offs](#13-risk-management--trade-offs)
+[14. Risk Management & Trade-Offs](#14-risk-management--trade-offs)
 
-[15. Roadmap & Timelines (SAFe-Aligned)](#14-roadmap--timelines-safe-aligned)
+[15. Roadmap & Timelines (SAFe-Aligned)](#15-roadmap--timelines-safe-aligned)
 
 [15. Iteration & Feedback Loops](#15-iteration--feedback-loops)
 
