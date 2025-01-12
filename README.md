@@ -14,7 +14,7 @@
    - [Definition of Permissible Dip](#definition-of-permissible-dip)
    - [Dashboards & Alerts](#dashboards--alerts)
 
-[2. Market & User Insights](#2-market--user-insights)
+[3. Market & User Insights](#2-market--user-insights)
    - [Market Landscape & Competitive Context](#market-landscape--competitive-context)
    - [User Segments & Their Nuanced Needs](#user-segments--their-nuanced-needs)
      - Riders
@@ -23,36 +23,38 @@
    - [Opportunities](#opportunities)
    - [Dynamic Adaptation](#dynamic-adaptation)
 
-[3. Objectives & Key Results (OKRs)](#3-objectives--key-results-okrs)
+[4. Objectives & Key Results (OKRs)](#4-objectives--key-results-okrs)
    - [Real-World Validation & Iterative Adjustments](#real-world-validation--iterative-adjustments)
 
-[4. Product & Marketplace Strategy](#4-product--marketplace-strategy)
-   - [4.1 Strategic Pillars](#41-strategic-pillars)
-   - [4.2 Proposed Shared-Ride (Ride-Pooling) Model in a High-Fleet City](#42-proposed-shared-ride-ride-pooling-model-in-a-high-fleet-city)
-   - [4.3 Marketplace Strategy & Dynamics](#43-marketplace-strategy--dynamics)
-   - [4.4 Outcome-Focus & Real-World Checks](#44-outcome-focus--real-world-checks)
+[5. Product & Marketplace Strategy](#5-product--marketplace-strategy)
+   - [5.1 Strategic Pillars](#51-strategic-pillars)
+   - [5.2 Proposed Shared-Ride (Ride-Pooling) Model in a High-Fleet City](#52-proposed-shared-ride-ride-pooling-model-in-a-high-fleet-city)
+   - [5.3 Marketplace Strategy & Dynamics](#53-marketplace-strategy--dynamics)
+   - [5.4 Outcome-Focus & Real-World Checks](#54-outcome-focus--real-world-checks)
 
-[5. Epics & Strategic Alignment(#5-epics--strategic-alignment)
+[6. Epics & Strategic Alignment(#6-epics--strategic-alignment)
 
-[6. Detailed Requirements (FRs, NFRs)](#6-detailed-requirements-frs-nfrs)
-   - [Functional Requirements (FRs)](#functional-requirements-frs)
-   - [Non-Functional Requirements (NFRs)](#non-functional-requirements-nfrs)
+[7. Detailed Requirements (FRs, NFRs)](#7-detailed-requirements-frs-nfrs)
+   - [7.1 Functional Requirements (FRs)](#71-functional-requirements-frs)
+   - [7.2 Non-Functional Requirements (NFRs))](#72-non-functional-requirements-nfrs)
+   - [7.3 User Stories & Acceptance Criteria](#73-user-stories--acceptance-criteria)
+   - [7.4 Traceability Matrix (Epics → Features → User Stories → Tasks)](#74-traceability-matrix-epics--features--user-stories--tasks)
 
-[7. Data & Analytics Integration](#7-data--analytics-integration)
+[8. Data & Analytics Integration](#7-data--analytics-integration)
 
-[8. Engineering & Architecture Overview*](#8-engineering--architecture-overview)
+[9. Engineering & Architecture Overview*](#8-engineering--architecture-overview)
 
-[9. QA & Test Automation](#9-qa--test-automation)
+[10. QA & Test Automation](#9-qa--test-automation)
 
-[10. Branding, UX & CX Alignment](#10-branding-ux--cx-alignment)
+[11. Branding, UX & CX Alignment](#10-branding-ux--cx-alignment)
 
-[11. Marketing & GTM Integration](#11-marketing--gtm-integration)
+[12. Marketing & GTM Integration](#11-marketing--gtm-integration)
 
-[12. Operations & Compliance Considerations](#12-operations--compliance-considerations)
+[13. Operations & Compliance Considerations](#12-operations--compliance-considerations)
 
-[13. Risk Management & Trade-Offs](#13-risk-management--trade-offs)
+[14. Risk Management & Trade-Offs](#13-risk-management--trade-offs)
 
-[14. Roadmap & Timelines (SAFe-Aligned)](#14-roadmap--timelines-safe-aligned)
+[15. Roadmap & Timelines (SAFe-Aligned)](#14-roadmap--timelines-safe-aligned)
 
 [15. Iteration & Feedback Loops](#15-iteration--feedback-loops)
 
@@ -196,7 +198,7 @@ Every improvement will be validated through data-driven experiments, **user feed
 
 ---
 
-### 2. Market & User Insights
+### 3. Market & User Insights
 
 #### **Market Landscape & Competitive Context:**  
 Ride-sharing is a **key differentiator** in today’s ridesharing industry, especially in urban, high-traffic areas. While competitors experiment with pooling, few have successfully balanced precision pricing, operational efficiency, and user satisfaction. For instance, one competitor might handle weather-induced demand spikes simply by capping surges, while another might fail to explain price hikes, alienating riders. Missteps like **poorly matched carpools** or unclear cost-sharing logic alienate users. Overview of commuting patterns, peak traffic hours, cost sensitivity, environmental awareness(green ride datasets).  
@@ -253,7 +255,7 @@ Ride-sharing is a **key differentiator** in today’s ridesharing industry, espe
 
 ---
 
-### 3. Objectives & Key Results (OKRs)
+### 4. Objectives & Key Results (OKRs)
 
 We set OKRs to ensure that every feature, parameter tweak, and fallback decision ties directly to measurable outcomes. These OKRs are not static: if we fail to meet targets, we adjust strategy, backlog, or parameters (like unmet_rate thresholds or surge_high_tier_rate) in subsequent increments.
 
@@ -281,15 +283,15 @@ By linking outcomes to data-driven decision-making, we ensure no “What if?” 
 
 ---
 
-### 4. Product & Marketplace Strategy
+### 5. Product & Marketplace Strategy
 
 Our strategy rests on iterative refinement, data-driven insights, and the capacity to adapt swiftly if results deviate from targets. We integrate SAFe alignment, cross-functional input (Data, QA, Branding, Marketing, Compliance, Engineering), and scenario-based fallback logic to ensure resilience.
 
 ---
 
-#### **4.1 Strategic Pillars**
+#### **5.1 Strategic Pillars**
 
-##### **4.1.1 Carpool-Centric Model **
+##### **5.1.1 Carpool-Centric Model **
 
 - **Core Value Proposition**: Lower cost per ride, eco-friendly option, meet new people, reduce traffic.
 - **Product Differentiators**: Integration with official taxi network, guaranteed reliability, robust safety checks.  
@@ -299,20 +301,20 @@ Our strategy rests on iterative refinement, data-driven insights, and the capaci
 
 ---
 
-##### **4.1.2 SAFe Alignment & Iterative Validation**
+##### **5.1.2 SAFe Alignment & Iterative Validation**
 
 Each Program Increment (PI) targets specific features and pilots. After PI-1, if improvements are negligible, the backlog is reprioritized using WSJF (Weighted Shortest Job First) to focus on impactful features (e.g., unmet_rate adjustments or UX enhancements). Inspect & Adapt sessions after every PI integrate user feedback, compliance reviews, and pilot data into actionable next steps.
 
 ---
 
-##### **4.1.3 Robust Fallback & Compliance Integration**
+##### **5.1.3 Robust Fallback & Compliance Integration**
 
 The feature_flag mechanism ensures seamless fallback to previous logic when new models or parameters create dissatisfaction, compliance risks, or negative brand impact, reduce driver income or raise compliance concerns. For example:
 - Compliance rules dynamically integrate into pricing logic. If a city enforces a surge cap of 1.2x, the system immediately adapts while retaining old logic as a contingency.
 
 ---
 
-##### **4.1.4 Cross-Functional Integration**
+##### **5.1.4 Cross-Functional Integration**
 
 - **Data**: Powers carpool matching logic with real-time demand.
 - **QA**: Conducts performance validation, ensures accessibility compliance, and mitigates security risks. Releases are blocked if test criteria are unmet.
@@ -322,11 +324,11 @@ The feature_flag mechanism ensures seamless fallback to previous logic when new 
 
 ---
 
-#### **4.2 Proposed Shared-Ride (Ride-Pooling) Model in a High-Fleet City**
+#### **5.2 Proposed Shared-Ride (Ride-Pooling) Model in a High-Fleet City**
 
-##### **4.2.1 Context and Data**
+##### **5.2.1 Context and Data**
 
-#### **4.2.1 Context & Data**
+#### **5.2.1 Context & Data**
 In this **metropolitan area** (~5,000 to 5,500 taxis, ~600k daily trips), **rush-hour** congestion and **tourist-heavy** weekends create substantial, short-trip demand. User research shows:
 
 - **Acceptable Wait Time**: 5–8 minutes  
@@ -352,7 +354,7 @@ Some specialized fleets (e.g., Women and Families Taxis) may **opt out** to pres
 
 ---
 
-##### **4.2.2 Fare Structure and Discount Logic**
+##### **5.2.2 Fare Structure and Discount Logic**
 
 We define a **transparent** formula:
 
@@ -375,7 +377,7 @@ We define a **transparent** formula:
 
 ---
 
-##### **4.2.3 Real-Time Matching and Route Constraints**
+##### **5.2.3 Real-Time Matching and Route Constraints**
 
 1. **Max Detour**: +5–8 minutes over a typical single-rider trip.  
 2. **Seat Availability**: Typically 3 passengers in a standard sedan; if driver is open to 2 additional stops, they set that in their app.  
@@ -384,7 +386,7 @@ We define a **transparent** formula:
 > **Why**: This ensures user satisfaction (OKR3, on-time & NPS) and driver acceptance (they won’t be forced into chaotic route expansions).
 ---
 
-##### **4.2.4 Surge Interaction and Pooling**
+##### **5.2.4 Surge Interaction and Pooling**
 While we typically operate a zone-based surge model, the **pooling discount** is layered on top to keep group rides cost-attractive:
 
 1. **Dynamic Fare Adjustments**: If surge is +30% in a corridor, a 25% discount yields a net +5%.  
@@ -395,7 +397,7 @@ While we typically operate a zone-based surge model, the **pooling discount** is
 
 ---
 
-#### **4.2.5 New Feature Pillars for Ride-Sharing**
+#### **5.2.5 New Feature Pillars for Ride-Sharing**
 To deliver the strongest possible outcome, we anchor **each feature** in a specific “why” and measurable success:
 
 1. **Route & Seat Matching**  
@@ -421,7 +423,7 @@ To deliver the strongest possible outcome, we anchor **each feature** in a speci
 > **Iterative Approach**: We pilot each pillar in 1–2 zones, gather direct feedback, then expand citywide if KPI targets are met.
 
 ---
-##### **4.2.6 Pilot Phase vs. Citywide Rollout**
+##### **5.2.6 Pilot Phase vs. Citywide Rollout**
 1. **Pilot**  
    - Test for 3–6 months in 1–2 dense corridors or neighborhoods.  
    - Track occupancy, wait times, user satisfaction (NPS≥4.5).  
@@ -435,7 +437,7 @@ To deliver the strongest possible outcome, we anchor **each feature** in a speci
 
 ---
 
-##### **4.2.7 Potential Pitfalls and Mitigations**
+##### **5.2.7 Potential Pitfalls and Mitigations**
 
 | **Pitfall**                 | **Mitigation**                                                                                                                                     |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -446,7 +448,7 @@ To deliver the strongest possible outcome, we anchor **each feature** in a speci
 
 ---
 
-##### **4.2.8 Success Metrics and Continuous Feedback**
+##### **5.2.8 Success Metrics and Continuous Feedback**
 
 We **continuously** gather data to ensure alignment with OKRs:
 
@@ -467,7 +469,7 @@ We **continuously** gather data to ensure alignment with OKRs:
 >- **No Surprises**: The system is built with fallback flags, ensuring no forced expansions if user satisfaction drops.
 
 ---
-#### **4.3 Marketplace Strategy & Dynamics**
+#### **5.3 Marketplace Strategy & Dynamics**
 
 1. **Supply Management (Drivers / Car Owners)**  
    - Policies for who can offer carpool rides (licensed taxis only, or include private car owners if regulations permit).  
@@ -485,7 +487,7 @@ We **continuously** gather data to ensure alignment with OKRs:
    - Fill rate (seats per trip), average occupancy, driver acceptance rate, passenger satisfaction.
 
 
-#### **4.4 Outcome-Focus & Real-World Checks**
+#### **5.4 Outcome-Focus & Real-World Checks**
 ---
 >The entire strategy revolves around outcome validation:
 >
@@ -494,7 +496,7 @@ We **continuously** gather data to ensure alignment with OKRs:
 >- Each decision is not final; it’s a hypothesis tested in real conditions. If outcomes fail, we adapt swiftly, making the entire approach highly resilient and future-proof.
 >
 ---
-### 5. Epics, Features, and Hierarchy
+### 6. Epics & Strategic Alignment
 
 **Epics & Their Justification:**  
 Each Epic directly supports OKRs and strategic pillars by addressing rider/driver needs, ensuring compliance, enhancing data capabilities, scaling operations, and maintaining brand trust.
@@ -522,9 +524,9 @@ Each feature is not final until tested and validated. If a feature fails A/B tes
 
 ---
 
-### 6. Detailed Requirements (FRs, NFRs)
+### 7. Detailed Requirements (FRs, NFRs)
 
-#### **6.1 Functional Requirements (FRs)**
+#### **7.1 Functional Requirements (FRs)**
 
 Below is the table capturing each FR:
 
@@ -542,7 +544,7 @@ Below is the table capturing each FR:
 
 ---
 
-#### **6.2 Non-Functional Requirements (NFRs)**
+#### **7.2 Non-Functional Requirements (NFRs)**
 
 These ensure **performance**, **scalability**, **security**, **accessibility**, and **reliability**:
 
@@ -556,7 +558,7 @@ These ensure **performance**, **scalability**, **security**, **accessibility**, 
 | **Observability**     | - Real-time logs & metrics for driver acceptance, rider abandonment<br>- Error budget approach        | 24/7 dashboards, SLA error budgets, auto-alert if spiking | *Risk*: Blind spots hamper quick fixes. <br>*Fallback*: Add logging microservice, degrade advanced logic if logs missing.                      | **Data**: Build dashboards. <br>**Engineering**: Central logging. <br>**Ops**: On-call rotations with immediate alert triage.                                                 | **Post-MVP**    |
 
 ---
-#### **6.3 User Stories & Acceptance Criteria**
+#### **7.3 User Stories & Acceptance Criteria**
 
 The following table exemplifies **User Stories**, referencing **Epics**/**Features**. Each story includes acceptance criteria, departmental checks, and fallback triggers:
 
@@ -567,7 +569,7 @@ The following table exemplifies **User Stories**, referencing **Epics**/**Featur
 | **US-E02-07** (Driver Chat for Pooled Rides) | E-02 / F-02 (Transparency)       | - Provide co-rider chat for multi-stop pickups. <br>- If confusion calls drop by ≥10%, consider success. If not, test simpler push notifications. | - **UX**: Evaluate user flow for group chat. <br>- **QA**: Test multi-driver concurrency. <br>- **Ops**: Potential support scripts if chat fails.                                                          |
 
 ---
-#### **6.4 Traceability Matrix (Epics → Features → User Stories → Tasks)**
+#### **7.4 Traceability Matrix (Epics → Features → User Stories → Tasks)**
 
 Below is the matrix linking each epic to **features**, **user stories** (US), and **tasks**—along with references to the **OKRs** and **FRs** or **NFRs**. We also show **Priority** (MVP, Pilot, Scale) and **Departmental** owners/validations.
 
@@ -599,7 +601,7 @@ Below is the matrix linking each epic to **features**, **user stories** (US), an
 
 ---
 
-### 7. Data & Analytics Integration
+### 8. Data & Analytics Integration
 
 Data underpins iterative validation and outcome-driven improvements. We ensure that every decision—tweaking unmet_rate or adjusting surge caps—is grounded in robust, near-real-time and historical data.
 
@@ -619,7 +621,7 @@ By embedding analytics deeply, we ensure no guesswork. Each iteration can be jus
 ---
 
 
-### 8. Engineering & Architecture Overview
+### 9. Engineering & Architecture Overview
 
 **Architecture Goals:**
 Enable rapid changes—e.g., toggling feature_flag, updating parameters for a zone—without downtime, ensuring stable performance and easy scaling.
@@ -648,7 +650,7 @@ Enable rapid changes—e.g., toggling feature_flag, updating parameters for a zo
 
 ---
 
-### 9. QA & Test Automation
+### 10. QA & Test Automation
 
 QA validates that every release meets performance, security, accessibility, and compliance thresholds, and that fallback logic works as intended.
 
@@ -674,7 +676,7 @@ QA validates that every release meets performance, security, accessibility, and 
 
 ---
 
-### 10. Branding, UX & CX Alignment
+### 11. Branding, UX & CX Alignment
 
 **Brand Integration:**
 We ensure that every pricing change aligns with brand values: reliability (explain surges properly), fairness (adjust surge parameters promptly if feedback negative), innovation (pilot new UI elements, short animations).
@@ -706,7 +708,7 @@ During periods such as Ramadan or other significant local holidays:
 
 ---
 
-### 11. Marketing & GTM Integration 
+### 12. Marketing & GTM Integration 
 
 **Purpose & Strategic Fit:**  
 Marketing and GTM efforts ensure that users (riders, drivers) understand changes, trust the platform, and adopt ride-sharing features. This epic aligns directly with NPS improvements (OKR4) and growth targets. If marketing fails to raise adoption or clarify surge logic, we iterate messaging, test alternative campaigns, or add localized examples next increment.
@@ -739,7 +741,7 @@ Marketing and GTM efforts ensure that users (riders, drivers) understand changes
 - Measure NPS uplift quarterly. If after 3 months NPS < +3 points (vs. target +10), identify if marketing messages are unclear or if incentives fail to resonate. Adjust and retest next PI.
 
 ---
-### 12. Operations & Compliance Considerations
+### 13. Operations & Compliance Considerations
 
 **Operational Excellence & Compliance Integrity:**
 Operations ensure daily smooth functioning—driver onboarding, support resolution, parameter updates—while compliance maintains zero violations and ethical adherence. Both drive trust and brand reputation.
@@ -774,7 +776,7 @@ All rides must comply with real-time camera/GPS feed requirements mandated by re
 
 
 ---
-### 13. Risk Management & Trade-Offs
+### 14. Risk Management & Trade-Offs
 
 **Comprehensive Risk Handling:**
 We have fallback logic, compliance checks, pilot tests, and scenario-based parameter adjustments. This section explicitly details the risk register and trade-offs, ensuring no scenario lacks a mitigation plan.
@@ -805,7 +807,7 @@ Every risk has a clearly defined fallback or iterative improvement route. Regula
 
 ---
 
-### 14. Roadmap & Timelines (SAFe-Aligned) 
+### 15. Roadmap & Timelines (SAFe-Aligned) 
 
 **Roadmap Goals:**
 Align features, data collection, and pilots with incremental delivery and validation. Each PI delivers testable increments. If pilots fail KPIs, refine and retest next PI rather than prematurely scaling.
