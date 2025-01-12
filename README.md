@@ -7,6 +7,13 @@
    - [Strategic Imperatives](#strategic-imperatives)
    - [Key Artifacts](#key-artifacts)
 
+[2. BAU Context & Impact on Existing Business](#2-bau-context--impact-on-existing-business)
+   - [Current BAU Overview](#current-bau-overview)
+   - [Risk of Cannibalization](#risk-of-cannibalization)
+   - [Alignment with Company KPIs](#alignment-with-company-kpis)
+   - [Definition of Permissible Dip](#definition-of-permissible-dip)
+   - [Dashboards & Alerts](#dashboards--alerts)
+
 [2. Market & User Insights](#2-market--user-insights)
    - [Market Landscape & Competitive Context](#market-landscape--competitive-context)
    - [User Segments & Their Nuanced Needs](#user-segments--their-nuanced-needs)
@@ -14,6 +21,7 @@
      - Drivers
    - [Insights from Interviews, Surveys, and A/B Tests](#insights-from-interviews-surveys-and-ab-tests)
    - [Opportunities](#opportunities)
+   - [Dynamic Adaptation](#dynamic-adaptation)
 
 [3. Objectives & Key Results (OKRs)](#3-objectives--key-results-okrs)
    - [Real-World Validation & Iterative Adjustments](#real-world-validation--iterative-adjustments)
@@ -21,11 +29,12 @@
 [4. Product & Marketplace Strategy](#4-product--marketplace-strategy)
    - [4.1 Strategic Pillars](#41-strategic-pillars)
    - [4.2 Proposed Shared-Ride (Ride-Pooling) Model in a High-Fleet City](#42-proposed-shared-ride-ride-pooling-model-in-a-high-fleet-city)
-   - [4.3 Outcome-Focus & Real-World Checks](#43-outcome-focus--real-world-checks)
+   - [4.3 Marketplace Strategy & Dynamics](#43-marketplace-strategy--dynamics)
+   - [4.4 Outcome-Focus & Real-World Checks](#44-outcome-focus--real-world-checks)
 
-[5. Epics, Features, and Hierarchy](#5-epics-features-and-hierarchy)
+[5. Epics & Strategic Alignment(#5-epics--strategic-alignment)
 
-[6. Detailed Requirements (FRs, NFRs, User Stories, Acceptance Criteria)](#6-detailed-requirements-frs-nfrs-user-stories-acceptance-criteria)
+[6. Detailed Requirements (FRs, NFRs)](#6-detailed-requirements-frs-nfrs)
    - [Functional Requirements (FRs)](#functional-requirements-frs)
    - [Non-Functional Requirements (NFRs)](#non-functional-requirements-nfrs)
 
@@ -513,7 +522,7 @@ Each feature is not final until tested and validated. If a feature fails A/B tes
 
 ---
 
-### 6. Detailed Requirements (FRs, NFRs, User Stories, Acceptance Criteria)
+### 6. Detailed Requirements (FRs, NFRs)
 
 #### **6.1 Functional Requirements (FRs)**
 
