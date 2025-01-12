@@ -1101,7 +1101,7 @@ A ride-sharing marketplace cannot rely on **short-term driver bonuses** alone. T
    - **Why**: Instead of outbidding competitors on cash payouts, we foster loyalty via a “Bronze, Silver, Gold” tier approach.  
    - **What**: Each tier grants perks (priority ride requests, subsidized maintenance, extended insurance).  
    - **Target**: +10–15% retention among drivers who ascend at least one tier within 6 months. If under +3%, revise tier criteria or perks.
-     
+     <br>
 
    > **Validation**: QA & Ops check monthly churn data. If perks fail to move the needle, pivot to EV charging subsidies or brand-lift campaigns.  
 
@@ -1109,22 +1109,21 @@ A ride-sharing marketplace cannot rely on **short-term driver bonuses** alone. T
    - **Why**: Drivers with better route optimization and safe driving records yield higher rider satisfaction (and tips), thus staying loyal.  
    - **What**: Partner with driving institutes for advanced modules (safety, route planning).  
    - **Success Metric**: 20% driver completion leads to +5% improvement in rider ratings. If not, refine or switch training partners.
-     
+     <br>
 
    > **Engineering** helps integrate modules into the driver app. **Product** sets acceptance criteria (≥5% rating boost). If unsuccessful, re-scope the upskilling strategy.
 
 3. **Balancing Onboarding & Retention Budgets**  
    - **Approach**: Keep a stable ratio (e.g., 60% retention vs. 40% acquisition) each quarter. If churn rises or competitor sign-ups spike, shift to 50–50 short-term. If overhead surpasses 1% monthly margin, revert.  
    - **Why**: This ensures we don’t overspend to attract new drivers at the expense of losing experienced ones.
-
+<br>
    > **Finance** monitors overhead. If a major competitor offers huge bounties, we weigh short spurts of sign-up bonuses vs. permanent retention expansions.
 
 4. **Pooling-Specific Incentives**  
    - **Why**: Encourages multi-passenger acceptance.  
    - **What**: Mini-bonus for maintaining 2+ riders/trip in a day (e.g., “Complete 15 pooled trips, earn $X extra”).  
    - **Fallback**: If negative driver feedback persists after 2 sprints, simplify or show real-time “potential group fare” in the driver’s app.
-     
-
+     <br>
    > **Example**:  
    ```
    [Driver App Mock: 'Today's Potential Earnings']
@@ -1135,7 +1134,7 @@ A ride-sharing marketplace cannot rely on **short-term driver bonuses** alone. T
    - Pooled Bonus Count: 14/15 for daily bonus
    ```
 
-   This visual highlights how 2–3 passenger rides can outperform one single-rider fare, increasing driver buy-in.
+   This highlights how 2–3 passenger rides can outperform one single-rider fare, increasing driver buy-in.
 ---
 
 #### 19.2 Handling Different Driver Profiles
@@ -1143,15 +1142,13 @@ A ride-sharing marketplace cannot rely on **short-term driver bonuses** alone. T
 1. **Full-Time vs. Part-Time Dynamics**  
    - **Full-Time Track**: Provide guaranteed hours or advanced scheduling tools. If costs surge, we scale back or revert to standard incentives in underperforming zones.  
    - **Part-Time Track**: Low-commitment sign-up flows, flexible surge preferences, no heavy penalty for short shifts. If usage stagnates, gather feedback or offer occasional pop-up bonuses.
-     
-
+     <br>
    > **Operations** ensures the scheduling tools won’t inflate overhead. **Engineering** designs flexible shift toggles in the driver app.
 
 2. **Supply Acquisition vs. Retention Cost**  
    - **Monthly Analytics**: If churn outstrips arrivals for 2 consecutive months, shift to retention perks or better training. If new arrivals lag behind competitor expansions, bump sign-up incentives short-term, but watch overhead.  
    - **Fallback**: If overhead >1% monthly margin for 2 sprints, freeze or re-scope sign-up campaigns.
-     
-
+     <br>
    > **Strategy** tip: Align with OKRs on supply stability. If supply dips hamper on-time performance, re-focus retention or upskilling.
 
 ---
@@ -1174,8 +1171,7 @@ By **blending** tier-based retention programs, upskilling opportunities, and dat
 1. Build a **stable driver base** resistant to competitor poaching.  
 2. **Optimize** operational overhead, preventing costly sign-up wars.  
 3. **Enhance** carpool acceptance (2+ riders/trip) for improved margin and user satisfaction.
-
-
+<br>
 > **Real-World Check**: If after 2 quarters we see <3% net retention improvement, we reevaluate the entire structure—possibly weighting more on intangible perks (priority dispatch, insurance) than direct cash.
 
 ---
