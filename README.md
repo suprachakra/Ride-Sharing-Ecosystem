@@ -327,8 +327,6 @@ The feature_flag mechanism ensures seamless fallback to previous logic when new 
 #### **5.2 Proposed Shared-Ride (Ride-Pooling) Model in a High-Fleet City**
 
 ##### **5.2.1 Context and Data**
-
-#### **5.2.1 Context & Data**
 In this **metropolitan area** (~5,000 to 5,500 taxis, ~600k daily trips), **rush-hour** congestion and **tourist-heavy** weekends create substantial, short-trip demand. User research shows:
 
 - **Acceptable Wait Time**: 5–8 minutes  
