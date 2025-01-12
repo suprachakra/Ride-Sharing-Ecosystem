@@ -1101,9 +1101,10 @@ A ride-sharing marketplace cannot rely on **short-term driver bonuses** alone. T
    - **Why**: Instead of outbidding competitors on cash payouts, we foster loyalty via a “Bronze, Silver, Gold” tier approach.  
    - **What**: Each tier grants perks (priority ride requests, subsidized maintenance, extended insurance).  
    - **Target**: +10–15% retention among drivers who ascend at least one tier within 6 months. If under +3%, revise tier criteria or perks.
-   - 
+     
 
-   > **Validation**: QA & Ops check monthly churn data. If perks fail to move the needle, pivot to EV charging subsidies or brand-lift campaigns.  
+   > **Validation**: QA & Ops check monthly churn data. If perks fail to move the needle, pivot to EV charging subsidies or brand-lift campaigns.
+   <br>
 
 2. **Training & Upskilling Initiatives**  
    - **Why**: Drivers with better route optimization and safe driving records yield higher rider satisfaction (and tips), thus staying loyal.  
