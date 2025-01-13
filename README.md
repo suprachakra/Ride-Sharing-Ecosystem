@@ -56,12 +56,16 @@
 
 [15. Roadmap & Timelines (SAFe-Aligned)](#15-roadmap--timelines-safe-aligned)
 
-[15. Iteration & Feedback Loops](#15-iteration--feedback-loops)
+[16. Iteration & Feedback Loops](#16-iteration--feedback-loops)
 
-[16. Financial Modeling & Unit Economics]()
-  - [16.1 Core Financial KPIs & Extended Targets](#161-core-financial-kpis--extended-targets)
-  - [16.2 Dynamic Scenario Modeling & Deeper Resilience](#162-dynamic-scenario-modeling--deeper-resilience)
-  - [16.3 ROI & Breakeven with Cross-Functional Budgeting](#163-roi--breakeven-with-cross-functional-budgeting)
+[17. Financial Modeling & Unit Economics]()
+  - [17.1 Purpose & Strategic Alignment](#171-purpose--strategic-alignment)
+  - [17.2 Revenue Streams](#172-revenue-streams)
+  - [17.3 Cost Structure](#173-cost-structure)
+  - [17.4 Profitability Analysis & Pricing Logic](#174-profitability-analysis--pricing-logic)
+  - [17.5 Scenario Handling & Resilience](#175-scenario-handling--resilience)
+  - [17.6 ROI & Breakeven with Cross-Functional Budgeting](#176-roi--breakeven-with-cross-functional-budgeting)
+  - [17.7 Fallback Triggers & Tiered Responses](#177-fallback-triggers--tiered-responses)
 
 [17. Competitive & Market Analysis](#17-competitive--market-analysis)
   - [17.1 Competitor Benchmarking: Framework & Metrics](#171-competitor-benchmarking-framework--metrics)
@@ -923,7 +927,7 @@ We embed **scenario-based fallback triggers** to avoid margin shocks:
 - **QA** blocks features with excessive test overhead or unaddressed high-severity defects.
 
 ---
-### **17.7 Example “Pooling Margin” Simulation (UX Component)**
+### ** Example “Pooling Margin” Simulation (UX Component)**
 
 Below is a small **interactive** mock illustrating how seat-based revenue can surpass single-rider trips:
 
@@ -946,7 +950,7 @@ Below is a small **interactive** mock illustrating how seat-based revenue can su
 
 ---
 
-### **17.8 Fallback Triggers & Tiered Responses**
+### **17.7 Fallback Triggers & Tiered Responses**
 
 | **Trigger Level**  | **Condition**                                               | **Response**                                                                                                         |
 |--------------------|-------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
