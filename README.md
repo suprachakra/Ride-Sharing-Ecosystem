@@ -117,15 +117,18 @@
   - [25.2 Contingency & Flex Budgets](#252-contingency--flex-budgets)
   - [25.3 Integrating These Plans with Product & Ops](#243-integrating-these-plans-with-product--ops)
 
-[25. Integration with Payment & Loyalty Systems](#25-integration-with-payment--loyalty-systems)
-  - [25.1 Payment System Integration](#251-payment-system-integration)
-  - [25.2 Loyalty Program Design](#252-loyalty-program-design)
-  - [25.3 Partnership Opportunities](#253-partnership-opportunities)
-  - [25.4 Data-Driven Personalization](#254-data-driven-personalization)
-  - [25.5 Operational Efficiency](#255-operational-efficiency)
-  - [25.6 Metrics & Success Measurement](#256-metrics--success-measurement)
-  - [25.7 Global Scalability & Compliance](#257-global-scalability--compliance)
-  - [25.8 Long-Term Vision](#258-long-term-vision)
+[26. Integration with Payment & Loyalty Systems](#26-integration-with-payment--loyalty-systems)
+  - [26.1 Payment System Integration](#261-payment-system-integration)
+  - [26.2 Loyalty Program Design](#262-loyalty-program-design)
+  - [26.3 Partnership Opportunities](#263-partnership-opportunities)
+  - [26.4 Data-Driven Personalization](#264-data-driven-personalization)
+  - [26.5 Operational Efficiency](#265-operational-efficiency)
+  - [26.6 Metrics & Success Measurement](#266-metrics--success-measurement)
+  - [26.7 Global Scalability & Compliance](#267-global-scalability--compliance)
+  - [26.8 Long-Term Vision](#268-long-term-vision)
+
+[27. Stakeholder Validation & Departmental Considerations](#27-stakeholder-validation--departmental-considerations)
+
 ---
 
 **Context:**  
