@@ -613,7 +613,7 @@ Below is the matrix linking each epic to **features**, **user stories** (US), an
 
 ---
 
-### **Additional UX Components & Real-Life Flow Examples**
+### **Components & Real-Life Flow Examples**
 
 #### **Rider App: Carpool Discount vs. Surge**  
 ```
