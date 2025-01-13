@@ -88,28 +88,34 @@
   - [21.2 Brand Evolution & Compliance Adaption](#212-brand-evolution--compliance-adaption)
   - [21.3 Loopholes, Risks, and Contingency Plans](#213-loopholes-risks-and-contingency-plans)
 
-[21. Data Privacy & Ethics Beyond Compliance](#21-data-privacy--ethics-beyond-compliance-a-comprehensive-framework)
-  - [21.1. Global Data Privacy Compliance](#211-global-data-privacy-compliance)
-  - [21.2. Data Minimization & Anonymization](#212-data-minimization--anonymization)
-  - [21.3. Ethical Data Usage](#213-ethical-data-usage)
-  - [21.4. Transparency & Communication](#214-transparency--communication)
-  - [21.5. Data Governance & Accountability](#215-data-governance--accountability)
-  - [21.6. Crisis Preparedness](#216-crisis-preparedness)
-  - [21.7. Metrics and Continuous Improvement](#217-metrics-and-continuous-improvement)
-  - [21.8. Positioning for Thought Leadership](#218-positioning-for-thought-leadership)
+[22. Data Privacy & Ethics Beyond Compliance](#22-data-privacy--ethics-beyond-compliance-a-comprehensive-framework)
+  - [22.1. Global Data Privacy Compliance](#221-global-data-privacy-compliance)
+  - [22.2. Data Minimization & Anonymization](#222-data-minimization--anonymization)
+  - [22.3. Ethical Data Usage](#223-ethical-data-usage)
+  - [22.4. Transparency & Communication](#224-transparency--communication)
+  - [22.5. Data Governance & Accountability](#225-data-governance--accountability)
+  - [22.6. Crisis Preparedness](#226-crisis-preparedness)
+  - [22.7. Metrics and Continuous Improvement](#227-metrics-and-continuous-improvement)
+  - [22.8. Positioning for Thought Leadership](#228-positioning-for-thought-leadership)
 
-[22. Disaster Scenarios & Macro-Environmental Changes](#22-disaster-scenarios--macro-environmental-changes)
+[23. Disaster Scenarios & Macro-Environmental Changes](#23-disaster-scenarios--macro-environmental-changes)
+  - [23.1 Economic Downturn Response](#231-economic-downturn-response)
+  - [23.2 Public Health Crises (Pandemic-Like)](#232-public-health-crises-pandemic-like)
+  - [23.3 Macro-Level Mobility Shifts & Competitor Price Wars](#233-macro-level-mobility-shifts--competitor-price-wars)
 
-[23. Customer Lifetime Value (CLV) & Retention Strategies](#23-customer-lifetime-value-clv--retention-strategies)
-  - [23.1. Customer Lifetime Value (CLV) Optimization](#231-customer-lifetime-value-clv-optimization)
-  - [23.2. Retention Strategies](#232-retention-strategies)
-  - [23.3. Behavioral Insights & Personalization](#233-behavioral-insights--personalization)
-  - [23.4. In-App Engagement & Gamification](#234-in-app-engagement--gamification)
-  - [23.5. Customer Feedback Integration](#235-customer-feedback-integration)
-  - [23.6. Measurement & KPIs](#236-measurement--kpis)
-  - [23.7. Scenario Planning for Long-Term Retention](#237-scenario-planning-for-long-term-retention)
+[24. Customer Lifetime Value (CLV) & Retention Strategies](#24-customer-lifetime-value-clv--retention-strategies)
+  - [24.1. Customer Lifetime Value (CLV) Optimization](#241-customer-lifetime-value-clv-optimization)
+  - [24.2. Retention Strategies](#242-retention-strategies)
+  - [24.3. Behavioral Insights & Personalization](#243-behavioral-insights--personalization)
+  - [24.4. In-App Engagement & Gamification](#244-in-app-engagement--gamification)
+  - [24.5. Customer Feedback Integration](#245-customer-feedback-integration)
+  - [24.6. Measurement & KPIs](#246-measurement--kpis)
+  - [24.7. Scenario Planning for Long-Term Retention](#247-scenario-planning-for-long-term-retention)
 
-[24. Cost Structures & Resource Allocation Planning](#24-cost-structures--resource-allocation-planning)
+[25. Cost Structures & Resource Allocation Planning](#24-cost-structures--resource-allocation-planning)
+  - [25.1 Budgeting Guidelines per SAFe PI](#251-budgeting-guidelines-per-safe-pi)
+  - [25.2 Contingency & Flex Budgets](#252-contingency--flex-budgets)
+  - [25.3 Integrating These Plans with Product & Ops](#243-integrating-these-plans-with-product--ops)
 
 [25. Integration with Payment & Loyalty Systems](#25-integration-with-payment--loyalty-systems)
   - [25.1 Payment System Integration](#251-payment-system-integration)
@@ -1259,7 +1265,7 @@ If these expansions yield less than a 3% usage gain within 2 months, revert to s
 
 ---
 
-#### 22. Data Privacy & Ethics Beyond Compliance: A Comprehensive Framework
+### 22. Data Privacy & Ethics Beyond Compliance: A Comprehensive Framework
 
 **Strategic Goal:**  
 Establish the company as a global leader in ethical data handling within the mobility sector, surpassing mere legal requirements (GDPR, PDPA, CCPA, etc.) to create a trusted brand. Each initiative aims to protect user privacy, maintain robust governance, mitigate ML biases, and communicate transparently—without neglecting operational efficiency or scaling ambitions.
@@ -1481,7 +1487,7 @@ We might reduce carpool offerings or highlight driver safety kits. If competitor
 **Driver Support & Scheduling Flexibility:**  
 In a prolonged public health scenario, some drivers may avoid work. We can try short-term illness compensation or flexible scheduling. If these measures balloon costs beyond 2% monthly margin, scale back or seek partial government relief. Balancing goodwill with financial sustainability ensures brand trust.
 
-#### 22.3 Macro-Level Mobility Shifts & Competitor Price Wars
+#### 23.3 Macro-Level Mobility Shifts & Competitor Price Wars
 
 **Micro-Mobility or Alternative Modes:**  
 If e-scooters or bike shares siphon short-distance trips, we refocus on mid/long routes or build alliances with micro-mobility providers for last-mile synergy. If synergy yields +5% in integrated usage, keep it. If brand confusion or adoption <2%, revert to classic taxi focus.
@@ -1644,12 +1650,12 @@ A rigorous, easily monitored KPI set that ensures we remain agile, dropping fail
 
 ---
 
-## 24.7. Scenario Planning for Long-Term Retention
+#### 24.7. Scenario Planning for Long-Term Retention
 
 **Purpose & Future Resilience:**  
 A robust plan must handle economic downturns, competitor discount wars, or major industry shifts (like micro-transit integration). By envisioning these scenarios, we maintain loyalty even under external pressures.
 
-#### 23.7.1 Maintaining Retention Under External Challenges
+#### 24.7.1 Maintaining Retention Under External Challenges
 
 - **Economic Downturns:**  
   - If ridership dips >10% for 2 consecutive months, we pilot stable or partial discount fares for cost-sensitive segments while intensifying brand-lift about “safe official rides.” If net margin hits -2% from plan, revert expansions or advanced ML usage until the market stabilizes.  
@@ -1700,7 +1706,7 @@ We keep a contingency buffer (e.g., 10% of total spend per PI) for urgent compli
 **Staff Resourcing:**  
 If driver onboarding or compliance tasks double unexpectedly, we can add temps or partial staff reassignments. If this overhead exceeds 1% monthly margin for 2 consecutive months, we scale back expansions or reduce certain marketing outlays.
 
-#### 24.3 Integrating These Plans with Product & Ops
+#### 25.3 Integrating These Plans with Product & Ops
 
 Each backlog item now references a cost line (e.g., “+2% marketing budget for sign-up codes in City A,” “+1 staff for compliance checks”). If the cost-risk ratio is too high (like adding staff overshadowing potential margin improvements), the item is deprioritized unless validated by a critical scenario (like major churn risk). This ensures **no hidden cost** emerges from well-meaning expansions or features.
 
