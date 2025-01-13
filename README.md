@@ -79,13 +79,14 @@
   - [19.2 Driver & Fleet Ecosystem Partnerships](#192-driver--fleet-ecosystem-partnerships)
   - [19.3 Corporate & Institutional Tie-Ups](#193-corporate--institutional-tie-ups)
 
-[19. Supply Management & Driver Economics Beyond Incentives](#19-supply-management--driver-economics-beyond-incentives)
-  - [19.1 Holistic Driver Retention & Support](#191-holistic-driver-retention--support)
-  - [19.2 Handling Different Driver Profiles](#192-handling-different-driver-profiles)
+[20. Supply Management & Driver Economics Beyond Incentives](#19-supply-management--driver-economics-beyond-incentives)
+  - [20.1 Holistic Driver Retention & Support](#201-holistic-driver-retention--support)
+  - [20.2 Handling Different Driver Profiles](#202-handling-different-driver-profiles)
 
-[20. Long-Term Strategic Roadmap Beyond the First Few PIs](#20-long-term-strategic-roadmap-beyond-the-first-few-pis)
-  - [20.1 Two-to-Three Year Vision](#201-two-to-three-year-vision)
-  - [20.2 Brand Evolution & Compliance Adaption](#202-brand-evolution--compliance-adaption)
+[21. Long-Term Strategic Roadmap Beyond the First Few PIs](#20-long-term-strategic-roadmap-beyond-the-first-few-pis)
+  - [21.1 Two-to-Three Year Vision](#211-two-to-three-year-vision)
+  - [21.2 Brand Evolution & Compliance Adaption](#212-brand-evolution--compliance-adaption)
+  - [21.3 Loopholes, Risks, and Contingency Plans](#213-loopholes-risks-and-contingency-plans)
 
 [21. Data Privacy & Ethics Beyond Compliance](#21-data-privacy--ethics-beyond-compliance-a-comprehensive-framework)
   - [21.1. Global Data Privacy Compliance](#211-global-data-privacy-compliance)
@@ -1179,9 +1180,7 @@ A ride-sharing marketplace cannot rely on **short-term driver bonuses** alone. T
    - Pooled Ride B (2 seats) -> ~$12 
      "If you accept a second passenger, your total fare grows by +$3"
    - Pooled Bonus Count: 14/15 for daily bonus
-   ```
-
-   This highlights how 2–3 passenger rides can outperform one single-rider fare, increasing driver buy-in.
+   ``` This highlights how 2–3 passenger rides can outperform one single-rider fare, increasing driver buy-in.
 ---
 
 #### 20.2 Handling Different Driver Profiles
@@ -1212,7 +1211,7 @@ A ride-sharing marketplace cannot rely on **short-term driver bonuses** alone. T
 
 ---
 
-#### **20.4 Summary & Key Outcomes**
+#### **Summary & Key Outcomes**
 
 By **blending** tier-based retention programs, upskilling opportunities, and data-driven incentive controls, we:
 
