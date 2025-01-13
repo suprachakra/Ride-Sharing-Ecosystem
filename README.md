@@ -32,7 +32,7 @@
    - [5.3 Marketplace Strategy & Dynamics](#53-marketplace-strategy--dynamics)
    - [5.4 Outcome-Focus & Real-World Checks](#54-outcome-focus--real-world-checks)
 
-[6. Epics & Strategic Alignment(#6-epics--strategic-alignment)
+[6. Epics & Strategic Alignment](#6-epics--strategic-alignment)
 
 [7. Detailed Requirements (FRs, NFRs)](#7-detailed-requirements-frs-nfrs)
    - [7.1 Functional Requirements (FRs)](#71-functional-requirements-frs)
