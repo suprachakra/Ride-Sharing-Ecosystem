@@ -1180,7 +1180,8 @@ A ride-sharing marketplace cannot rely on **short-term driver bonuses** alone. T
    - Pooled Ride B (2 seats) -> ~$12 
      "If you accept a second passenger, your total fare grows by +$3"
    - Pooled Bonus Count: 14/15 for daily bonus
-   ``` This highlights how 2–3 passenger rides can outperform one single-rider fare, increasing driver buy-in.
+   ```
+
 ---
 
 #### 20.2 Handling Different Driver Profiles
