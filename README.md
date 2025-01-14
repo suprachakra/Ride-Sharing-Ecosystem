@@ -350,10 +350,14 @@ In this **metropolitan area** (~5,000 to 5,500 taxis, ~600k daily trips), **rush
 - **Off-Peak Highways**: Up to 60–80 km/h
 
 **Why Carpooling Works**  
-\- High-density short trips make ride-pooling feasible without major inconvenience.  
-\- Better vehicle utilization lowers idle time and reduces traffic congestion.
+\-**High-Density Short Trips**: Pooling is relatively seamless for riders; a 5–8-minute detour is tolerable if they save money.  
+\- **Better Vehicle Utilization**: Cuts driver idle time, reduces traffic congestion—aligns with city sustainability goals.
 
-> **Outcome Focus**: This section ties directly to **OKR2** (validate carpool feasibility), **OKR3** (maintain on-time performance & user satisfaction), and **OKR1** (no drop in revenue).
+
+> **Outcome Focus**:
+> - **OKR2**: Validate carpool feasibility (target ~20–30% adoption)  
+>- **OKR3**: Maintain on-time performance & user satisfaction (no operational meltdown)  
+>- **OKR1**: Ensure no drop in overall revenue (carpool fares often yield multi-seat revenue)
 
 ---
 
@@ -363,7 +367,7 @@ Some specialized fleets (e.g., Women and Families Taxis) may **opt out** to pres
 1. **Pilot Mode**: A feature_flag=1 is enabled; the driver’s app prompts passenger consent screens ensuring shared comfort.  
 2. **Fallback**: If negative feedback or usage <2% persists for 2 sprints, revert to private-only.
 
-> **Why**: Ensures no forced pooling for specialized segments, mitigating cultural or safety concerns.
+> **Rationale**: Ensures no forced pooling for specialized segments, mitigating cultural or safety concerns.
 
 ---
 
@@ -380,7 +384,7 @@ We define a **transparent** formula:
 | Minimum Fare                   | ~$5.00                              | No trip below this threshold.                                                                  |
 | Waiting Charges               | ~$0.15/minute (car is idle)         | Encourages drivers to stay on schedule; if traffic spikes, can raise or freeze pickups.         |
 | Shared Discount (Pooled Ride) | ~25% cheaper than private ride       | <15% discount not compelling; >40% discount erodes driver earnings.                             |
-| Tolls/Surcharges (Split)      | E.g., $5 or AED4 equally divided     | The system calculates each passenger’s share upfront, ensuring clarity (“$1 each if 5 riders”). |
+| Tolls/Surcharges (Split)      | E.g., $5 or $4 equally divided     | The system calculates each passenger’s share upfront, ensuring clarity (“$1 each if 5 riders”). |
 
 **Example**  
 - Private Fare: 10 km × $0.60 + $2.00 flagfall = $8 total.  
@@ -436,7 +440,32 @@ To deliver the strongest possible outcome, we anchor **each feature** in a speci
 > **Iterative Approach**: We pilot each pillar in 1–2 zones, gather direct feedback, then expand citywide if KPI targets are met.
 
 ---
-##### **5.2.6 Pilot Phase vs. Citywide Rollout**
+
+#### **5.2.6 Creating & Updating Shared-Pooling Trips**
+
+##### **Fleet Engine Integration (or Equivalent Backend)**
+
+- **Trip Fields**: For a shared ride, set `trip_type = SHARED`.  
+- **Vehicle Waypoints**: Must specify the arrival order of unvisited waypoints from multiple trips.  
+- **Assignment**: The trip must have a `vehicle_id` assigned, or be updated to have one with the correct waypoint order.
+
+##### **Creating a Shared Trip**  
+1. **Trip Creation**:  
+   - `trip_type = SHARED`  
+   - `pickup_point` (mandatory) and `dropoff_point` (optional if multiple intermediate stops)  
+   - `vehicle_waypoints` includes existing route from the vehicle plus new pickup/drop-off points for the shared trip.  
+2. **Assign to Vehicle**: If you know in advance which driver/vehicle to use, set `vehicle_id` on creation. Otherwise, do so in an `UpdateTrip` call.
+
+##### **Updating a Shared Trip**  
+1. **Set or Change `vehicle_id`**: If a new passenger is added mid-route, specify the updated list of waypoints.  
+2. **Vehicle Waypoints**: The updated list interleaves the existing trip’s drop-off with the new trip’s pickup and drop-off.  
+   - If you skip ordering, new waypoints go to the tail end of existing route.  
+   - *Example*: “Trip B pickup → Trip A drop-off → Trip B drop-off.”
+
+**Privacy**: `vehicle_waypoints` are not returned on `GetTrip()` calls (privacy reasons), but are available in the driver’s or admin’s backend calls.
+
+---
+##### **5.2.7 Pilot Phase vs. Citywide Rollout**
 1. **Pilot**  
    - Test for 3–6 months in 1–2 dense corridors or neighborhoods.  
    - Track occupancy, wait times, user satisfaction (NPS≥4.5).  
@@ -450,7 +479,7 @@ To deliver the strongest possible outcome, we anchor **each feature** in a speci
 
 ---
 
-##### **5.2.7 Potential Pitfalls and Mitigations**
+##### **5.2.8 Potential Pitfalls and Mitigations**
 
 | **Pitfall**                 | **Mitigation**                                                                                                                                     |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -458,10 +487,11 @@ To deliver the strongest possible outcome, we anchor **each feature** in a speci
 | **Traffic Volatility**      | Freeze new pickups if predicted arrival time overshoots detour cap. Retain user trust by capping detour at +8 minutes.                                                                   |
 | **Fare Surprises**          | No final cost can exceed the quoted max. Any extra pickups only reduce per-rider cost. If confusion persists, ramp up “cost-sharing breakdown” UI.  |
 | **Specialized Fleets**      | Let Women & Family Taxis opt in. If usage <2%, revert. Comply with cultural or safety norms.                                                        |
+| **Backend Complexity** | Use `trip_type=SHARED` and updated vehicle_waypoints to reorder pickups. If repeated invalid waypoint issues occur, revert to simpler param-based routing.            |
 
 ---
 
-##### **5.2.8 Success Metrics and Continuous Feedback**
+##### **5.2.9 Success Metrics and Continuous Feedback**
 
 We **continuously** gather data to ensure alignment with OKRs:
 
@@ -469,9 +499,9 @@ We **continuously** gather data to ensure alignment with OKRs:
 - **Detour Compliance**: 80%+ rides under 8-minute extra time  
 - **User Satisfaction**: NPS≥4.5 or 90% positive rating in pilot survey  
 - **Driver Earnings**: Net hourly up by ~10% vs. single-rider average
+- **Shared Trip Creation**: 95% of shared pooling trips set correct `trip_type=SHARED` and valid `vehicle_waypoints`. Minimal errors in create/update calls.
 
 > **Iterative Validation**: If results plateau or regress, we:
-
 1. Adjust discount rate or seat-limit policy.  
 2. Simplify route matching or revise driver incentives.  
 3. Re-test in smaller increments before a broader rollout.
