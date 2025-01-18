@@ -58,7 +58,7 @@
 
 [16. Iteration & Feedback Loops](#16-iteration--feedback-loops)
 
-[17. Financial Modeling & Unit Economics]()
+[17. Financial Modeling & Unit Economics](#17-financial-modeling--unit-economics)
   - [17.1 Purpose & Strategic Alignment](#171-purpose--strategic-alignment)
   - [17.2 Revenue Streams](#172-revenue-streams)
   - [17.3 Cost Structure](#173-cost-structure)
