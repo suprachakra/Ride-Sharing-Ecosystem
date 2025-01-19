@@ -1036,12 +1036,9 @@ Carpool profitability thrives on seat fill. However, if a second passenger picku
 #### **17.5. Profit & Loss Dynamics**
 ```
 1. **Core Profit Equation**  
-
-   \text{Net Margin} \approx 
-   (\text{Fare Revenue per Seat} \times \text{Avg. Seats per Ride})
-   - (\text{Driver Payout} + \text{Operational Overheads})
-   
-
+\[
+\text{Net Margin} \approx (\text{Fare Rev. per Seat} \times \text{Avg. Seats}) - (\text{Driver Pay} + \text{Op. Overhead})
+\]  
    - Margins expand with each additional passenger if the detour overhead stays minimal.
 ```
 2. **Break-Even Scenarios**  
