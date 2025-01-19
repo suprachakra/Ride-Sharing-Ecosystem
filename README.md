@@ -1034,7 +1034,7 @@ Carpool profitability thrives on seat fill. However, if a second passenger picku
 ---
 
 #### **17.5. Profit & Loss Dynamics**
-
+```
 1. **Core Profit Equation**  
 
    \text{Net Margin} \approx 
@@ -1043,7 +1043,7 @@ Carpool profitability thrives on seat fill. However, if a second passenger picku
    
 
    - Margins expand with each additional passenger if the detour overhead stays minimal.
-
+```
 2. **Break-Even Scenarios**  
    - If average occupancy is ~1.2 seats/ride with a moderate discount(~20–25%)   , the platform typically breaks even or profits slightly over single-rider fares.  
    - Below 1.1 seats/ride, the discount might erode profits to net-negative, especially if marketing or driver incentives are high.
