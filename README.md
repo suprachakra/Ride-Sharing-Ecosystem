@@ -59,13 +59,19 @@
 [16. Iteration & Feedback Loops](#16-iteration--feedback-loops)
 
 [17. Financial Modeling & Unit Economics](#17-financial-modeling--unit-economics)
-  - [17.1 Purpose & Strategic Alignment](#171-purpose--strategic-alignment)
-  - [17.2 Revenue Streams](#172-revenue-streams)
-  - [17.3 Cost Structure](#173-cost-structure)
-  - [17.4 Profitability Analysis & Pricing Logic](#174-profitability-analysis--pricing-logic)
-  - [17.5 Scenario Handling & Resilience](#175-scenario-handling--resilience)
-  - [17.6 ROI & Breakeven with Cross-Functional Budgeting](#176-roi--breakeven-with-cross-functional-budgeting)
-  - [17.7 Fallback Triggers & Tiered Responses](#177-fallback-triggers--tiered-responses)
+  - [17.1 Strategic Rationale & Overview](#171-strategic-rationale--overview)
+  - [17.2. Revenue Architecture](#172-revenue-architecture)
+  - [17.3. Cost Structure](#173-cost-structure)
+  - [17.4. Occupancy & Timing Considerations](#174-occupancy--timing-considerations)
+  - [17.5. Profit & Loss Dynamics](#175-profit--loss-dynamics)
+  - [17.6. Market Segmentation & Positioning](#176-market-segmentation--positioning)
+  - [17.7. Tiered Risk & Fallback Triggers](#177-tiered-risk--fallback-triggers)
+  - [17.8. Risk Management & Mitigation](#178-risk-management--mitigation)
+  - [17.9. Detailed Example: Corridor “A→B”](#179-detailed-example-corridor-ab)
+  - [17.10. Implementation & Continuous Improvement](#1710-implementation--continuous-improvement)
+  - [17.11. Illustrative Economics: Ride sharing vs. Single-Rider](#1711-illustrative-economics-ride-sharing-vs-single-rider)
+  - [17.12. Detailed Example: Multi-Corridor City Rollout](#1712-detailed-example-multi-corridor-city-rollout)
+  - [17.13. Final Integration & Takeaways](#1713-final-integration--takeaways)
 
 [18. Competitive & Market Analysis](#18-competitive--market-analysis)
   - [18.1 Competitor Benchmarking: Framework & Metrics](#181-competitor-benchmarking-framework--metrics)
@@ -1131,7 +1137,7 @@ We expand beyond the classic “mild–moderate–severe” structure to include
 
 ---
 
-#### **17.11. Illustrative Economics: Ride sharing vs. Single-Rider**
+#### 17.11. **Illustrative Economics: Ride sharing vs. Single-Rider**
 
 **Scenario**: A high-demand corridor handles 100 rides/hour in peak times.  
 - Single-rider fare: $10 average. Net to platform after driver payout/overhead: ~$2 profit/ride.  
@@ -1140,7 +1146,7 @@ We expand beyond the classic “mild–moderate–severe” structure to include
 
 ---
 
-#### **17.12. **Detailed Example: Multi-Corridor City Rollout**
+#### 17.12. **Detailed Example: Multi-Corridor City Rollout**
 
 ##### **Scenario Setup**
 - **City Setup**: Two major corridors, each with heavy rush-hour traffic and scattered demand in off-peak times.  
