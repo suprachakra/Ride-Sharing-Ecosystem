@@ -1034,9 +1034,9 @@ Carpool profitability thrives on seat fill. However, if a second passenger picku
 ---
 
 #### **17.5. Profit & Loss Dynamics**
-```
-1. **Core Profit Equation**  
 
+1. **Core Profit Equation**  
+```
 Net Margin ≈ (Fare Revenue per Seat × Avg. Seats) - (Driver Pay + Operational Overhead)
  
    - Margins expand with each additional passenger if the detour overhead stays minimal.
@@ -1068,7 +1068,7 @@ Net Margin ≈ (Fare Revenue per Seat × Avg. Seats) - (Driver Pay + Operational
 
 To shield margins from unexpected shocks, we define multiple trigger levels for **margin dips**, **occupancy changes**, **market shifts**, or **P&L anomalies**. Each has distinct **conditions**, **causes**, and **responses**.
 
-##### **17.8.1 Trigger Levels Overview**
+##### **1. Trigger Levels Overview**
 
 We expand beyond the classic “mild–moderate–severe” structure to include finer granularity:
 
@@ -1086,7 +1086,7 @@ We expand beyond the classic “mild–moderate–severe” structure to include
 
 ---
 
-##### **17.8. Risk Management & Mitigation**
+#### **17.8. Risk Management & Mitigation**
 
 1. **Regulatory Changes**  
    - If surge gets capped, quickly pivot to adjusting base fares or driver commissions. Keep a 10% budget reserve for compliance overhead.  
