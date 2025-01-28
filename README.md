@@ -140,7 +140,7 @@
 **Context:**  
 > We are developing a **cutting-edge ridesharing (carpooling) marketplace** pricing strategy—transitioning from a traditional zone-based surge model to an **intelligent** approach, potentially incorporating advanced AI-driven pricing. This new methodology aims to **improve operational metrics**, align deeply with **brand values** and **compliance needs**, and champion **user satisfaction** (both riders and drivers).
 
-**Document Overview**  
+> [!NOTE]   
 > This document provides a **comprehensive** blueprint: from **product strategy** and **release phases** to **financial modeling**, **risk management**, and **stakeholder validation**.
 
 ---
