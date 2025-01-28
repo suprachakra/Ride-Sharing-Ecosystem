@@ -197,8 +197,9 @@ Every improvement will be validated through data-driven experiments, **user feed
    - Summarize existing service: daily rides, average revenue per ride, driver supply, key user segments (airport runs, business, tourism, etc.).
 
 #### **Risk of Cannibalization**  
-   - **Permissible Dip**: Define an acceptable revenue dip from single-rider trips if users switch to cheaper shared rides (e.g., maximum 5–10%).  
-   - **Monitoring Mechanism**: Outline how financial dashboards track daily/weekly shifts from single to shared rides.
+> [!IMPORTANT]  
+>   - **Permissible Dip**: Define an acceptable revenue dip from single-rider trips if users switch to cheaper shared rides (e.g., maximum 5–10%).  
+>   - **Monitoring Mechanism**: Outline how financial dashboards track daily/weekly shifts from single to shared rides.
 
 #### **Mitigation Strategies**  
    - Gradual rollout of carpooling in certain corridors/times to limit BAU disruption.  
