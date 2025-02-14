@@ -8,7 +8,7 @@
  *
  * These thresholds can be defined in configuration (here, hardcoded for demonstration).
  */
-
+/*
 function shouldFallback(tripData, riskMetrics) {
   try {
     // Define thresholds.
@@ -27,3 +27,4 @@ function shouldFallback(tripData, riskMetrics) {
 }
 
 module.exports = { shouldFallback };
+*/
