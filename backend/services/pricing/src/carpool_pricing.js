@@ -9,7 +9,7 @@
  * - The final fare per rider is calculated by dividing the discounted total fare by the number of riders.
  * - A maximum fare per rider (if defined) is enforced.
  */
-
+/*
 async function computeCarpoolFare({ baseFare, distance, waitingTime, surgeMultiplier, numRiders, config }) {
   try {
     if (numRiders <= 0) throw new Error('Number of riders must be greater than 0');
@@ -57,3 +57,4 @@ async function computeCarpoolFare({ baseFare, distance, waitingTime, surgeMultip
 }
 
 module.exports = { computeCarpoolFare };
+*/
