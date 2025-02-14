@@ -7,7 +7,7 @@
  *   - Otherwise, surge = 1.0.
  * The factor can be tuned via configuration.
  */
-
+/*
 async function computeSurge(demand, supply) {
   try {
     if (typeof demand !== 'number' || typeof supply !== 'number') {
@@ -30,3 +30,4 @@ async function computeSurge(demand, supply) {
 }
 
 module.exports = { computeSurge };
+*/
