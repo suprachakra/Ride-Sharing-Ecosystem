@@ -5,7 +5,7 @@
  * In a production system, this module would interface with monitoring services
  * or a metrics database. Here, we simulate the retrieval of current metrics.
  */
-
+/*
 async function getCurrentMetrics() {
   try {
     // Simulated metrics. In a real scenario, fetch from monitoring/analytics services.
@@ -22,3 +22,4 @@ async function getCurrentMetrics() {
 }
 
 module.exports = { getCurrentMetrics };
+*/
