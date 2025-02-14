@@ -6,7 +6,7 @@
  *   - If local regulations enforce a maximum surge multiplier (maxSurgeCap),
  *     then adjust the fare breakdown accordingly.
  */
-
+/*
 function applyComplianceChecks(fareDetails) {
   try {
     // For demonstration, assume a max surge cap of 1.5.
@@ -32,3 +32,4 @@ function applyComplianceChecks(fareDetails) {
 }
 
 module.exports = { applyComplianceChecks };
+*/
