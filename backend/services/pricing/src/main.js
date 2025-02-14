@@ -3,7 +3,7 @@
  * Entry point for the Dynamic Pricing & Carpool Logic Service.
  * Exposes REST endpoints to calculate fares for both private and carpool rides.
  */
-
+/*
 const express = require('express');
 const bodyParser = require('body-parser');
 const surge = require('./surge');
@@ -97,7 +97,7 @@ app.post('/calculateFare', async (req, res) => {
     });
   }
 });
-
+*/
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Pricing service is running on port ${PORT}`);
