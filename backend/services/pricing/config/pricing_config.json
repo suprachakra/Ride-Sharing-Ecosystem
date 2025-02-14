@@ -1,0 +1,15 @@
+{
+  "baseFare": 2.00,
+  "perKmRate": 0.60,
+  "waitingCharge": 0.15,
+  "carpoolDiscount": 0.25,
+  "maxSurgeCap": 1.5,
+  "maxFarePerRider": 20.00,
+  "fallbackThresholds": {
+    "maxMarginDip": 0.05,
+    "minOccupancyRate": 1.1
+  },
+  "surge": {
+    "factor": 0.1
+  }
+}
