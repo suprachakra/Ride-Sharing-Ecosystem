@@ -1,1 +1,16 @@
+spring:
+  application:
+    name: pricing-service
 
+pricing:
+  baseFare: 2.00
+  perKmRate: 0.60
+  waitingCharge: 0.15
+  carpoolDiscount: 0.25
+  maxFarePerRider: 20.00
+  maxSurgeCap: 1.5
+  surge:
+    factor: 0.1
+  fallback:
+    maxMarginDip: 0.05
+    minOccupancyRate: 1.1
