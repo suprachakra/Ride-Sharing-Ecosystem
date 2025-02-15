@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: compliance-service
+
+server:
+  port: 3005
+
+compliance:
+  maxSurgeCap: 1.5
