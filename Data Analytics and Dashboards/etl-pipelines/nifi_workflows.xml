@@ -1,1 +1,21 @@
 // Apache NiFi workflows configuration for real-time data ingestion
+
+<?xml version="1.0" encoding="UTF-8"?>
+<flowController>
+    <flow name="Rideshare_ETL_Workflow">
+        <processor id="proc-1" name="Fetch Data" type="org.apache.nifi.processors.standard.GetFile">
+            <property name="Input Directory">/data/input</property>
+            <property name="Keep Source File">false</property>
+        </processor>
+        <processor id="proc-2" name="Convert JSON to CSV" type="org.apache.nifi.processors.standard.ConvertRecord">
+            <property name="Record Reader">JsonTreeReader</property>
+            <property name="Record Writer">CSVRecordSetWriter</property>
+        </processor>
+        <processor id="proc-3" name="Put Data into Warehouse" type="org.apache.nifi.processors.standard.PutDatabaseRecord">
+            <property name="JDBC Connection Pool">DatabaseCP</property>
+            <property name="Table Name">bookings</property>
+        </processor>
+        <connection id="conn-1" sourceId="proc-1" destinationId="proc-2" />
+        <connection id="conn-2" sourceId="proc-2" destinationId="proc-3" />
+    </flow>
+</flowController>
