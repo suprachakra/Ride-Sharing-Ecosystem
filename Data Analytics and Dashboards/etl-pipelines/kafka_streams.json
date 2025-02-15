@@ -1,1 +1,21 @@
-
+{
+  "topics": [
+    {
+      "name": "rideshare-logs",
+      "partitions": 3,
+      "replicationFactor": 2
+    },
+    {
+      "name": "rideshare-events",
+      "partitions": 3,
+      "replicationFactor": 2
+    }
+  ],
+  "streams": {
+    "rideMetricsStream": {
+      "sourceTopic": "rideshare-logs",
+      "destinationTopic": "ride-metrics",
+      "processingLogic": "aggregate_by_hour"
+    }
+  }
+}
