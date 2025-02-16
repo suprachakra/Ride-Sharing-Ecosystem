@@ -167,14 +167,3 @@ flowchart TD
 ```
 
 ---
-
-#### E. Additional Files in Documentation Folder
-
-1. **`powerbi_data_model.md`** – Contains the above documentation.
-2. **`data_warehouse_schema.sql`** – SQL script with complete table definitions (as provided earlier).
-3. **ETL Pipeline Files:**
-   - **`nifi_workflows.xml`** – XML configuration for Apache NiFi.
-   - **`airflow_dags.py`** – Sample DAGs for scheduling ETL jobs.
-   - **`kafka_streams.json`** – JSON config for Kafka topics.
-
----
