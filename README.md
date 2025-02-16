@@ -1,6 +1,10 @@
 # Ridesharing Marketplace Ecosystem
 
 ```mermaid
+---
+config:
+  look: handDrawn
+---
 flowchart TD
   %% ================================
   %% EXECUTIVE STRATEGY & VISION
