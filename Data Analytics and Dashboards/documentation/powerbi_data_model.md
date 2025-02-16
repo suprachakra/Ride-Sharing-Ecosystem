@@ -1,5 +1,3 @@
-// Complete documentation for the Power BI data model and dashboards
-
 ### Power BI Data Model & Dashboard Strategy for Ride-Sharing Platform
 
 #### Overview
