@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RideShare Rider</string>
+    <string name="welcome_message">Welcome to RideShare Rider</string>
+    <string name="book_ride">Book a Ride</string>
+    <string name="view_map">View Map</string>
+    <string name="make_payment">Make a Payment</string>
+    <string name="my_profile">My Profile</string>
+</resources>
