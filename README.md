@@ -88,7 +88,7 @@ flowchart TD
     H2 --> H3
     H3 --> H4
     H4 -- **Risk/Incident Feedback** --> B6
-    H5 -- **Compliance & Data Ethics Feedback** --> D1
+    H5 -- **Compliance &amp; Data Ethics Feedback** --> D1
     H1 -- **Governance Reviews & Alignment** --> E3
     B3@{ shape: rect}
      A1:::Class_02
@@ -103,11 +103,11 @@ flowchart TD
      C1:::Class_02
      C2:::Class_02
      C3:::Class_02
+     C4:::Class_02
      D1:::Class_02
      D2:::Class_02
      D3:::Class_02
      D4:::Class_02
-     C4:::Class_02
      E1:::Class_02
      E2:::Class_02
      E3:::Class_02
@@ -126,13 +126,14 @@ flowchart TD
      H5:::Class_02
     classDef Class_01 stroke-width:4px, stroke-dasharray: 5
     classDef Class_02 fill:#FFF
-    style A fill:#FFDDC1,stroke:#FF8C00,stroke-width:2px
-    style B fill:#D4E2D4,stroke:#006400,stroke-width:2px
-    style C fill:#C8D8E4,stroke:#4682B4,stroke-width:2px
-    style D fill:#F8CFCF,stroke:#B22222,stroke-width:2px
-    style E fill:#E6E6FA,stroke:#4B0082,stroke-width:2px
-    style F fill:#FDE4E1,stroke:#DC143C,stroke-width:2px
-    style G fill:#F3E5AB,stroke:#DAA520,stroke-width:2px
-    style H fill:#D8CFE5,stroke:#6A5ACD,stroke-width:2px
+    style G fill:#F3E5A0,stroke:#DAA520,stroke-width:2px
+    style A fill:#FFDDC0,stroke:#FF8C00,stroke-width:2px
+    style B fill:#D4E2D0,stroke:#006400,stroke-width:2px
+    style C fill:#C8D8E0,stroke:#4682B0,stroke-width:2px
+    style D fill:#F8CFC0,stroke:#B22220,stroke-width:2px
+    style E fill:#E6E6F0,stroke:#4B0080,stroke-width:2px
+    style F fill:#FDE4E0,stroke:#DC1430,stroke-width:2px
+    style H fill:#D8CFE0,stroke:#6A5AC0,stroke-width:2px
+ 
 
 ```
