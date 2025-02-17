@@ -9,7 +9,7 @@ flowchart TD
   %% ================================
   %% EXECUTIVE STRATEGY & VISION
   %% ================================
-  subgraph A["🎯 Executive Strategy & Vision"]
+  subgraph A["🎯 **Executive Strategy & Vision**"]
     A1["🚀 Executive Vision <br> Sustainable & Shared Urban Mobility"]
     A2["🔍 Market & User Insights <br> Rider, Driver, Regulatory, Competitor"]
     A3["📊 Key Objectives & OKRs <br> Revenue, Adoption, On-Time, NPS"]
@@ -19,7 +19,7 @@ flowchart TD
   %% ================================
   %% PRODUCT & MARKETPLACE STRATEGY
   %% ================================
-  subgraph B["♻️ Product & Marketplace Strategy"]
+  subgraph B["♻️ **Product & Marketplace Strategy**"]
     B1["🌍 Carpool-Centric Model <br> Cost-saving, Eco-friendly"]
     B2["📈 Dynamic Pricing & Dispatch <br> Param-based & AI-Enabled"]
     B3["💡 Transparent UX & Fare Breakdown <br> 'Why This Fare?'"]
@@ -32,7 +32,7 @@ flowchart TD
   %% ================================
   %% TECHNICAL ARCHITECTURE
   %% ================================
-  subgraph C["🖥️ Technical Architecture & Engineering"]
+  subgraph C["🖥️ **Technical Architecture & Engineering**"]
     C1["🛠️ Backend Microservices <br> Pricing, Dispatch, Booking, Compliance, Analytics"]
     C2["📱 Mobile & Web Apps <br> Rider, Driver, Admin Portals"]
     C3["🚀 CI/CD Pipelines & Shared Libraries <br> Scalability, Versioning, Rollbacks"]
@@ -43,7 +43,7 @@ flowchart TD
   %% ================================
   %% DATA & ANALYTICS
   %% ================================
-  subgraph D["📊 Data & Analytics Ecosystem"]
+  subgraph D["📊 **Data & Analytics Ecosystem**"]
     D1["📦 ETL Pipelines & Data Warehouse <br> NiFi, Airflow, SQL Schema, Kafka Streams"]
     D2["📊 Real-Time Dashboards & Reporting <br> PowerBI, Custom Dashboards"]
     D3["🤖 ML & Predictive Analytics <br> Surge, Demand Forecasting, Risk Metrics"]
@@ -54,7 +54,7 @@ flowchart TD
   %% ================================
   %% OPERATIONS, RISK & QA
   %% ================================
-  subgraph E["⚠️ Operations, Risk & QA"]
+  subgraph E["⚠️ **Operations, Risk & QA**"]
     E1["🏆 Operational Excellence <br> Driver/Rider Support, Training, UAT"]
     E2["⚠️ Fallback & Compliance Integration <br> Feature Flags, Rapid Rollbacks"]
     E3["🛑 Risk Monitoring & Continuous Improvement <br> Monthly Reviews, Incident Response"]
@@ -65,7 +65,7 @@ flowchart TD
   %% ================================
   %% MARKETING, GTM & BRAND
   %% ================================
-  subgraph F["📣 Marketing, GTM & Brand"]
+  subgraph F["📣** Marketing, GTM & Brand**"]
     F1["📣 Brand Messaging & Promotions <br> Transparent, Official Fares"]
     F2["🎁 User Acquisition & Retention <br> Incentives, Referral, Loyalty Programs"]
     F3["🏅 Driver & Rider Engagement <br> Gamification, Tiered Programs, Rewards"]
